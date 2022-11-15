@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SistemaVendas.Vendas
 {
-    public partial class EstoqueProdutos : MetroFramework.Forms.MetroForm
+    public partial class CadastroProdutos : MetroFramework.Forms.MetroForm
     {
-        public EstoqueProdutos()
+        public CadastroProdutos()
         {
             InitializeComponent();
         }
