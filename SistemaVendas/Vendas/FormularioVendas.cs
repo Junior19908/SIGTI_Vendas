@@ -16,8 +16,9 @@ namespace CadastroClientes
         public FormularioVendas()
         {
             InitializeComponent();
-            CarregarComboBoxProduto();
+            //CarregarComboBoxProduto();
             CarregarComboBoxCliente();
+            CarregarComboBoxVendedor();
         }
         OleDbCommand command;
 
@@ -69,6 +70,33 @@ namespace CadastroClientes
             catch (Exception Error)
             {
                 MessageBox.Show("Erro ao preencher o BoxCliente! - Contate o Desenvolvedor\r\n"+ Error.Message, "<- Banco de Dados ->",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            }
+            finally
+            {
+                ClassConexao.DBSCV().Close();
+            }
+        }
+        private void CarregarComboBoxVendedor()
+        {
+            try
+            {
+                OleDbCommand command = new OleDbCommand("SELECT col_id, col_usuario FROM TB_LoginDBSCV WHERE col_id="+ ClassDadosGEt.IDUsuario.ToString() +"", ClassConexao.DBSCV());
+                OleDbDataReader reader = command.ExecuteReader();
+                DataTable dt = new DataTable();
+                dt.Load(reader);
+                DataRow row = dt.NewRow();
+                //row["col_id"] = 0;
+                //dt.Rows.InsertAt(row, 0);
+            
+                this.cbVendedor.DataSource = dt;
+                this.cbVendedor.ValueMember = "col_id";
+                this.cbVendedor.DisplayMember = "col_usuario";
+            
+                reader.Close();
+            }
+            catch (Exception Error)
+            {
+                MessageBox.Show("Erro ao preencher o BoxCliente! - Contate o Desenvolvedor\r\n" + Error.Message, "<- Banco de Dados ->", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             finally
             {
