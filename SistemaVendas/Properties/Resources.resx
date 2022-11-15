@@ -118,37 +118,40 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="c67aef3d02b7b2eb9cfb953fe776d224-pilha-de-caixas-de-papelao" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\c67aef3d02b7b2eb9cfb953fe776d224-pilha-de-caixas-de-papelao.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="model_fashion_Monika_Jagaciak_women-63909 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\model_fashion_Monika_Jagaciak_women-63909 (1).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="caixaRegistradora-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\caixaRegistradora-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="model_fashion_Monika_Jagaciak_women-63909 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\model_fashion_Monika_Jagaciak_women-63909 (1).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="naom_59eb3ce573053" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\naom_59eb3ce573053.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="logo_ti" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logo_ti.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="user" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\user.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="índices" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\índices.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="6078603" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\6078603.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Huvafen-Fushi-Sunrise-Dawn-Maldives-Overwater-Spa-Paul-Reiffer-Professional-Landscape-Photograph-Photographer-Pink-Blue-Sea-Ocean-Jetty-Wooden-Per-Aquum@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Huvafen-Fushi-Sunrise-Dawn-Maldives-Overwater-Spa-Paul-Reiffer-Professional-Landscape-Photograph-Photographer-Pink-Blue-Sea-Ocean-Jetty-Wooden-Per-Aquum@2x.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="identification-id-student-card-icon-260nw-288673628-removebg-preview(1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\identification-id-student-card-icon-260nw-288673628-removebg-preview(1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="naom_59eb3ce573053" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\naom_59eb3ce573053.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="índices" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\índices.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Huvafen-Fushi-Sunrise-Dawn-Maldives-Overwater-Spa-Paul-Reiffer-Professional-Landscape-Photograph-Photographer-Pink-Blue-Sea-Ocean-Jetty-Wooden-Per-Aquum@2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Huvafen-Fushi-Sunrise-Dawn-Maldives-Overwater-Spa-Paul-Reiffer-Professional-Landscape-Photograph-Photographer-Pink-Blue-Sea-Ocean-Jetty-Wooden-Per-Aquum@2x.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logo_ti" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logo_ti.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c67aef3d02b7b2eb9cfb953fe776d224-pilha-de-caixas-de-papelao" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\c67aef3d02b7b2eb9cfb953fe776d224-pilha-de-caixas-de-papelao.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="user" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\user.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="produtos-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\produtos-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

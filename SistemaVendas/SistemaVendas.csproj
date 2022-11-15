@@ -206,6 +206,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="logo_ti.ico" />
+    <None Include="Resources\produtos-removebg-preview.png" />
     <None Include="Resources\6078603.png" />
     <None Include="Resources\índices.png" />
     <None Include="Resources\identification-id-student-card-icon-260nw-288673628-removebg-preview%281%29.png" />

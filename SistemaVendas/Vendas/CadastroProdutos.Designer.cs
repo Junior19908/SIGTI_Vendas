@@ -33,50 +33,49 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnVoltar = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnCadastraItem = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.label19 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.cmbSubGrupo = new System.Windows.Forms.ComboBox();
             this.label18 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.cmbGrupo = new System.Windows.Forms.ComboBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateVencimento = new System.Windows.Forms.DateTimePicker();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.txtReferencia = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.txtMarca = new System.Windows.Forms.TextBox();
+            this.cmbFornecedor = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.txtLocalizacaoDeposito = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.richTextObeservacao = new System.Windows.Forms.RichTextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.txtEstoqueMinimo = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtPrecoVenda = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtLucroValor = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtMargemLucro = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbUnidadeMedida = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btnRemoverFoto = new System.Windows.Forms.Button();
             this.btnAdicionarFoto = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtDescricaoItem = new System.Windows.Forms.TextBox();
             this.btnCriarCodigo = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtCodBarras = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label17 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.picFoto = new System.Windows.Forms.PictureBox();
             this.tabControl1.SuspendLayout();
@@ -114,46 +113,45 @@
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.btnVoltar);
-            this.groupBox1.Controls.Add(this.button4);
+            this.groupBox1.Controls.Add(this.btnCadastraItem);
             this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.label19);
-            this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.comboBox4);
+            this.groupBox1.Controls.Add(this.cmbSubGrupo);
             this.groupBox1.Controls.Add(this.label18);
-            this.groupBox1.Controls.Add(this.comboBox3);
+            this.groupBox1.Controls.Add(this.cmbGrupo);
             this.groupBox1.Controls.Add(this.label16);
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
+            this.groupBox1.Controls.Add(this.dateVencimento);
             this.groupBox1.Controls.Add(this.label15);
             this.groupBox1.Controls.Add(this.label14);
-            this.groupBox1.Controls.Add(this.textBox10);
+            this.groupBox1.Controls.Add(this.txtReferencia);
             this.groupBox1.Controls.Add(this.label13);
-            this.groupBox1.Controls.Add(this.textBox9);
-            this.groupBox1.Controls.Add(this.comboBox2);
+            this.groupBox1.Controls.Add(this.txtMarca);
+            this.groupBox1.Controls.Add(this.cmbFornecedor);
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.textBox8);
+            this.groupBox1.Controls.Add(this.txtLocalizacaoDeposito);
             this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.richTextBox1);
+            this.groupBox1.Controls.Add(this.richTextObeservacao);
             this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.textBox7);
+            this.groupBox1.Controls.Add(this.txtEstoqueMinimo);
             this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.textBox6);
+            this.groupBox1.Controls.Add(this.txtPrecoVenda);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.textBox5);
+            this.groupBox1.Controls.Add(this.txtLucroValor);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.textBox4);
+            this.groupBox1.Controls.Add(this.txtMargemLucro);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.cmbUnidadeMedida);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.btnRemoverFoto);
             this.groupBox1.Controls.Add(this.btnAdicionarFoto);
             this.groupBox1.Controls.Add(this.picFoto);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.txtDescricaoItem);
             this.groupBox1.Controls.Add(this.btnCriarCodigo);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txtCodBarras);
@@ -174,47 +172,26 @@
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
-            // button4
+            // btnCadastraItem
             // 
-            this.button4.Font = new System.Drawing.Font("Cascadia Code SemiBold", 12F, System.Drawing.FontStyle.Bold);
-            this.button4.Location = new System.Drawing.Point(827, 343);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(184, 85);
-            this.button4.TabIndex = 82;
-            this.button4.Text = "&Cadastrar Item";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnCadastraItem.Font = new System.Drawing.Font("Cascadia Code SemiBold", 12F, System.Drawing.FontStyle.Bold);
+            this.btnCadastraItem.Location = new System.Drawing.Point(827, 343);
+            this.btnCadastraItem.Name = "btnCadastraItem";
+            this.btnCadastraItem.Size = new System.Drawing.Size(184, 85);
+            this.btnCadastraItem.TabIndex = 82;
+            this.btnCadastraItem.Text = "&Cadastrar Item";
+            this.btnCadastraItem.UseVisualStyleBackColor = true;
+            this.btnCadastraItem.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Cascadia Code SemiBold", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(827, 268);
+            this.button3.Location = new System.Drawing.Point(827, 220);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(184, 42);
             this.button3.TabIndex = 81;
             this.button3.Text = "&Adicionar Estoque";
             this.button3.UseVisualStyleBackColor = true;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(875, 193);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(85, 30);
-            this.label19.TabIndex = 80;
-            this.label19.Text = "Estoque Atual\r\ndo Produto";
-            this.label19.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.textBox1.Font = new System.Drawing.Font("Cascadia Code SemiBold", 13F, System.Drawing.FontStyle.Bold);
-            this.textBox1.Location = new System.Drawing.Point(827, 226);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(184, 36);
-            this.textBox1.TabIndex = 79;
-            this.textBox1.Text = "0,00";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // button1
             // 
@@ -227,24 +204,13 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // comboBox4
+            // cmbSubGrupo
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Items.AddRange(new object[] {
-            "UN",
-            "PC",
-            "CXS",
-            "SC",
-            "KG",
-            "L",
-            "DZ",
-            "ML",
-            "M2",
-            "M"});
-            this.comboBox4.Location = new System.Drawing.Point(156, 163);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(148, 23);
-            this.comboBox4.TabIndex = 76;
+            this.cmbSubGrupo.FormattingEnabled = true;
+            this.cmbSubGrupo.Location = new System.Drawing.Point(156, 163);
+            this.cmbSubGrupo.Name = "cmbSubGrupo";
+            this.cmbSubGrupo.Size = new System.Drawing.Size(148, 23);
+            this.cmbSubGrupo.TabIndex = 76;
             // 
             // label18
             // 
@@ -256,24 +222,13 @@
             this.label18.Text = "Sub-Grupo";
             this.label18.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // comboBox3
+            // cmbGrupo
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
-            "UN",
-            "PC",
-            "CXS",
-            "SC",
-            "KG",
-            "L",
-            "DZ",
-            "ML",
-            "M2",
-            "M"});
-            this.comboBox3.Location = new System.Drawing.Point(7, 163);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(143, 23);
-            this.comboBox3.TabIndex = 74;
+            this.cmbGrupo.FormattingEnabled = true;
+            this.cmbGrupo.Location = new System.Drawing.Point(7, 163);
+            this.cmbGrupo.Name = "cmbGrupo";
+            this.cmbGrupo.Size = new System.Drawing.Size(143, 23);
+            this.cmbGrupo.TabIndex = 74;
             // 
             // label16
             // 
@@ -285,15 +240,15 @@
             this.label16.Text = "Grupo";
             this.label16.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // dateTimePicker1
+            // dateVencimento
             // 
-            this.dateTimePicker1.CustomFormat = "dd/MM/yyyy";
-            this.dateTimePicker1.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(374, 165);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(99, 20);
-            this.dateTimePicker1.TabIndex = 71;
+            this.dateVencimento.CustomFormat = "dd/MM/yyyy";
+            this.dateVencimento.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
+            this.dateVencimento.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateVencimento.Location = new System.Drawing.Point(374, 165);
+            this.dateVencimento.Name = "dateVencimento";
+            this.dateVencimento.Size = new System.Drawing.Size(99, 20);
+            this.dateVencimento.TabIndex = 71;
             // 
             // label15
             // 
@@ -315,13 +270,13 @@
             this.label14.Text = "Referência";
             this.label14.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // textBox10
+            // txtReferencia
             // 
-            this.textBox10.Location = new System.Drawing.Point(594, 119);
-            this.textBox10.Multiline = true;
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(203, 23);
-            this.textBox10.TabIndex = 67;
+            this.txtReferencia.Location = new System.Drawing.Point(594, 119);
+            this.txtReferencia.Multiline = true;
+            this.txtReferencia.Name = "txtReferencia";
+            this.txtReferencia.Size = new System.Drawing.Size(203, 23);
+            this.txtReferencia.TabIndex = 67;
             // 
             // label13
             // 
@@ -333,32 +288,32 @@
             this.label13.Text = "Marca";
             this.label13.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // textBox9
+            // txtMarca
             // 
-            this.textBox9.Location = new System.Drawing.Point(493, 119);
-            this.textBox9.Multiline = true;
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(95, 23);
-            this.textBox9.TabIndex = 65;
+            this.txtMarca.Location = new System.Drawing.Point(493, 119);
+            this.txtMarca.Multiline = true;
+            this.txtMarca.Name = "txtMarca";
+            this.txtMarca.Size = new System.Drawing.Size(95, 23);
+            this.txtMarca.TabIndex = 65;
             // 
-            // comboBox2
+            // cmbFornecedor
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.cmbFornecedor.FormattingEnabled = true;
+            this.cmbFornecedor.Items.AddRange(new object[] {
             "UN",
             "KG",
             "TON",
             "M",
             "L"});
-            this.comboBox2.Location = new System.Drawing.Point(215, 119);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(270, 23);
-            this.comboBox2.TabIndex = 64;
+            this.cmbFornecedor.Location = new System.Drawing.Point(215, 119);
+            this.cmbFornecedor.Name = "cmbFornecedor";
+            this.cmbFornecedor.Size = new System.Drawing.Size(270, 23);
+            this.cmbFornecedor.TabIndex = 64;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(321, 101);
+            this.label12.Location = new System.Drawing.Point(312, 101);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(67, 15);
             this.label12.TabIndex = 63;
@@ -377,35 +332,35 @@
             this.label11.Text = "Localização no Depósito:";
             this.label11.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // textBox8
+            // txtLocalizacaoDeposito
             // 
-            this.textBox8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.textBox8.Location = new System.Drawing.Point(185, 191);
-            this.textBox8.Multiline = true;
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(636, 23);
-            this.textBox8.TabIndex = 60;
+            this.txtLocalizacaoDeposito.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtLocalizacaoDeposito.Location = new System.Drawing.Point(185, 191);
+            this.txtLocalizacaoDeposito.Multiline = true;
+            this.txtLocalizacaoDeposito.Name = "txtLocalizacaoDeposito";
+            this.txtLocalizacaoDeposito.Size = new System.Drawing.Size(636, 23);
+            this.txtLocalizacaoDeposito.TabIndex = 60;
             // 
             // label10
             // 
             this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Cascadia Code SemiBold", 9F, System.Drawing.FontStyle.Bold);
-            this.label10.Location = new System.Drawing.Point(88, 222);
+            this.label10.Location = new System.Drawing.Point(88, 220);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(91, 16);
             this.label10.TabIndex = 59;
             this.label10.Text = "Observações:";
             this.label10.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // richTextBox1
+            // richTextObeservacao
             // 
-            this.richTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.richTextBox1.Location = new System.Drawing.Point(185, 220);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(636, 208);
-            this.richTextBox1.TabIndex = 58;
-            this.richTextBox1.Text = "";
+            this.richTextObeservacao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.richTextObeservacao.Location = new System.Drawing.Point(185, 220);
+            this.richTextObeservacao.Name = "richTextObeservacao";
+            this.richTextObeservacao.Size = new System.Drawing.Size(636, 208);
+            this.richTextObeservacao.TabIndex = 58;
+            this.richTextObeservacao.Text = "";
             // 
             // label9
             // 
@@ -417,13 +372,13 @@
             this.label9.Text = "Estoque Mínimo";
             this.label9.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // textBox7
+            // txtEstoqueMinimo
             // 
-            this.textBox7.Location = new System.Drawing.Point(6, 119);
-            this.textBox7.Multiline = true;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(203, 23);
-            this.textBox7.TabIndex = 56;
+            this.txtEstoqueMinimo.Location = new System.Drawing.Point(6, 119);
+            this.txtEstoqueMinimo.Multiline = true;
+            this.txtEstoqueMinimo.Name = "txtEstoqueMinimo";
+            this.txtEstoqueMinimo.Size = new System.Drawing.Size(203, 23);
+            this.txtEstoqueMinimo.TabIndex = 56;
             // 
             // label8
             // 
@@ -435,13 +390,13 @@
             this.label8.Text = "Preço de Venda";
             this.label8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // textBox6
+            // txtPrecoVenda
             // 
-            this.textBox6.Location = new System.Drawing.Point(741, 75);
-            this.textBox6.Multiline = true;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(141, 23);
-            this.textBox6.TabIndex = 54;
+            this.txtPrecoVenda.Location = new System.Drawing.Point(741, 75);
+            this.txtPrecoVenda.Multiline = true;
+            this.txtPrecoVenda.Name = "txtPrecoVenda";
+            this.txtPrecoVenda.Size = new System.Drawing.Size(141, 23);
+            this.txtPrecoVenda.TabIndex = 54;
             // 
             // label7
             // 
@@ -453,13 +408,13 @@
             this.label7.Text = "Lucro (R$)";
             this.label7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // textBox5
+            // txtLucroValor
             // 
-            this.textBox5.Location = new System.Drawing.Point(594, 75);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(141, 23);
-            this.textBox5.TabIndex = 52;
+            this.txtLucroValor.Location = new System.Drawing.Point(594, 75);
+            this.txtLucroValor.Multiline = true;
+            this.txtLucroValor.Name = "txtLucroValor";
+            this.txtLucroValor.Size = new System.Drawing.Size(141, 23);
+            this.txtLucroValor.TabIndex = 52;
             // 
             // label6
             // 
@@ -471,13 +426,13 @@
             this.label6.Text = "Margem de Lucro";
             this.label6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // textBox4
+            // txtMargemLucro
             // 
-            this.textBox4.Location = new System.Drawing.Point(447, 75);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(141, 23);
-            this.textBox4.TabIndex = 50;
+            this.txtMargemLucro.Location = new System.Drawing.Point(447, 75);
+            this.txtMargemLucro.Multiline = true;
+            this.txtMargemLucro.Name = "txtMargemLucro";
+            this.txtMargemLucro.Size = new System.Drawing.Size(141, 23);
+            this.txtMargemLucro.TabIndex = 50;
             // 
             // label5
             // 
@@ -497,10 +452,10 @@
             this.textBox3.Size = new System.Drawing.Size(141, 23);
             this.textBox3.TabIndex = 48;
             // 
-            // comboBox1
+            // cmbUnidadeMedida
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cmbUnidadeMedida.FormattingEnabled = true;
+            this.cmbUnidadeMedida.Items.AddRange(new object[] {
             "UN",
             "PC",
             "CXS",
@@ -511,10 +466,10 @@
             "ML",
             "M2",
             "M"});
-            this.comboBox1.Location = new System.Drawing.Point(215, 75);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(79, 23);
-            this.comboBox1.TabIndex = 47;
+            this.cmbUnidadeMedida.Location = new System.Drawing.Point(215, 75);
+            this.cmbUnidadeMedida.Name = "cmbUnidadeMedida";
+            this.cmbUnidadeMedida.Size = new System.Drawing.Size(79, 23);
+            this.cmbUnidadeMedida.TabIndex = 47;
             // 
             // label4
             // 
@@ -537,9 +492,9 @@
             // btnRemoverFoto
             // 
             this.btnRemoverFoto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRemoverFoto.Location = new System.Drawing.Point(819, 153);
+            this.btnRemoverFoto.Location = new System.Drawing.Point(819, 148);
             this.btnRemoverFoto.Name = "btnRemoverFoto";
-            this.btnRemoverFoto.Size = new System.Drawing.Size(64, 20);
+            this.btnRemoverFoto.Size = new System.Drawing.Size(64, 25);
             this.btnRemoverFoto.TabIndex = 42;
             this.btnRemoverFoto.Text = "&Remover";
             this.btnRemoverFoto.UseVisualStyleBackColor = true;
@@ -547,12 +502,13 @@
             // btnAdicionarFoto
             // 
             this.btnAdicionarFoto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAdicionarFoto.Location = new System.Drawing.Point(819, 128);
+            this.btnAdicionarFoto.Location = new System.Drawing.Point(819, 119);
             this.btnAdicionarFoto.Name = "btnAdicionarFoto";
-            this.btnAdicionarFoto.Size = new System.Drawing.Size(64, 20);
+            this.btnAdicionarFoto.Size = new System.Drawing.Size(64, 29);
             this.btnAdicionarFoto.TabIndex = 41;
             this.btnAdicionarFoto.Text = "&Adicionar";
             this.btnAdicionarFoto.UseVisualStyleBackColor = true;
+            this.btnAdicionarFoto.Click += new System.EventHandler(this.btnAdicionarFoto_Click);
             // 
             // label2
             // 
@@ -563,13 +519,13 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Descrição do Item";
             // 
-            // textBox2
+            // txtDescricaoItem
             // 
-            this.textBox2.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox2.Location = new System.Drawing.Point(215, 34);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(667, 20);
-            this.textBox2.TabIndex = 3;
+            this.txtDescricaoItem.BackColor = System.Drawing.SystemColors.Window;
+            this.txtDescricaoItem.Location = new System.Drawing.Point(215, 34);
+            this.txtDescricaoItem.Name = "txtDescricaoItem";
+            this.txtDescricaoItem.Size = new System.Drawing.Size(667, 20);
+            this.txtDescricaoItem.TabIndex = 3;
             // 
             // btnCriarCodigo
             // 
@@ -607,7 +563,7 @@
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(1029, 446);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.Text = "Histórico de Compra";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // panel2
@@ -632,6 +588,15 @@
             this.label17.TabIndex = 0;
             this.label17.Text = "Módulo de Cadastro do Produto";
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(827, 314);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(184, 23);
+            this.button2.TabIndex = 84;
+            this.button2.Text = "&Imprimir Código de Barras";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
             // pictureBox2
             // 
             this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -647,10 +612,10 @@
             // 
             this.picFoto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.picFoto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picFoto.Image = global::SistemaVendas.Properties.Resources.user;
+            this.picFoto.Image = global::SistemaVendas.Properties.Resources.produtos_removebg_preview;
             this.picFoto.Location = new System.Drawing.Point(888, 34);
             this.picFoto.Name = "picFoto";
-            this.picFoto.Size = new System.Drawing.Size(123, 135);
+            this.picFoto.Size = new System.Drawing.Size(123, 139);
             this.picFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picFoto.TabIndex = 40;
             this.picFoto.TabStop = false;
@@ -687,47 +652,46 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnCriarCodigo;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtDescricaoItem;
         private System.Windows.Forms.Button btnRemoverFoto;
         private System.Windows.Forms.Button btnAdicionarFoto;
         private System.Windows.Forms.PictureBox picFoto;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txtEstoqueMinimo;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtPrecoVenda;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtLucroValor;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtMargemLucro;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbUnidadeMedida;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox txtLocalizacaoDeposito;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox richTextObeservacao;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateVencimento;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox txtReferencia;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.TextBox txtMarca;
+        private System.Windows.Forms.ComboBox cmbFornecedor;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnCadastraItem;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.ComboBox cmbSubGrupo;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox cmbGrupo;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Button btnVoltar;
+        private System.Windows.Forms.Button button2;
     }
 }
