@@ -32,24 +32,25 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label17 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.dtGridViewGrupo = new System.Windows.Forms.DataGridView();
-            this.dtGridViewSubGrupo = new System.Windows.Forms.DataGridView();
+            this.btnGravarGrupo = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.dtGridViewGrupo = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtGrupo = new System.Windows.Forms.TextBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnGravarSubGrupo = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dtGridViewSubGrupo = new System.Windows.Forms.DataGridView();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtSubGrupo = new System.Windows.Forms.TextBox();
+            this.btnClose = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtGridViewGrupo)).BeginInit();
+            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtGridViewSubGrupo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -88,10 +89,10 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.btnGravarGrupo);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.dtGridViewGrupo);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtGrupo);
             this.groupBox1.Font = new System.Drawing.Font("Cascadia Code SemiBold", 8.25F, System.Drawing.FontStyle.Bold);
             this.groupBox1.Location = new System.Drawing.Point(20, 123);
             this.groupBox1.Name = "groupBox1";
@@ -100,33 +101,24 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Grupo de Material";
             // 
-            // groupBox2
+            // btnGravarGrupo
             // 
-            this.groupBox2.Controls.Add(this.button2);
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.dtGridViewSubGrupo);
-            this.groupBox2.Controls.Add(this.textBox2);
-            this.groupBox2.Font = new System.Drawing.Font("Cascadia Code SemiBold", 8.25F, System.Drawing.FontStyle.Bold);
-            this.groupBox2.Location = new System.Drawing.Point(549, 123);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(514, 203);
-            this.groupBox2.TabIndex = 4;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Sub-Grupo de Material";
+            this.btnGravarGrupo.Location = new System.Drawing.Point(442, 16);
+            this.btnGravarGrupo.Name = "btnGravarGrupo";
+            this.btnGravarGrupo.Size = new System.Drawing.Size(75, 23);
+            this.btnGravarGrupo.TabIndex = 3;
+            this.btnGravarGrupo.Text = "&Gravar";
+            this.btnGravarGrupo.UseVisualStyleBackColor = true;
+            this.btnGravarGrupo.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBox1
+            // label1
             // 
-            this.textBox1.Location = new System.Drawing.Point(133, 45);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(384, 20);
-            this.textBox1.TabIndex = 0;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(157, 45);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(348, 20);
-            this.textBox2.TabIndex = 0;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 48);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(121, 15);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Descrição do Grupo:";
             // 
             // dtGridViewGrupo
             // 
@@ -139,54 +131,6 @@
             this.dtGridViewGrupo.Name = "dtGridViewGrupo";
             this.dtGridViewGrupo.Size = new System.Drawing.Size(511, 126);
             this.dtGridViewGrupo.TabIndex = 1;
-            // 
-            // dtGridViewSubGrupo
-            // 
-            this.dtGridViewSubGrupo.AllowUserToAddRows = false;
-            this.dtGridViewSubGrupo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtGridViewSubGrupo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column3,
-            this.Column4});
-            this.dtGridViewSubGrupo.Location = new System.Drawing.Point(6, 71);
-            this.dtGridViewSubGrupo.Name = "dtGridViewSubGrupo";
-            this.dtGridViewSubGrupo.Size = new System.Drawing.Size(499, 126);
-            this.dtGridViewSubGrupo.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 48);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(121, 15);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Descrição do Grupo:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 48);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(145, 15);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Descrição do Sub-Grupo:";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(442, 16);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "&Gravar";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(430, 16);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "&Gravar";
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // Column1
             // 
@@ -202,6 +146,58 @@
             this.Column2.Name = "Column2";
             this.Column2.Width = 300;
             // 
+            // txtGrupo
+            // 
+            this.txtGrupo.Location = new System.Drawing.Point(133, 45);
+            this.txtGrupo.Name = "txtGrupo";
+            this.txtGrupo.Size = new System.Drawing.Size(384, 20);
+            this.txtGrupo.TabIndex = 0;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.btnGravarSubGrupo);
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.dtGridViewSubGrupo);
+            this.groupBox2.Controls.Add(this.txtSubGrupo);
+            this.groupBox2.Font = new System.Drawing.Font("Cascadia Code SemiBold", 8.25F, System.Drawing.FontStyle.Bold);
+            this.groupBox2.Location = new System.Drawing.Point(549, 123);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(514, 203);
+            this.groupBox2.TabIndex = 4;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Sub-Grupo de Material";
+            // 
+            // btnGravarSubGrupo
+            // 
+            this.btnGravarSubGrupo.Location = new System.Drawing.Point(430, 16);
+            this.btnGravarSubGrupo.Name = "btnGravarSubGrupo";
+            this.btnGravarSubGrupo.Size = new System.Drawing.Size(75, 23);
+            this.btnGravarSubGrupo.TabIndex = 4;
+            this.btnGravarSubGrupo.Text = "&Gravar";
+            this.btnGravarSubGrupo.UseVisualStyleBackColor = true;
+            this.btnGravarSubGrupo.Click += new System.EventHandler(this.btnGravarSubGrupo_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 48);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(145, 15);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Descrição do Sub-Grupo:";
+            // 
+            // dtGridViewSubGrupo
+            // 
+            this.dtGridViewSubGrupo.AllowUserToAddRows = false;
+            this.dtGridViewSubGrupo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtGridViewSubGrupo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column3,
+            this.Column4});
+            this.dtGridViewSubGrupo.Location = new System.Drawing.Point(6, 71);
+            this.dtGridViewSubGrupo.Name = "dtGridViewSubGrupo";
+            this.dtGridViewSubGrupo.Size = new System.Drawing.Size(499, 126);
+            this.dtGridViewSubGrupo.TabIndex = 1;
+            // 
             // Column3
             // 
             this.Column3.DataPropertyName = "Código";
@@ -216,11 +212,30 @@
             this.Column4.Name = "Column4";
             this.Column4.Width = 300;
             // 
+            // txtSubGrupo
+            // 
+            this.txtSubGrupo.Location = new System.Drawing.Point(157, 45);
+            this.txtSubGrupo.Name = "txtSubGrupo";
+            this.txtSubGrupo.Size = new System.Drawing.Size(348, 20);
+            this.txtSubGrupo.TabIndex = 0;
+            // 
+            // btnClose
+            // 
+            this.btnClose.Location = new System.Drawing.Point(985, 341);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(75, 23);
+            this.btnClose.TabIndex = 5;
+            this.btnClose.Text = "&Fechar";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
             // CadastroGrupoSub
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1083, 374);
+            this.ControlBox = false;
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel2);
@@ -231,9 +246,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtGridViewGrupo)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtGridViewGrupo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtGridViewSubGrupo)).EndInit();
             this.ResumeLayout(false);
 
@@ -247,16 +262,17 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dtGridViewGrupo;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtGrupo;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dtGridViewSubGrupo;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox txtSubGrupo;
+        private System.Windows.Forms.Button btnGravarGrupo;
+        private System.Windows.Forms.Button btnGravarSubGrupo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.Button btnClose;
     }
 }

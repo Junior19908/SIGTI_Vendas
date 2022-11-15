@@ -37,7 +37,7 @@ namespace CadastroClientes
 
             this.txtCodBarras.Text = ((long)(random_seed / 655) % 10000000000000001).ToString();
         }
-        private void CarregarComboBox()
+        public void CarregarComboBox()
         {
             try
             {
@@ -182,6 +182,16 @@ namespace CadastroClientes
                 bitmap.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
                 foto = ms.ToArray();
             }
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            CarregarComboBox();
+        }
+
+        private void btnRemoverFoto_Click(object sender, EventArgs e)
+        {
+            picFoto.Image = null;
         }
     }
 }

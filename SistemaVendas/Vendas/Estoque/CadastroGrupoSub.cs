@@ -38,7 +38,7 @@ namespace SistemaVendas.Vendas.Estoque
             }
             catch (OleDbException ex)
             {
-                MessageBox.Show("Arquivo de Usuário não, encontrado!", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Erro relacionado ao banco de dados " + ex.Message + " !", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception Er)
             {
@@ -66,7 +66,7 @@ namespace SistemaVendas.Vendas.Estoque
             }
             catch (OleDbException ex)
             {
-                MessageBox.Show("Arquivo de Usuário não, encontrado!", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Erro relacionado ao banco de dados "+ ex.Message +" !", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception Er)
             {
@@ -76,6 +76,52 @@ namespace SistemaVendas.Vendas.Estoque
             {
                 ClassConexao.DBSCV().Close();
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                OleDbParameter paramFoto;
+                OleDbCommand command = ClassConexao.DBSCV().CreateCommand();
+                command.CommandType = CommandType.Text;
+                command.CommandText = "INSERT INTO TB_GrupoDBSCV (col_descricaoGrupo) VALUES" +
+                    "('" + txtGrupo.Text + "')";
+                command.ExecuteNonQuery();
+                MessageBox.Show("Cadastro " + txtGrupo.Text + " Realizado com sucesso!");
+                txtGrupo.Clear();
+                CarregarGridGrupos();
+            }
+            catch (Exception Erro)
+            {
+                MessageBox.Show("Erro! - Contate o Desenvolvedor\r\n" + Erro.Message, "<- Banco de Dados ->", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+
+        private void btnGravarSubGrupo_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                OleDbParameter paramFoto;
+                OleDbCommand command = ClassConexao.DBSCV().CreateCommand();
+                command.CommandType = CommandType.Text;
+                command.CommandText = "INSERT INTO TB_SubGrupoDBSCV (col_descricaoSubGrupo) VALUES" +
+                    "('" + txtSubGrupo.Text + "')";
+                command.ExecuteNonQuery();
+                MessageBox.Show("Cadastro " + txtSubGrupo.Text + " Realizado com sucesso!");
+                txtGrupo.Clear();
+                CarregarGridGrupos();
+            }
+            catch (Exception Erro)
+            {
+                MessageBox.Show("Erro! - Contate o Desenvolvedor\r\n" + Erro.Message, "<- Banco de Dados ->", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

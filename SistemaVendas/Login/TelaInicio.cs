@@ -70,15 +70,20 @@ namespace CadastroClientes
 
         private void Menu_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.F8)
+            if(e.KeyCode == Keys.F1)
             {
                 FormularioVendas vendas = new FormularioVendas();
                 vendas.Show();
                 this.Visible = false;
             }
-            else if(e.KeyCode == Keys.F3)
+            else if(e.KeyCode == Keys.F2)
             {
                 CadastroProdutos vendas = new CadastroProdutos();
+                vendas.Show();
+                this.Visible = false;
+            }else if(e.KeyCode == Keys.F3)
+            {
+                CadastroClientes vendas = new CadastroClientes();
                 vendas.Show();
                 this.Visible = false;
             }

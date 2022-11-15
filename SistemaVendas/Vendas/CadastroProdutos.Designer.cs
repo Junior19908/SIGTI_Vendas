@@ -35,7 +35,7 @@
             this.btnVoltar = new System.Windows.Forms.Button();
             this.btnCadastraItem = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnCriarGrupo = new System.Windows.Forms.Button();
             this.cmbSubGrupo = new System.Windows.Forms.ComboBox();
             this.label18 = new System.Windows.Forms.Label();
             this.cmbGrupo = new System.Windows.Forms.ComboBox();
@@ -78,6 +78,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.picFoto = new System.Windows.Forms.PictureBox();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -113,11 +114,12 @@
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.btnRefresh);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.btnVoltar);
             this.groupBox1.Controls.Add(this.btnCadastraItem);
             this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.btnCriarGrupo);
             this.groupBox1.Controls.Add(this.cmbSubGrupo);
             this.groupBox1.Controls.Add(this.label18);
             this.groupBox1.Controls.Add(this.cmbGrupo);
@@ -193,29 +195,29 @@
             this.button3.Text = "&Adicionar Estoque";
             this.button3.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnCriarGrupo
             // 
-            this.button1.Font = new System.Drawing.Font("Cascadia Code SemiBold", 6F, System.Drawing.FontStyle.Bold);
-            this.button1.Location = new System.Drawing.Point(310, 164);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(58, 22);
-            this.button1.TabIndex = 77;
-            this.button1.Text = "&Criar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnCriarGrupo.Font = new System.Drawing.Font("Cascadia Code SemiBold", 6F, System.Drawing.FontStyle.Bold);
+            this.btnCriarGrupo.Location = new System.Drawing.Point(491, 163);
+            this.btnCriarGrupo.Name = "btnCriarGrupo";
+            this.btnCriarGrupo.Size = new System.Drawing.Size(74, 22);
+            this.btnCriarGrupo.TabIndex = 77;
+            this.btnCriarGrupo.Text = "&Criar Grupo";
+            this.btnCriarGrupo.UseVisualStyleBackColor = true;
+            this.btnCriarGrupo.Click += new System.EventHandler(this.button1_Click);
             // 
             // cmbSubGrupo
             // 
             this.cmbSubGrupo.FormattingEnabled = true;
-            this.cmbSubGrupo.Location = new System.Drawing.Point(156, 163);
+            this.cmbSubGrupo.Location = new System.Drawing.Point(215, 163);
             this.cmbSubGrupo.Name = "cmbSubGrupo";
-            this.cmbSubGrupo.Size = new System.Drawing.Size(148, 23);
+            this.cmbSubGrupo.Size = new System.Drawing.Size(270, 23);
             this.cmbSubGrupo.TabIndex = 76;
             // 
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(201, 145);
+            this.label18.Location = new System.Drawing.Point(321, 145);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(61, 15);
             this.label18.TabIndex = 75;
@@ -227,13 +229,13 @@
             this.cmbGrupo.FormattingEnabled = true;
             this.cmbGrupo.Location = new System.Drawing.Point(7, 163);
             this.cmbGrupo.Name = "cmbGrupo";
-            this.cmbGrupo.Size = new System.Drawing.Size(143, 23);
+            this.cmbGrupo.Size = new System.Drawing.Size(202, 23);
             this.cmbGrupo.TabIndex = 74;
             // 
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(59, 144);
+            this.label16.Location = new System.Drawing.Point(88, 145);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(37, 15);
             this.label16.TabIndex = 73;
@@ -245,7 +247,7 @@
             this.dateVencimento.CustomFormat = "dd/MM/yyyy";
             this.dateVencimento.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
             this.dateVencimento.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateVencimento.Location = new System.Drawing.Point(374, 165);
+            this.dateVencimento.Location = new System.Drawing.Point(662, 165);
             this.dateVencimento.Name = "dateVencimento";
             this.dateVencimento.Size = new System.Drawing.Size(99, 20);
             this.dateVencimento.TabIndex = 71;
@@ -253,7 +255,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(395, 148);
+            this.label15.Location = new System.Drawing.Point(683, 148);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(55, 15);
             this.label15.TabIndex = 70;
@@ -277,6 +279,7 @@
             this.txtReferencia.Name = "txtReferencia";
             this.txtReferencia.Size = new System.Drawing.Size(203, 23);
             this.txtReferencia.TabIndex = 67;
+            this.txtReferencia.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label13
             // 
@@ -295,6 +298,7 @@
             this.txtMarca.Name = "txtMarca";
             this.txtMarca.Size = new System.Drawing.Size(95, 23);
             this.txtMarca.TabIndex = 65;
+            this.txtMarca.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // cmbFornecedor
             // 
@@ -379,6 +383,7 @@
             this.txtEstoqueMinimo.Name = "txtEstoqueMinimo";
             this.txtEstoqueMinimo.Size = new System.Drawing.Size(203, 23);
             this.txtEstoqueMinimo.TabIndex = 56;
+            this.txtEstoqueMinimo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label8
             // 
@@ -397,6 +402,7 @@
             this.txtPrecoVenda.Name = "txtPrecoVenda";
             this.txtPrecoVenda.Size = new System.Drawing.Size(141, 23);
             this.txtPrecoVenda.TabIndex = 54;
+            this.txtPrecoVenda.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label7
             // 
@@ -415,6 +421,7 @@
             this.txtLucroValor.Name = "txtLucroValor";
             this.txtLucroValor.Size = new System.Drawing.Size(141, 23);
             this.txtLucroValor.TabIndex = 52;
+            this.txtLucroValor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label6
             // 
@@ -433,6 +440,7 @@
             this.txtMargemLucro.Name = "txtMargemLucro";
             this.txtMargemLucro.Size = new System.Drawing.Size(141, 23);
             this.txtMargemLucro.TabIndex = 50;
+            this.txtMargemLucro.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label5
             // 
@@ -451,6 +459,7 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(141, 23);
             this.textBox3.TabIndex = 48;
+            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // cmbUnidadeMedida
             // 
@@ -498,6 +507,7 @@
             this.btnRemoverFoto.TabIndex = 42;
             this.btnRemoverFoto.Text = "&Remover";
             this.btnRemoverFoto.UseVisualStyleBackColor = true;
+            this.btnRemoverFoto.Click += new System.EventHandler(this.btnRemoverFoto_Click);
             // 
             // btnAdicionarFoto
             // 
@@ -620,6 +630,17 @@
             this.picFoto.TabIndex = 40;
             this.picFoto.TabStop = false;
             // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Font = new System.Drawing.Font("Cascadia Code SemiBold", 6F, System.Drawing.FontStyle.Bold);
+            this.btnRefresh.Location = new System.Drawing.Point(571, 163);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(85, 22);
+            this.btnRefresh.TabIndex = 85;
+            this.btnRefresh.Text = "&Carregar Grupo";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
             // CadastroProdutos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -686,12 +707,13 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button btnCadastraItem;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnCriarGrupo;
         private System.Windows.Forms.ComboBox cmbSubGrupo;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.ComboBox cmbGrupo;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Button btnVoltar;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }

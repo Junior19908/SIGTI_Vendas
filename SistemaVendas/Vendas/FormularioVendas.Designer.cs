@@ -333,11 +333,13 @@ namespace CadastroClientes
             // textBox6
             // 
             this.textBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.textBox6.Enabled = false;
             this.textBox6.Location = new System.Drawing.Point(611, 9);
             this.textBox6.Multiline = true;
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(82, 26);
             this.textBox6.TabIndex = 25;
+            this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label8
             // 
@@ -426,9 +428,9 @@ namespace CadastroClientes
             this.label5.Font = new System.Drawing.Font("Cascadia Code SemiBold", 7F, System.Drawing.FontStyle.Bold);
             this.label5.Location = new System.Drawing.Point(115, 39);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(211, 13);
+            this.label5.Size = new System.Drawing.Size(205, 13);
             this.label5.TabIndex = 18;
-            this.label5.Text = "Código de Barras - (F10 Localizar)";
+            this.label5.Text = "Código de Barras - (F1 Localizar)";
             // 
             // txtCodBarras
             // 
@@ -825,6 +827,12 @@ namespace CadastroClientes
             | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBox3.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Items.AddRange(new object[] {
+            "Á VISTA",
+            "CARTÃO DE CRÉDITO",
+            "CARTÃO DE DÉBITO",
+            "BOLETO",
+            "CARNÊ"});
             this.comboBox3.Location = new System.Drawing.Point(6, 79);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(126, 23);
@@ -860,13 +868,13 @@ namespace CadastroClientes
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(115, 17);
             this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
             this.radioButton2.Text = "&Criar Orçamento";
             this.radioButton2.UseVisualStyleBackColor = true;
             // 
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
+            this.radioButton1.Checked = true;
             this.radioButton1.Location = new System.Drawing.Point(24, 19);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(91, 17);
