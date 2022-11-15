@@ -37,7 +37,6 @@ E:\Projetos\VisualStudio\SistemaVendas\SistemaVendas\obj\Debug\CadastroClientes.
 E:\Projetos\VisualStudio\SistemaVendas\SistemaVendas\obj\Debug\CadastroClientes.ConfigConexao.resources
 E:\Projetos\VisualStudio\SistemaVendas\SistemaVendas\obj\Debug\CadastroClientes.FormularioVendas.resources
 E:\Projetos\VisualStudio\SistemaVendas\SistemaVendas\obj\Debug\CadastroClientes.Login.resources
-E:\Projetos\VisualStudio\SistemaVendas\SistemaVendas\obj\Debug\CadastroClientes.Menu.resources
 E:\Projetos\VisualStudio\SistemaVendas\SistemaVendas\obj\Debug\SistemaVendas.Properties.Resources.resources
 E:\Projetos\VisualStudio\SistemaVendas\SistemaVendas\obj\Debug\SistemaVendas.csproj.GenerateResource.cache
 E:\Projetos\VisualStudio\SistemaVendas\SistemaVendas\obj\Debug\SistemaVendas.csproj.CoreCompileInputs.cache
@@ -46,4 +45,6 @@ E:\Projetos\VisualStudio\SistemaVendas\SistemaVendas\obj\Debug\SistemaVendas.app
 E:\Projetos\VisualStudio\SistemaVendas\SistemaVendas\obj\Debug\SistemaVendas.csproj.CopyComplete
 E:\Projetos\VisualStudio\SistemaVendas\SistemaVendas\obj\Debug\SistemaVendas.exe
 E:\Projetos\VisualStudio\SistemaVendas\SistemaVendas\obj\Debug\SistemaVendas.pdb
-E:\Projetos\VisualStudio\SistemaVendas\SistemaVendas\obj\Debug\SistemaVendas.Vendas.EstoqueProdutos.resources
+E:\Projetos\VisualStudio\SistemaVendas\SistemaVendas\obj\Debug\CadastroClientes.CadastroProdutos.resources
+E:\Projetos\VisualStudio\SistemaVendas\SistemaVendas\obj\Debug\CadastroClientes.TelaInicio.resources
+E:\Projetos\VisualStudio\SistemaVendas\SistemaVendas\obj\Debug\SistemaVendas.Vendas.Estoque.CadastroGrupoSub.resources

@@ -27,7 +27,7 @@ namespace SistemaVendas
 
             if (formlogin.FMP == true)
             {
-                Application.Run(new CadastroClientes.Menu());
+                Application.Run(new CadastroClientes.TelaInicio());
             }
         }
     }

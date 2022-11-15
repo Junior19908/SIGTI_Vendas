@@ -2,7 +2,7 @@
 
 namespace CadastroClientes
 {
-    partial class Menu
+    partial class TelaInicio
     {
         /// <summary>
         /// Required designer variable.
@@ -30,8 +30,9 @@ namespace CadastroClientes
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaInicio));
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label17 = new System.Windows.Forms.Label();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lbluser = new System.Windows.Forms.ToolStripStatusLabel();
@@ -48,12 +49,11 @@ namespace CadastroClientes
             this.btnCadastro = new System.Windows.Forms.FlowLayoutPanel();
             this.btnEstoque = new System.Windows.Forms.FlowLayoutPanel();
             this.btnVendas = new System.Windows.Forms.FlowLayoutPanel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
-            this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -66,6 +66,18 @@ namespace CadastroClientes
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1082, 57);
             this.panel2.TabIndex = 1;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox2.Image = global::SistemaVendas.Properties.Resources.logo_ti;
+            this.pictureBox2.Location = new System.Drawing.Point(988, 9);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(86, 43);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 1;
+            this.pictureBox2.TabStop = false;
             // 
             // label17
             // 
@@ -214,6 +226,7 @@ namespace CadastroClientes
             this.btnEstoque.Name = "btnEstoque";
             this.btnEstoque.Size = new System.Drawing.Size(211, 197);
             this.btnEstoque.TabIndex = 9;
+            this.btnEstoque.Click += new System.EventHandler(this.btnEstoque_Click);
             this.btnEstoque.Paint += new System.Windows.Forms.PaintEventHandler(this.btnEstoque_Paint);
             // 
             // btnVendas
@@ -227,18 +240,6 @@ namespace CadastroClientes
             this.btnVendas.TabIndex = 8;
             this.btnVendas.Click += new System.EventHandler(this.btnVendas_Click);
             this.btnVendas.Paint += new System.Windows.Forms.PaintEventHandler(this.btnVendas_Paint);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox2.Image = global::SistemaVendas.Properties.Resources.logo_ti;
-            this.pictureBox2.Location = new System.Drawing.Point(988, 9);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(86, 43);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
             // 
             // label6
             // 
@@ -291,9 +292,9 @@ namespace CadastroClientes
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Menu_KeyPress);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

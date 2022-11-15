@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CadastroClientes
 {
-    public partial class Menu : MetroFramework.Forms.MetroForm
+    public partial class TelaInicio : MetroFramework.Forms.MetroForm
     {
-        public Menu()
+        public TelaInicio()
         {
             InitializeComponent();
             lblUsuario.Text = ClassDadosGEt.Usuario;
@@ -21,7 +21,7 @@ namespace CadastroClientes
         private void vendaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormularioVendas vendas = new FormularioVendas();
-            vendas.ShowDialog();
+            vendas.Show();
             this.Dispose();
         }
 
@@ -57,8 +57,8 @@ namespace CadastroClientes
         private void btnVendas_Click(object sender, EventArgs e)
         {
             FormularioVendas vendas = new FormularioVendas();
-            vendas.ShowDialog();
-            this.Dispose();
+            vendas.Show();
+            this.Visible = false;
         }
 
         private void btnCadastro_Click(object sender, EventArgs e)
@@ -73,8 +73,14 @@ namespace CadastroClientes
             if(e.KeyCode == Keys.F8)
             {
                 FormularioVendas vendas = new FormularioVendas();
-                vendas.ShowDialog();
-                this.Dispose();
+                vendas.Show();
+                this.Visible = false;
+            }
+            else if(e.KeyCode == Keys.F3)
+            {
+                CadastroProdutos vendas = new CadastroProdutos();
+                vendas.Show();
+                this.Visible = false;
             }
         }
 
@@ -89,6 +95,11 @@ namespace CadastroClientes
         }
 
         private void btnEstoque_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnEstoque_Click(object sender, EventArgs e)
         {
 
         }
