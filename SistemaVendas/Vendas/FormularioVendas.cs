@@ -21,6 +21,7 @@ namespace CadastroClientes
             CarregarComboBoxVendedor();
         }
         OleDbCommand command;
+        
 
         private void CarregarComboBoxProduto()
         {
@@ -158,19 +159,29 @@ namespace CadastroClientes
         {
 
         }
+        double valorProdutoUnidade;
+        double valorProdutoTotal;
+        double valorDescontoProduto;
+        string valorPorcentagem;
+        double valorLiquidoVenda;
 
         private void btnAdicionarItem_Click(object sender, EventArgs e)
         {
-            //command = ClassConexao.DBSCV().CreateCommand();
-            //command.CommandType = CommandType.Text;
-            //command.CommandText = "INSERT INTO TB_VendasDBSCV (col_codProduto, col_codVendaProduto, col_quantidadeVendaProduto, col_valorProdutoUnidade, col_valorTotalProduto, col_porcentagemProduto, col_valorDesconto, col_valorLiquidoProduto, col_codCliente, col_codigoVendedor, col_dataVenda, col_codigoFinanceiroVenda1, col_codigoFinanceiroVenda2, col_valorPagoFinanceiroVenda1, col_valorPagoFinanceiroVenda2 ) VALUES" +
-            //    "(" + txtCodBarras.Text + ",'" + txtVendaCod.Text + "','" + txtQuantidade.Text + "','" + txtResultValor.Text + "','" + txtCNPJ.Text + "','" + txtInscricaoEstadual.Text + "','" + txtCelPessoal.Text + "','" + txtCelSecundario.Text + "','" + txtEndereco.Text + "','" + txtEstado.Text + "','" + txtCidade.Text + "','" + txtBairro.Text + "','" + txtCep.Text + "','" + txtNumEnd.Text + "','" + txtComplemento.Text + "'" +
-            //    ",'" + txtSite.Text + "','" + txtemail.Text + "','" + txtInfo.Text + "', NOW(), '" + ClassDadosGEt.IDUsuario.ToString() + "',@foto)";
-            //
-            //paramFoto = new OleDbParameter("@foto", OleDbType.Binary);
-            //paramFoto.Value = foto;
-            //command.Parameters.Add(paramFoto);
-            //command.ExecuteNonQuery();
+            try
+            {
+                double result;
+                result = Convert.ToDouble(txtVendaCod.Text);
+                result += 1;
+                command = ClassConexao.DBSCV().CreateCommand();
+                command.CommandType = CommandType.Text;
+                command.CommandText = "INSERT INTO TB_VendasDBSCV (col_codVendaProduto, col_codProduto, col_quantidadeVendaProduto, col_valorProdutoUnidade, col_valorTotalProduto, col_porcentagemProduto, col_valorDesconto, col_valorLiquidoProduto) VALUES" +
+                    "(" + result + ",'" + txtCodBarras.Text + "','" + txtQtde.Text + "','" + valorProdutoUnidade + "','" + valorProdutoTotal + "', '" + valorPorcentagem + "', '" + valorDescontoProduto + "', '" + valorLiquidoVenda + "')";
+                command.ExecuteNonQuery();
+            }
+            catch (Exception Erro)
+            {
+                MessageBox.Show("Erro ao preencher o BoxCliente! - Contate o Desenvolvedor\r\n" + Erro.Message, "<- Banco de Dados ->", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void txtQuantidade_KeyUp(object sender, KeyEventArgs e)
@@ -187,11 +198,20 @@ namespace CadastroClientes
                 //}
             }
         }
-
         private void btnCriarCodBarras_Click(object sender, EventArgs e)
         {
-            Random random = new Random();
-            this.txtCodBarras.Text = random.Next(700000000).ToString();
+            Random rnd = new Random();
+
+            byte[] buf = new byte[8];
+            rnd.NextBytes(buf);
+            long longRand = BitConverter.ToInt64(buf, 0);
+
+            long result = (Math.Abs(longRand % (2000000000000000 - 1000000000000000)) + 1000000000000000);
+
+            long random_seed = (long)rnd.Next(1000, 5000);
+            random_seed = random_seed * result + rnd.Next(1000, 5000);
+
+            this.txtCodBarras.Text = ((long)(random_seed / 655) % 10000000000000001).ToString();
         }
     }
 }
