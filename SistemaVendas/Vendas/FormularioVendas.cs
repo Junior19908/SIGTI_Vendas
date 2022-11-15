@@ -161,16 +161,16 @@ namespace CadastroClientes
 
         private void btnAdicionarItem_Click(object sender, EventArgs e)
         {
-            //command = ClassConexao.DBSCV().CreateCommand();
-            //command.CommandType = CommandType.Text;
-            //command.CommandText = "INSERT INTO TB_TempVendasDBSCV (col_codProduto, col_codVendaProduto, col_quantidadeVendaProduto, col_valorProdutoUnidade, col_dataVenda, col_codigoVendedor, col_codigoFinanceiroVenda, col_codCliente) VALUES" +
-            //    "(" + cmbProduto.Text + ",'" + txtVendaCod.Text + "','" + txtQuantidade.Text + "','" + txtResultValor.Text + "','" + txtCNPJ.Text + "','" + txtInscricaoEstadual.Text + "','" + txtCelPessoal.Text + "','" + txtCelSecundario.Text + "','" + txtEndereco.Text + "','" + txtEstado.Text + "','" + txtCidade.Text + "','" + txtBairro.Text + "','" + txtCep.Text + "','" + txtNumEnd.Text + "','" + txtComplemento.Text + "'" +
-            //    ",'" + txtSite.Text + "','" + txtemail.Text + "','" + txtInfo.Text + "', NOW(), '" + ClassDadosGEt.IDUsuario.ToString() + "',@foto)";
-            //
-            //paramFoto = new OleDbParameter("@foto", OleDbType.Binary);
-            //paramFoto.Value = foto;
-            //command.Parameters.Add(paramFoto);
-            //command.ExecuteNonQuery();
+            command = ClassConexao.DBSCV().CreateCommand();
+            command.CommandType = CommandType.Text;
+            command.CommandText = "INSERT INTO TB_VendasDBSCV (col_codProduto, col_codVendaProduto, col_quantidadeVendaProduto, col_valorProdutoUnidade, col_valorTotalProduto, col_porcentagemProduto, col_valorDesconto, col_valorLiquidoProduto, col_codCliente, col_codigoVendedor, col_dataVenda, col_codigoFinanceiroVenda1, col_codigoFinanceiroVenda2, col_valorPagoFinanceiroVenda1, col_valorPagoFinanceiroVenda2 ) VALUES" +
+                "(" + cmbProduto.Text + ",'" + txtVendaCod.Text + "','" + txtQuantidade.Text + "','" + txtResultValor.Text + "','" + txtCNPJ.Text + "','" + txtInscricaoEstadual.Text + "','" + txtCelPessoal.Text + "','" + txtCelSecundario.Text + "','" + txtEndereco.Text + "','" + txtEstado.Text + "','" + txtCidade.Text + "','" + txtBairro.Text + "','" + txtCep.Text + "','" + txtNumEnd.Text + "','" + txtComplemento.Text + "'" +
+                ",'" + txtSite.Text + "','" + txtemail.Text + "','" + txtInfo.Text + "', NOW(), '" + ClassDadosGEt.IDUsuario.ToString() + "',@foto)";
+            
+            paramFoto = new OleDbParameter("@foto", OleDbType.Binary);
+            paramFoto.Value = foto;
+            command.Parameters.Add(paramFoto);
+            command.ExecuteNonQuery();
         }
 
         private void txtQuantidade_KeyUp(object sender, KeyEventArgs e)
