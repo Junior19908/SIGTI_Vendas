@@ -105,6 +105,7 @@ namespace CadastroClientes
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
+            this.btnCriarCodBarras = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.datagridVenda)).BeginInit();
@@ -178,6 +179,7 @@ namespace CadastroClientes
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.btnCriarCodBarras);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.cbVendedor);
             this.groupBox1.Controls.Add(this.flowLayoutPanel1);
@@ -312,9 +314,9 @@ namespace CadastroClientes
             this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.textBox3.Location = new System.Drawing.Point(331, 68);
+            this.textBox3.Location = new System.Drawing.Point(384, 68);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(452, 20);
+            this.textBox3.Size = new System.Drawing.Size(399, 20);
             this.textBox3.TabIndex = 19;
             // 
             // label5
@@ -886,6 +888,18 @@ namespace CadastroClientes
             this.button1.Text = "&Imprimir Recibo";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // btnCriarCodBarras
+            // 
+            this.btnCriarCodBarras.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCriarCodBarras.Font = new System.Drawing.Font("Cascadia Code SemiBold", 6F, System.Drawing.FontStyle.Bold);
+            this.btnCriarCodBarras.Location = new System.Drawing.Point(327, 69);
+            this.btnCriarCodBarras.Name = "btnCriarCodBarras";
+            this.btnCriarCodBarras.Size = new System.Drawing.Size(54, 19);
+            this.btnCriarCodBarras.TabIndex = 28;
+            this.btnCriarCodBarras.Text = "&Gerar";
+            this.btnCriarCodBarras.UseVisualStyleBackColor = true;
+            this.btnCriarCodBarras.Click += new System.EventHandler(this.btnCriarCodBarras_Click);
+            // 
             // FormularioVendas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1002,5 +1016,6 @@ namespace CadastroClientes
         private DataGridViewTextBoxColumn Column6;
         private DataGridViewTextBoxColumn Column7;
         private Button button1;
+        private Button btnCriarCodBarras;
     }
 }
