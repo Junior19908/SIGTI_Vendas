@@ -101,7 +101,9 @@ namespace CadastroClientes
 
         private void btnEstoque_Click(object sender, EventArgs e)
         {
-
+            CadastroProdutos vendas = new CadastroProdutos();
+            vendas.Show();
+            this.Visible = false;
         }
     }
 }

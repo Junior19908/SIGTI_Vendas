@@ -37,7 +37,6 @@
             this.button3 = new System.Windows.Forms.Button();
             this.label19 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.label18 = new System.Windows.Forms.Label();
@@ -120,7 +119,6 @@
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.label19);
             this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.comboBox4);
             this.groupBox1.Controls.Add(this.label18);
@@ -189,7 +187,7 @@
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Cascadia Code SemiBold", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(827, 295);
+            this.button3.Location = new System.Drawing.Point(827, 268);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(184, 42);
             this.button3.TabIndex = 81;
@@ -199,7 +197,7 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(873, 220);
+            this.label19.Location = new System.Drawing.Point(875, 193);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(85, 30);
             this.label19.TabIndex = 80;
@@ -210,7 +208,7 @@
             // 
             this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.textBox1.Font = new System.Drawing.Font("Cascadia Code SemiBold", 13F, System.Drawing.FontStyle.Bold);
-            this.textBox1.Location = new System.Drawing.Point(827, 253);
+            this.textBox1.Location = new System.Drawing.Point(827, 226);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(184, 36);
@@ -218,20 +216,10 @@
             this.textBox1.Text = "0,00";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Cascadia Code SemiBold", 6F, System.Drawing.FontStyle.Bold);
-            this.button2.Location = new System.Drawing.Point(367, 163);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(58, 22);
-            this.button2.TabIndex = 78;
-            this.button2.Text = "&Criar";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Cascadia Code SemiBold", 6F, System.Drawing.FontStyle.Bold);
-            this.button1.Location = new System.Drawing.Point(153, 163);
+            this.button1.Location = new System.Drawing.Point(310, 164);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(58, 22);
             this.button1.TabIndex = 77;
@@ -253,7 +241,7 @@
             "ML",
             "M2",
             "M"});
-            this.comboBox4.Location = new System.Drawing.Point(215, 162);
+            this.comboBox4.Location = new System.Drawing.Point(156, 163);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(148, 23);
             this.comboBox4.TabIndex = 76;
@@ -261,7 +249,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(260, 144);
+            this.label18.Location = new System.Drawing.Point(201, 145);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(61, 15);
             this.label18.TabIndex = 75;
@@ -290,7 +278,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(82, 145);
+            this.label16.Location = new System.Drawing.Point(59, 144);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(37, 15);
             this.label16.TabIndex = 73;
@@ -302,7 +290,7 @@
             this.dateTimePicker1.CustomFormat = "dd/MM/yyyy";
             this.dateTimePicker1.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(431, 163);
+            this.dateTimePicker1.Location = new System.Drawing.Point(374, 165);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(99, 20);
             this.dateTimePicker1.TabIndex = 71;
@@ -310,7 +298,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(449, 144);
+            this.label15.Location = new System.Drawing.Point(395, 148);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(55, 15);
             this.label15.TabIndex = 70;
@@ -735,7 +723,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ComboBox comboBox4;
         private System.Windows.Forms.Label label18;
