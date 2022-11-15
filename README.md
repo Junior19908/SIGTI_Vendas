@@ -1,3 +1,3 @@
-# SIGTI_Vendas
+# SIGTI Vendas
 
 Sistema destinado a Vendas
