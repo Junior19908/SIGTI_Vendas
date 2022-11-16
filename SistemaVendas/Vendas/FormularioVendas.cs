@@ -21,35 +21,7 @@ namespace CadastroClientes
             CarregarComboBoxVendedor();
         }
         OleDbCommand command;
-        
-
-        private void CarregarComboBoxProduto()
-        {
-            try
-            {
-                OleDbCommand command = new OleDbCommand("SELECT col_IdProduto, col_descricaoProduto FROM TB_EstoqueDBSCV", ClassConexao.DBSCV());
-                OleDbDataReader reader = command.ExecuteReader();
-                DataTable dt = new DataTable();
-                dt.Load(reader);
-                DataRow row = dt.NewRow();
-                row["col_IdProduto"] = 0;
-                dt.Rows.InsertAt(row, 0);
-
-                //this.cmbProduto.DataSource = dt;
-                //this.cmbProduto.ValueMember = "col_IdProduto";
-                //this.cmbProduto.DisplayMember = "col_descricaoProduto";
-
-                reader.Close();
-            }
-            catch (Exception Error)
-            {
-                MessageBox.Show("Erro ao preencher o BoxCliente! - Contate o Desenvolvedor\r\n" + Error.Message, "<- Banco de Dados ->", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            finally
-            {
-                ClassConexao.DBSCV().Close();
-            }
-        }
+       
         private void CarregarComboBoxCliente()
         {
             try
@@ -104,16 +76,15 @@ namespace CadastroClientes
                 ClassConexao.DBSCV().Close();
             }
         }
-        private void carregarGridVendas()
+        private void carregarGrid1Vendas()
         {
             try
             {
                 OleDbCommand selectCMD = new OleDbCommand("" +
                 "SELECT " +
                 "TB_VendaDBSCV.*," +
-                "TB_EstoqueDBSCV.col_IdProduto," +
-                "TB_EstoqueDBSCV.col_descricaoProduto," +
-                "TB_EstoqueDBSCV.col_precoAtual " +
+                "TB_ProdutosDBSCV.col_codigoProduto," +
+                "TB_ProdutosDBSCV.col_descricaoItem," +
                 "FROM TB_VendaDBSCV " +
                 "WHERE TB_VendaDBSCV.col_codCliente='"+ClassDadosGEt.IDUsuario+"' " +
                 "LEFT JOIN TB_EstoqueDBSCV ON TB_VendaDBSCV.col_codProduto = TB_EstoqueDBSCV.col_IdProduto " +
@@ -164,24 +135,29 @@ namespace CadastroClientes
         double valorDescontoProduto;
         string valorPorcentagem;
         double valorLiquidoVenda;
-
-        private void btnAdicionarItem_Click(object sender, EventArgs e)
+        int codigoBarrasID;
+        private void adicionarProdutos()
         {
             try
             {
                 double result;
                 result = Convert.ToDouble(txtVendaCod.Text);
                 result += 1;
+
                 command = ClassConexao.DBSCV().CreateCommand();
                 command.CommandType = CommandType.Text;
                 command.CommandText = "INSERT INTO TB_VendasDBSCV (col_codVendaProduto, col_codProduto, col_quantidadeVendaProduto, col_valorProdutoUnidade, col_valorTotalProduto, col_porcentagemProduto, col_valorDesconto, col_valorLiquidoProduto) VALUES" +
-                    "(" + result + ",'" + txtCodBarras.Text + "','" + txtQtde.Text + "','" + valorProdutoUnidade + "','" + valorProdutoTotal + "', '" + valorPorcentagem + "', '" + valorDescontoProduto + "', '" + valorLiquidoVenda + "')";
+                    "(" + result + "," + codigoBarrasID + ",'" + txtQtde.Text + "','" + txtPrecoVenda.Text.Replace("R$ ", "") + "','0', '0', '0', '0')";
                 command.ExecuteNonQuery();
             }
             catch (Exception Erro)
             {
                 MessageBox.Show("Erro ao preencher o BoxCliente! - Contate o Desenvolvedor\r\n" + Erro.Message, "<- Banco de Dados ->", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+        private void btnAdicionarItem_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void txtQuantidade_KeyUp(object sender, KeyEventArgs e)
@@ -212,6 +188,66 @@ namespace CadastroClientes
             random_seed = random_seed * result + rnd.Next(1000, 5000);
 
             this.txtCodBarras.Text = ((long)(random_seed / 655) % 10000000000000001).ToString();
+        }
+
+        private void txtCodBarras_Enter(object sender, EventArgs e)
+        {
+        }
+
+        private void txtCodBarras_KeyPress(object sender, KeyPressEventArgs e)
+        {
+        }
+        private void carregarCodigoDeBarras()
+        {
+            OleDbCommand command = new OleDbCommand("SELECT Código,col_descricaoItem,col_unidadeMedida,col_precoVenda FROM TB_ProdutosDBSCV WHERE col_codigoProduto = " + txtCodBarras.Text + "", ClassConexao.DBSCV());
+            OleDbDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                codigoBarrasID = Int16.Parse(reader.GetValue(0).ToString());
+                txtDescricaoItem.Text = reader.GetValue(1).ToString();
+                txtUm.Text = reader.GetValue(2).ToString();
+                txtPrecoVenda.Text = Decimal.Parse(reader.GetValue(3).ToString()).ToString("C");
+                //double vlTotal = Convert.ToDouble(txtResultValor.Text) * Convert.ToDouble(txtQuantidade.Text);
+                //txtResultValor.Text = vlTotal.ToString();
+            }
+        }
+        private void carregarGridVendas()
+        {
+            try
+            {
+                if (ClassConexao.DBSCV().State == ConnectionState.Open)
+                {
+                    OleDbCommand selectCMD = new OleDbCommand("SELECT * FROM TB_GrupoDBSCV", ClassConexao.DBSCV());
+                    OleDbDataAdapter daAdapter = new OleDbDataAdapter(selectCMD);
+                    DataSet table = new DataSet();
+                    daAdapter.Fill(table);
+                    datagridVenda.DataSource = table.Tables[0];
+                }
+                else
+                {
+                    MessageBox.Show("Erro ao Conectar!");
+                }
+            }
+            catch (OleDbException ex)
+            {
+                MessageBox.Show("Erro relacionado ao banco de dados " + ex.Message + " !", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception Er)
+            {
+                MessageBox.Show(Er.Message);
+            }
+            finally
+            {
+                ClassConexao.DBSCV().Close();
+            }
+        }
+        private void txtCodBarras_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                carregarCodigoDeBarras();
+                adicionarProdutos();
+            }
         }
     }
 }

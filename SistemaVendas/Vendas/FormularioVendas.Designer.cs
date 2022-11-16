@@ -64,7 +64,7 @@ namespace CadastroClientes
             this.txtUm = new System.Windows.Forms.TextBox();
             this.btnAdicionarItem = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtDescricaoItem = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtCodBarras = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -281,7 +281,7 @@ namespace CadastroClientes
             this.groupBox1.Controls.Add(this.txtUm);
             this.groupBox1.Controls.Add(this.btnAdicionarItem);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.txtDescricaoItem);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.txtCodBarras);
             this.groupBox1.Controls.Add(this.label3);
@@ -410,15 +410,15 @@ namespace CadastroClientes
             this.label6.TabIndex = 20;
             this.label6.Text = "Descrição do Item";
             // 
-            // textBox3
+            // txtDescricaoItem
             // 
-            this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtDescricaoItem.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.textBox3.Location = new System.Drawing.Point(331, 54);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(452, 20);
-            this.textBox3.TabIndex = 19;
+            this.txtDescricaoItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.txtDescricaoItem.Location = new System.Drawing.Point(331, 54);
+            this.txtDescricaoItem.Name = "txtDescricaoItem";
+            this.txtDescricaoItem.Size = new System.Drawing.Size(452, 20);
+            this.txtDescricaoItem.TabIndex = 19;
             // 
             // label5
             // 
@@ -442,6 +442,9 @@ namespace CadastroClientes
             this.txtCodBarras.Size = new System.Drawing.Size(213, 20);
             this.txtCodBarras.TabIndex = 17;
             this.txtCodBarras.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtCodBarras.Enter += new System.EventHandler(this.txtCodBarras_Enter);
+            this.txtCodBarras.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCodBarras_KeyDown);
+            this.txtCodBarras.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodBarras_KeyPress);
             // 
             // label3
             // 
@@ -967,7 +970,7 @@ namespace CadastroClientes
         private Label label7;
         private TextBox txtUm;
         private Label label6;
-        private TextBox textBox3;
+        private TextBox txtDescricaoItem;
         private Label label5;
         private TextBox txtCodBarras;
         private Label label3;
