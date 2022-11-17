@@ -39,6 +39,9 @@ namespace CadastroClientes
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label17 = new System.Windows.Forms.Label();
@@ -73,7 +76,7 @@ namespace CadastroClientes
             this.label10 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.txtDescontoPorcent = new System.Windows.Forms.TextBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
@@ -535,16 +538,16 @@ namespace CadastroClientes
             this.textBox7.Text = "R$: 0,00";
             this.textBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox8
+            // txtDescontoPorcent
             // 
-            this.textBox8.Font = new System.Drawing.Font("Cascadia Code SemiBold", 12F, System.Drawing.FontStyle.Bold);
-            this.textBox8.Location = new System.Drawing.Point(209, 408);
-            this.textBox8.Multiline = true;
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(160, 31);
-            this.textBox8.TabIndex = 36;
-            this.textBox8.Text = "10%";
-            this.textBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtDescontoPorcent.Font = new System.Drawing.Font("Cascadia Code SemiBold", 12F, System.Drawing.FontStyle.Bold);
+            this.txtDescontoPorcent.Location = new System.Drawing.Point(209, 408);
+            this.txtDescontoPorcent.Multiline = true;
+            this.txtDescontoPorcent.Name = "txtDescontoPorcent";
+            this.txtDescontoPorcent.Size = new System.Drawing.Size(160, 31);
+            this.txtDescontoPorcent.TabIndex = 36;
+            this.txtDescontoPorcent.Text = "10%";
+            this.txtDescontoPorcent.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox9
             // 
@@ -885,17 +888,24 @@ namespace CadastroClientes
             // Column9
             // 
             this.Column9.DataPropertyName = "col_porcentagemProduto";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column9.DefaultCellStyle = dataGridViewCellStyle6;
             this.Column9.HeaderText = "% Desc";
             this.Column9.Name = "Column9";
             // 
             // Column10
             // 
             this.Column10.DataPropertyName = "col_valorDesconto";
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.Column10.DefaultCellStyle = dataGridViewCellStyle7;
             this.Column10.HeaderText = "R$ Desc";
             this.Column10.Name = "Column10";
             // 
             // Column8
             // 
+            this.Column8.DataPropertyName = "col_valorLiquidoProduto";
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.Column8.DefaultCellStyle = dataGridViewCellStyle8;
             this.Column8.HeaderText = "Total Líquido";
             this.Column8.Name = "Column8";
             // 
@@ -903,8 +913,8 @@ namespace CadastroClientes
             // 
             this.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.Column6.DataPropertyName = "col_codVendaProduto";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            this.Column6.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            this.Column6.DefaultCellStyle = dataGridViewCellStyle9;
             this.Column6.HeaderText = "Código da Venda";
             this.Column6.Name = "Column6";
             this.Column6.Width = 85;
@@ -913,8 +923,8 @@ namespace CadastroClientes
             // 
             this.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.Column7.DataPropertyName = "col_codCliente";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            this.Column7.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            this.Column7.DefaultCellStyle = dataGridViewCellStyle10;
             this.Column7.HeaderText = "Código do Cliente";
             this.Column7.Name = "Column7";
             this.Column7.Width = 123;
@@ -936,7 +946,7 @@ namespace CadastroClientes
             this.Controls.Add(this.textBox10);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.textBox9);
-            this.Controls.Add(this.textBox8);
+            this.Controls.Add(this.txtDescontoPorcent);
             this.Controls.Add(this.textBox7);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label10);
@@ -1003,7 +1013,7 @@ namespace CadastroClientes
         private Label label10;
         private Label label12;
         private TextBox textBox7;
-        private TextBox textBox8;
+        private TextBox txtDescontoPorcent;
         private TextBox textBox9;
         private TextBox textBox10;
         private Label label13;

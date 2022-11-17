@@ -119,17 +119,30 @@ namespace CadastroClientes
                 double result;
                 result = Convert.ToDouble(txtVendaCod.Text);
                 result += 1;
+                double valorA = Convert.ToDouble(vlTotal);
+                double valorB = Convert.ToDouble(txtDescontoPorcent.Text.Replace("%", "").Replace(" %", "").Replace("% ", "").Trim());
+                double valorC = (valorA * valorB) / 100;
+                double valorD = valorA - valorC;
 
                 command = ClassConexao.DBSCV().CreateCommand();
                 command.CommandType = CommandType.Text;
                 command.CommandText = "INSERT INTO TB_VendasDBSCV (col_codVendaProduto, col_codProduto, col_quantidadeVendaProduto, col_valorProdutoUnidade, col_valorTotalProduto, col_porcentagemProduto, col_valorDesconto, col_valorLiquidoProduto, col_descricaoProduto, col_unidadeMedida) VALUES" +
-                    "(" + txtVendaCod.Text + "," + txtCodBarras.Text + ",'" + txtQtde.Text + "','" + txtPrecoVenda.Text.Replace("R$ ", "") + "','"+ vlTotal + "', '0', '0', '0','"+ txtDescricaoItem.Text +"','"+ txtUm.Text +"')";
+                    "(" + txtVendaCod.Text + "," + txtCodBarras.Text + ",'" + txtQtde.Text + "','" + txtPrecoVenda.Text.Replace("R$ ", "") + "','"+ vlTotal.ToString("N2") + "', '"+ txtDescontoPorcent.Text.Replace("%","").Replace(" %","").Replace("% ","").Trim() + "', '"+ valorC.ToString("N2") + "', '"+ valorD.ToString("N2") + "','"+ txtDescricaoItem.Text +"','"+ txtUm.Text +"')";
                 command.ExecuteNonQuery();
+                limparText();
             }
             catch (Exception Erro)
             {
                 MessageBox.Show("Erro ao preencher o BoxCliente! - Contate o Desenvolvedor\r\n" + Erro.Message, "<- Banco de Dados ->", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+        private void limparText()
+        {
+            txtQtde.Clear();
+            txtCodBarras.Clear();
+            txtDescricaoItem.Clear();
+            txtUm.Clear();
+            txtPrecoVenda.Clear();
         }
         private void btnAdicionarItem_Click(object sender, EventArgs e)
         {
@@ -199,7 +212,7 @@ namespace CadastroClientes
             {
                 if (ClassConexao.DBSCV().State == ConnectionState.Open)
                 {
-                    OleDbCommand selectCMD = new OleDbCommand("SELECT col_codProduto,col_descricaoProduto,col_unidadeMedida,col_quantidadeVendaProduto,col_valorProdutoUnidade,col_valorTotalProduto,col_porcentagemProduto,col_valorDesconto FROM TB_VendasDBSCV WHERE col_codVendaProduto=" + txtVendaCod.Text +" ORDER BY col_codItemVendaProduto DESC", ClassConexao.DBSCV());
+                    OleDbCommand selectCMD = new OleDbCommand("SELECT col_codProduto,col_descricaoProduto,col_unidadeMedida,col_quantidadeVendaProduto,col_valorProdutoUnidade,col_valorTotalProduto,col_porcentagemProduto,col_valorDesconto,col_valorLiquidoProduto FROM TB_VendasDBSCV WHERE col_codVendaProduto=" + txtVendaCod.Text +" ORDER BY col_codItemVendaProduto DESC", ClassConexao.DBSCV());
                     OleDbDataAdapter daAdapter = new OleDbDataAdapter(selectCMD);
                     DataSet tableGridVendas = new DataSet();
                     daAdapter.Fill(tableGridVendas);
@@ -242,6 +255,10 @@ namespace CadastroClientes
             if (checkBox1.Checked)
             {
                 refreshTimer.Enabled = false;
+            }
+            else
+            {
+                refreshTimer.Enabled = true;
             }
         }
     }
