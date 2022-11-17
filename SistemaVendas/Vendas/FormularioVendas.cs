@@ -16,7 +16,8 @@ namespace CadastroClientes
         public FormularioVendas()
         {
             InitializeComponent();
-            //CarregarComboBoxProduto();
+            txtCodBarras.Focus();
+            carregarGridVendas();
             CarregarComboBoxCliente();
             CarregarComboBoxVendedor();
         }
@@ -76,32 +77,6 @@ namespace CadastroClientes
                 ClassConexao.DBSCV().Close();
             }
         }
-        private void carregarGrid1Vendas()
-        {
-            try
-            {
-                OleDbCommand selectCMD = new OleDbCommand("" +
-                "SELECT " +
-                "TB_VendaDBSCV.*," +
-                "TB_ProdutosDBSCV.col_codigoProduto," +
-                "TB_ProdutosDBSCV.col_descricaoItem," +
-                "FROM TB_VendaDBSCV " +
-                "WHERE TB_VendaDBSCV.col_codCliente='"+ClassDadosGEt.IDUsuario+"' " +
-                "LEFT JOIN TB_EstoqueDBSCV ON TB_VendaDBSCV.col_codProduto = TB_EstoqueDBSCV.col_IdProduto " +
-                "ORDER BY TB_VendaDBSCV.col_codVendaIDitem ASC", ClassConexao.DBSCV());
-                OleDbDataAdapter daAdapter = new OleDbDataAdapter(selectCMD);
-                DataSet table = new DataSet();
-                daAdapter.Fill(table);
-                datagridVenda.DataSource = table.Tables[0];
-                //datagridVenda.Columns["col_UsuarioVenda"].Visible = false;
-                //datagridVenda.Columns["col_codVendaIDitem"].Visible = false;
-                //datagridVenda.Columns["col_codProduto"].Visible = false;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
 
         private void btnClienteNovo_Click(object sender, EventArgs e)
         {
@@ -135,6 +110,7 @@ namespace CadastroClientes
         double valorDescontoProduto;
         string valorPorcentagem;
         double valorLiquidoVenda;
+        double vlTotal;
         int codigoBarrasID;
         private void adicionarProdutos()
         {
@@ -146,8 +122,8 @@ namespace CadastroClientes
 
                 command = ClassConexao.DBSCV().CreateCommand();
                 command.CommandType = CommandType.Text;
-                command.CommandText = "INSERT INTO TB_VendasDBSCV (col_codVendaProduto, col_codProduto, col_quantidadeVendaProduto, col_valorProdutoUnidade, col_valorTotalProduto, col_porcentagemProduto, col_valorDesconto, col_valorLiquidoProduto) VALUES" +
-                    "(" + result + "," + codigoBarrasID + ",'" + txtQtde.Text + "','" + txtPrecoVenda.Text.Replace("R$ ", "") + "','0', '0', '0', '0')";
+                command.CommandText = "INSERT INTO TB_VendasDBSCV (col_codVendaProduto, col_codProduto, col_quantidadeVendaProduto, col_valorProdutoUnidade, col_valorTotalProduto, col_porcentagemProduto, col_valorDesconto, col_valorLiquidoProduto, col_descricaoProduto, col_unidadeMedida) VALUES" +
+                    "(" + txtVendaCod.Text + "," + txtCodBarras.Text + ",'" + txtQtde.Text + "','" + txtPrecoVenda.Text.Replace("R$ ", "") + "','"+ vlTotal + "', '0', '0', '0','"+ txtDescricaoItem.Text +"','"+ txtUm.Text +"')";
                 command.ExecuteNonQuery();
             }
             catch (Exception Erro)
@@ -197,9 +173,10 @@ namespace CadastroClientes
         private void txtCodBarras_KeyPress(object sender, KeyPressEventArgs e)
         {
         }
+        double vlLiquido;
         private void carregarCodigoDeBarras()
         {
-            OleDbCommand command = new OleDbCommand("SELECT Código,col_descricaoItem,col_unidadeMedida,col_precoVenda FROM TB_ProdutosDBSCV WHERE col_codigoProduto = " + txtCodBarras.Text + "", ClassConexao.DBSCV());
+            OleDbCommand command = new OleDbCommand("SELECT Código,col_descricaoItem,col_unidadeMedida,col_precoVenda,col_margemLucro,col_lucroValor FROM TB_ProdutosDBSCV WHERE col_codigoProduto = " + txtCodBarras.Text + "", ClassConexao.DBSCV());
             OleDbDataReader reader = command.ExecuteReader();
             while (reader.Read())
             {
@@ -207,7 +184,12 @@ namespace CadastroClientes
                 txtDescricaoItem.Text = reader.GetValue(1).ToString();
                 txtUm.Text = reader.GetValue(2).ToString();
                 txtPrecoVenda.Text = Decimal.Parse(reader.GetValue(3).ToString()).ToString("C");
-                //double vlTotal = Convert.ToDouble(txtResultValor.Text) * Convert.ToDouble(txtQuantidade.Text);
+                double margLucro = Double.Parse(reader.GetValue(4).ToString());
+                double vlLucro = Double.Parse(reader.GetValue(5).ToString());
+
+                vlTotal = Convert.ToDouble(txtPrecoVenda.Text.Replace("R$ ","")) * Convert.ToDouble(txtQtde.Text);
+                vlLiquido = Convert.ToDouble(txtPrecoVenda.Text.Replace("R$ ","")) * Convert.ToDouble(txtQtde.Text);
+
                 //txtResultValor.Text = vlTotal.ToString();
             }
         }
@@ -217,11 +199,11 @@ namespace CadastroClientes
             {
                 if (ClassConexao.DBSCV().State == ConnectionState.Open)
                 {
-                    OleDbCommand selectCMD = new OleDbCommand("SELECT * FROM TB_GrupoDBSCV", ClassConexao.DBSCV());
+                    OleDbCommand selectCMD = new OleDbCommand("SELECT col_codProduto,col_descricaoProduto,col_unidadeMedida,col_quantidadeVendaProduto,col_valorProdutoUnidade,col_valorTotalProduto,col_porcentagemProduto,col_valorDesconto FROM TB_VendasDBSCV WHERE col_codVendaProduto=" + txtVendaCod.Text +" ORDER BY col_codItemVendaProduto DESC", ClassConexao.DBSCV());
                     OleDbDataAdapter daAdapter = new OleDbDataAdapter(selectCMD);
-                    DataSet table = new DataSet();
-                    daAdapter.Fill(table);
-                    datagridVenda.DataSource = table.Tables[0];
+                    DataSet tableGridVendas = new DataSet();
+                    daAdapter.Fill(tableGridVendas);
+                    datagridVenda.DataSource = tableGridVendas.Tables[0];
                 }
                 else
                 {
@@ -247,6 +229,19 @@ namespace CadastroClientes
             {
                 carregarCodigoDeBarras();
                 adicionarProdutos();
+            }
+        }
+
+        private void refreshTimer_Tick(object sender, EventArgs e)
+        {
+            carregarGridVendas();
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                refreshTimer.Enabled = false;
             }
         }
     }

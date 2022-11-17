@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.OleDb;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -55,7 +56,7 @@ namespace CadastroClientes
             }
             catch (Exception Error)
             {
-                MessageBox.Show("Erro ao preencher o BoxCliente! - Contate o Desenvolvedor\r\n" + Error.Message, "<- Banco de Dados ->", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Erro ao preencher o BoxGrupo! - Contate o Desenvolvedor\r\n" + Error.Message, "<- Banco de Dados ->", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             finally
             {
@@ -78,7 +79,7 @@ namespace CadastroClientes
             }
             catch (Exception Error)
             {
-                MessageBox.Show("Erro ao preencher o BoxCliente! - Contate o Desenvolvedor\r\n" + Error.Message, "<- Banco de Dados ->", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Erro ao preencher o BoxSub-Grupo! - Contate o Desenvolvedor\r\n" + Error.Message, "<- Banco de Dados ->", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             finally
             {
@@ -101,7 +102,7 @@ namespace CadastroClientes
             }
             catch (Exception Error)
             {
-                MessageBox.Show("Erro ao preencher o BoxCliente! - Contate o Desenvolvedor\r\n" + Error.Message, "<- Banco de Dados ->", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Erro ao preencher o BoxFornecedor! - Contate o Desenvolvedor\r\n" + Error.Message, "<- Banco de Dados ->", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             finally
             {
@@ -125,13 +126,14 @@ namespace CadastroClientes
             int codGrupo = Convert.ToInt32(cmbGrupo.SelectedValue);
             int codSubGrupo = Convert.ToInt32(cmbSubGrupo.SelectedValue);
             int codFornecedor = Convert.ToInt32(cmbFornecedor.SelectedValue);
+            double vlLucro = Convert.ToDouble(txtLucroValor.Text.Replace("R$ ",""));
             try
             {
                 OleDbParameter paramFoto;
                 OleDbCommand command = ClassConexao.DBSCV().CreateCommand();
                 command.CommandType = CommandType.Text;
-                command.CommandText = "INSERT INTO TB_ProdutosDBSCV (col_codigoProduto, col_descricaoItem, col_unidadeMedida, col_margemLucro, col_lucroValor, col_precoVenda, col_estoqueMinimo, col_estoqueAtual, col_fornecedorProduto, col_marcaProduto, col_referenciaProduto, col_grupoProduto, col_subGrupoProduto, col_validadeProduto, col_depositoLocalizacaoProduto, col_observacaoProduto, col_fotoAnexo, col_dataCriacao) VALUES" +
-                    "('" + txtCodBarras.Text + "','" + txtDescricaoItem.Text + "','" + cmbUnidadeMedida.Text + "','" + txtMargemLucro.Text + "','" + txtLucroValor.Text + "', '" + txtPrecoVenda.Text + "', '" + txtEstoqueMinimo.Text + "', '" + estoqueAtual + "', " + codFornecedor + ", '" + txtMarca.Text + "', '" + txtReferencia.Text + "', " + codGrupo + ", " + codSubGrupo + ", '"+ this.dateVencimento.Text +"', '" + txtLocalizacaoDeposito.Text + "', '"+ richTextObeservacao.Text + "', @foto, NOW())";
+                command.CommandText = "INSERT INTO TB_ProdutosDBSCV (col_codigoProduto, col_descricaoItem, col_unidadeMedida, col_margemLucro, col_lucroValor, col_precoVenda, col_estoqueMinimo, col_estoqueAtual, col_fornecedorProduto, col_marcaProduto, col_referenciaProduto, col_grupoProduto, col_subGrupoProduto, col_validadeProduto, col_depositoLocalizacaoProduto, col_observacaoProduto, col_fotoAnexo, col_dataCriacao,col_precoCompra) VALUES" +
+                    "('" + txtCodBarras.Text + "','" + txtDescricaoItem.Text + "','" + cmbUnidadeMedida.Text + "','" + txtMargemLucro.Text.Replace(" %","") + "','" + vlLucro + "', '" + txtPrecoVenda.Text.Replace("R$ ", "") + "', '" + txtEstoqueMinimo.Text + "', '" + estoqueAtual + "', " + codFornecedor + ", '" + txtMarca.Text + "', '" + txtReferencia.Text + "', " + codGrupo + ", " + codSubGrupo + ", '"+ this.dateVencimento.Text +"', '" + txtLocalizacaoDeposito.Text + "', '"+ richTextObeservacao.Text + "', @foto, NOW(),'"+ txtPrecoCompra.Text.Replace("R$ ", "") + "')";
                 paramFoto = new OleDbParameter("@foto", OleDbType.Binary);
                 paramFoto.Value = foto;
                 command.Parameters.Add(paramFoto);
@@ -141,7 +143,7 @@ namespace CadastroClientes
             }
             catch (Exception Erro)
             {
-                MessageBox.Show("Erro ao preencher o BoxCliente! - Contate o Desenvolvedor\r\n" + Erro.Message, "<- Banco de Dados ->", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Erro ao cadastrar produto ! - Contate o Desenvolvedor\r\n" + Erro.Message, "<- Banco de Dados ->", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
         private void LimparText()
@@ -192,6 +194,32 @@ namespace CadastroClientes
         private void btnRemoverFoto_Click(object sender, EventArgs e)
         {
             picFoto.Image = null;
+        }
+
+        private void txtPrecoVenda_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                double vlLucro = Convert.ToDouble(txtPrecoVenda.Text.Replace("R$ ","")) - Convert.ToDouble(txtPrecoCompra.Text.Replace("R$ ", ""));
+                txtLucroValor.Text = vlLucro.ToString("C");
+                double vlInicio = Convert.ToDouble(txtPrecoCompra.Text.Replace("R$ ", ""));
+                double vlFinal = Convert.ToDouble(txtPrecoVenda.Text.Replace("R$ ", ""));
+                double vlReultado = (vlFinal - vlInicio) / vlInicio * 100;
+                txtMargemLucro.Text = vlReultado.ToString("N2") + " %";
+            }
+        }
+
+        private void txtMargemLucro_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                double vlInicio = Convert.ToDouble(txtPrecoCompra.Text.Replace("R$ ", ""));
+                double vlMargemLucro = Convert.ToDouble(txtMargemLucro.Text.Replace(" %", ""));
+                double vlReultado = (vlInicio * vlMargemLucro) / 100;
+                txtLucroValor.Text = vlReultado.ToString("C");
+                double vlLucro = Convert.ToDouble(txtLucroValor.Text.Replace("R$ ", "")) + Convert.ToDouble(txtPrecoCompra.Text.Replace("R$ ", ""));
+                txtPrecoVenda.Text = vlLucro.ToString("C");
+            }
         }
     }
 }

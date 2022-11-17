@@ -32,6 +32,8 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnRefresh = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.btnVoltar = new System.Windows.Forms.Button();
             this.btnCadastraItem = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -61,12 +63,13 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtMargemLucro = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtPrecoCompra = new System.Windows.Forms.TextBox();
             this.cmbUnidadeMedida = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btnRemoverFoto = new System.Windows.Forms.Button();
             this.btnAdicionarFoto = new System.Windows.Forms.Button();
+            this.picFoto = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtDescricaoItem = new System.Windows.Forms.TextBox();
             this.btnCriarCodigo = new System.Windows.Forms.Button();
@@ -74,17 +77,14 @@
             this.txtCodBarras = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label17 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.picFoto = new System.Windows.Forms.PictureBox();
-            this.btnRefresh = new System.Windows.Forms.Button();
+            this.label17 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picFoto)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picFoto)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -145,7 +145,7 @@
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.txtMargemLucro);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.txtPrecoCompra);
             this.groupBox1.Controls.Add(this.cmbUnidadeMedida);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
@@ -162,6 +162,26 @@
             this.groupBox1.Size = new System.Drawing.Size(1017, 434);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Font = new System.Drawing.Font("Cascadia Code SemiBold", 6F, System.Drawing.FontStyle.Bold);
+            this.btnRefresh.Location = new System.Drawing.Point(571, 163);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(85, 22);
+            this.btnRefresh.TabIndex = 85;
+            this.btnRefresh.Text = "&Carregar Grupo";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(827, 314);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(184, 23);
+            this.button2.TabIndex = 84;
+            this.button2.Text = "&Imprimir Código de Barras";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // btnVoltar
             // 
@@ -398,11 +418,11 @@
             // txtPrecoVenda
             // 
             this.txtPrecoVenda.Location = new System.Drawing.Point(741, 75);
-            this.txtPrecoVenda.Multiline = true;
             this.txtPrecoVenda.Name = "txtPrecoVenda";
-            this.txtPrecoVenda.Size = new System.Drawing.Size(141, 23);
+            this.txtPrecoVenda.Size = new System.Drawing.Size(141, 20);
             this.txtPrecoVenda.TabIndex = 54;
             this.txtPrecoVenda.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtPrecoVenda.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPrecoVenda_KeyDown);
             // 
             // label7
             // 
@@ -416,10 +436,11 @@
             // 
             // txtLucroValor
             // 
+            this.txtLucroValor.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtLucroValor.Enabled = false;
             this.txtLucroValor.Location = new System.Drawing.Point(594, 75);
-            this.txtLucroValor.Multiline = true;
             this.txtLucroValor.Name = "txtLucroValor";
-            this.txtLucroValor.Size = new System.Drawing.Size(141, 23);
+            this.txtLucroValor.Size = new System.Drawing.Size(141, 20);
             this.txtLucroValor.TabIndex = 52;
             this.txtLucroValor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -436,11 +457,11 @@
             // txtMargemLucro
             // 
             this.txtMargemLucro.Location = new System.Drawing.Point(447, 75);
-            this.txtMargemLucro.Multiline = true;
             this.txtMargemLucro.Name = "txtMargemLucro";
-            this.txtMargemLucro.Size = new System.Drawing.Size(141, 23);
+            this.txtMargemLucro.Size = new System.Drawing.Size(141, 20);
             this.txtMargemLucro.TabIndex = 50;
             this.txtMargemLucro.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtMargemLucro.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtMargemLucro_KeyDown);
             // 
             // label5
             // 
@@ -452,14 +473,13 @@
             this.label5.Text = "Preço de Compra";
             this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // textBox3
+            // txtPrecoCompra
             // 
-            this.textBox3.Location = new System.Drawing.Point(300, 75);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(141, 23);
-            this.textBox3.TabIndex = 48;
-            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtPrecoCompra.Location = new System.Drawing.Point(300, 75);
+            this.txtPrecoCompra.Name = "txtPrecoCompra";
+            this.txtPrecoCompra.Size = new System.Drawing.Size(141, 20);
+            this.txtPrecoCompra.TabIndex = 48;
+            this.txtPrecoCompra.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // cmbUnidadeMedida
             // 
@@ -519,6 +539,18 @@
             this.btnAdicionarFoto.Text = "&Adicionar";
             this.btnAdicionarFoto.UseVisualStyleBackColor = true;
             this.btnAdicionarFoto.Click += new System.EventHandler(this.btnAdicionarFoto_Click);
+            // 
+            // picFoto
+            // 
+            this.picFoto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.picFoto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picFoto.Image = global::SistemaVendas.Properties.Resources.produtos_removebg_preview;
+            this.picFoto.Location = new System.Drawing.Point(888, 34);
+            this.picFoto.Name = "picFoto";
+            this.picFoto.Size = new System.Drawing.Size(123, 139);
+            this.picFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picFoto.TabIndex = 40;
+            this.picFoto.TabStop = false;
             // 
             // label2
             // 
@@ -587,26 +619,6 @@
             this.panel2.Size = new System.Drawing.Size(1043, 57);
             this.panel2.TabIndex = 1;
             // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Sitka Banner", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.label17.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label17.Location = new System.Drawing.Point(11, 10);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(363, 39);
-            this.label17.TabIndex = 0;
-            this.label17.Text = "Módulo de Cadastro do Produto";
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(827, 314);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(184, 23);
-            this.button2.TabIndex = 84;
-            this.button2.Text = "&Imprimir Código de Barras";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
             // pictureBox2
             // 
             this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -618,28 +630,16 @@
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
             // 
-            // picFoto
+            // label17
             // 
-            this.picFoto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.picFoto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picFoto.Image = global::SistemaVendas.Properties.Resources.produtos_removebg_preview;
-            this.picFoto.Location = new System.Drawing.Point(888, 34);
-            this.picFoto.Name = "picFoto";
-            this.picFoto.Size = new System.Drawing.Size(123, 139);
-            this.picFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picFoto.TabIndex = 40;
-            this.picFoto.TabStop = false;
-            // 
-            // btnRefresh
-            // 
-            this.btnRefresh.Font = new System.Drawing.Font("Cascadia Code SemiBold", 6F, System.Drawing.FontStyle.Bold);
-            this.btnRefresh.Location = new System.Drawing.Point(571, 163);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(85, 22);
-            this.btnRefresh.TabIndex = 85;
-            this.btnRefresh.Text = "&Carregar Grupo";
-            this.btnRefresh.UseVisualStyleBackColor = true;
-            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Sitka Banner", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.label17.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label17.Location = new System.Drawing.Point(11, 10);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(363, 39);
+            this.label17.TabIndex = 0;
+            this.label17.Text = "Módulo de Cadastro do Produto";
             // 
             // CadastroProdutos
             // 
@@ -655,10 +655,10 @@
             this.tabPage1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picFoto)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picFoto)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -686,7 +686,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtMargemLucro;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtPrecoCompra;
         private System.Windows.Forms.ComboBox cmbUnidadeMedida;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;

@@ -79,14 +79,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SistemaVendas.exe" size="2927552">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SistemaVendas.exe" size="2929600">
       <assemblyIdentity name="SistemaVendas" version="1.0.0.0" language="neutral" processorArchitecture="amd64" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>eEG1hj9/uuiWfEaW4G+3KmYPZgMNdxOr2iDMevmUXtA=</dsig:DigestValue>
+        <dsig:DigestValue>mqc7adGCvYDWA720M+PoyoeAMyCUaEWZ47808rsvzss=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
