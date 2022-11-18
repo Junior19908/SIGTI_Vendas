@@ -13,8 +13,10 @@ namespace CadastroClientes
         public CadastroClientes()
         {
             InitializeComponent();
+            carregarCodigo();
             CarregarGrid();
-            carregarGridVendas();
+            //carregarGridVendas();
+            
         }
 
         public CadastroClientes(string novaJanela)
@@ -35,6 +37,20 @@ namespace CadastroClientes
         private void cmbEstado_TextChanged(object sender, EventArgs e)
         {
 
+        }
+        private void carregarCodigo()
+        {
+            OleDbCommand commandCodCliente = new OleDbCommand("SELECT Código FROM TB_ClienteDBSCV ORDER BY Código DESC", ClassConexao.DBSCV());
+            commandCodCliente.ExecuteNonQuery();
+            int consultcodCliente = Convert.ToInt32(commandCodCliente.ExecuteScalar());
+            if (consultcodCliente > 0)
+            {
+                txtCodigoCliente.Text = consultcodCliente.ToString();
+            }
+            int aCodCliente = Convert.ToInt32(txtCodigoCliente.Text);
+            int bCodCliente = aCodCliente + 1;
+            int cCodCliente = bCodCliente;
+            txtCodigoCliente.Text = cCodCliente.ToString();
         }
         private void carregarGridVendas()
         {
@@ -73,7 +89,7 @@ namespace CadastroClientes
                     //codClientID++;
                     //txtCodigoCliente.Text = codClientID.ToString();
                     DataTable dtLista = new DataTable();
-                    cmdSelect = new OleDbCommand("SELECT * FROM TB_ArquivoDBSCV WHERE col_IDCliente=" + txtCodigoCliente.Text.ToString() + " ORDER BY col_IdArquivo ASC");
+                    cmdSelect = new OleDbCommand("SELECT * FROM TB_ArquivoDBSCV WHERE col_IDCliente=" + txtCodigoCliente.Text + " ORDER BY col_IdArquivo ASC");
                     cmdSelect.Connection = ClassConexao.DBSCV();
                     oleDbData = cmdSelect.ExecuteReader();
                     dtLista.Load(oleDbData);
@@ -89,7 +105,7 @@ namespace CadastroClientes
             }
             catch (OleDbException ex)
             {
-                MessageBox.Show("Arquivo de Usuário não, encontrado!","Informação",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                MessageBox.Show("Arquivo de Usuário não, encontrado!", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception Er)
             {
@@ -132,7 +148,7 @@ namespace CadastroClientes
                 if (consultDB > 0)
                 {
                     MessageBox.Show("Exite Registro, Com esse Código!");
-                    
+
 
 
                 }
@@ -169,7 +185,7 @@ namespace CadastroClientes
                     }
                 }
             }
-            catch(Exception Er)
+            catch (Exception Er)
             {
                 MessageBox.Show(Er.Message);
             }
@@ -239,7 +255,7 @@ namespace CadastroClientes
                     }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -257,7 +273,7 @@ namespace CadastroClientes
                     {
                         txtCaminho.Enabled = false;
                         txtCaminho.Text = caminhoArquivo = open.FileName;
-                        if (MessageBox.Show("Deseja Enviar?","Informação",MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        if (MessageBox.Show("Deseja Enviar?", "Informação", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                         {
                             comm.CommandText = "INSERT INTO TB_ArquivoDBSCV(col_IDCliente, col_nomeArquivo, col_arquivo) VALUES ('" + txtCodigoCliente.Text + "', @NomeArquivo, @Arquivo)";
                             ConfigurarParametros(comm, caminhoArquivo);
@@ -299,7 +315,7 @@ namespace CadastroClientes
 
         private void CarregarInfoCliente()
         {
-            OleDbCommand command =  new OleDbCommand("SELECT * FROM TB_ClienteDBSCV WHERE Código = @ID ", ClassConexao.DBSCV());
+            OleDbCommand command = new OleDbCommand("SELECT * FROM TB_ClienteDBSCV WHERE Código = @ID ", ClassConexao.DBSCV());
             command.Parameters.AddWithValue("@ID", int.Parse(txtCodigoCliente.Text));
             OleDbDataReader dataReader = command.ExecuteReader();
             while (dataReader.Read())
@@ -339,12 +355,12 @@ namespace CadastroClientes
                 {
                     MessageBox.Show("Cliente sem imagem, cadastrada!");
                 }
-                catch(Exception ErroR)
+                catch (Exception ErroR)
                 {
                     MessageBox.Show(ErroR.Message);
                 }
             }
-            if(dataReader.HasRows == false)
+            if (dataReader.HasRows == false)
             {
                 Nulo = 1;
             }
@@ -360,7 +376,7 @@ namespace CadastroClientes
             //carregarGridVendas();
             CarregarGrid();
             CarregarInfoCliente();
-            if(Nulo == 1)
+            if (Nulo == 1)
             {
                 LimparTxtBox();
                 Nulo = 0;

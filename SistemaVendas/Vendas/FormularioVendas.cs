@@ -118,6 +118,9 @@ namespace CadastroClientes
             {
                 txtQtde.Text = "1";
             }
+
+
+
             try
             {
                 double result;
@@ -128,12 +131,31 @@ namespace CadastroClientes
                 double valorC = (valorA * valorB) / 100;
                 double valorD = valorA - valorC;
 
-                command = ClassConexao.DBSCV().CreateCommand();
-                command.CommandType = CommandType.Text;
-                command.CommandText = "INSERT INTO TB_VendasDBSCV (col_codVendaProduto, col_codProduto, col_quantidadeVendaProduto, col_valorProdutoUnidade, col_valorTotalProduto, col_porcentagemProduto, col_valorDesconto, col_valorLiquidoProduto, col_descricaoProduto, col_unidadeMedida) VALUES" +
-                    "(" + txtVendaCod.Text + "," + txtCodBarras.Text + ",'" + txtQtde.Text + "','" + txtPrecoVenda.Text.Replace("R$ ", "") + "','"+ vlTotal.ToString("N2") + "', '"+ txtDescontoPorcent.Text.Replace("%","").Replace(" %","").Replace("% ","").Trim() + "', '"+ valorC.ToString("N2") + "', '"+ valorD.ToString("N2") + "','"+ txtDescricaoItem.Text +"','"+ txtUm.Text +"')";
-                command.ExecuteNonQuery();
-                limparText();
+                try
+                {
+                    OleDbCommand commandTotalProduto = new OleDbCommand("SELECT COUNT(col_codigoProduto) FROM TB_ProdutosDBSCV WHERE col_codigoProduto = " + txtCodBarras.Text + "", ClassConexao.DBSCV());
+                    commandTotalProduto.ExecuteNonQuery();
+                    double consultTotalBruto = Convert.ToDouble(commandTotalProduto.ExecuteScalar());
+                    if (consultTotalBruto > 0)
+                    {
+                        command = ClassConexao.DBSCV().CreateCommand();
+                        command.CommandType = CommandType.Text;
+                        command.CommandText = "INSERT INTO TB_VendasDBSCV (col_codVendaProduto, col_codProduto, col_quantidadeVendaProduto, col_valorProdutoUnidade, col_valorTotalProduto, col_porcentagemProduto, col_valorDesconto, col_valorLiquidoProduto, col_descricaoProduto, col_unidadeMedida,col_codCliente,col_dataVenda,col_codigoVendedor) VALUES" +
+                            "(" + txtVendaCod.Text + "," + txtCodBarras.Text + ",'" + txtQtde.Text + "','" + txtPrecoVenda.Text.Replace("R$ ", "") + "','" + vlTotal.ToString("N2") + "', '" + txtDescontoPorcent.Text.Replace("%", "").Replace(" %", "").Replace("% ", "").Trim() + "', '" + valorC.ToString("N2") + "', '" + valorD.ToString("N2") + "','" + txtDescricaoItem.Text + "','" + txtUm.Text + "','"+ cbCliente.SelectedValue + "', NOW(), '"+ ClassDadosGEt.IDUsuario +"')";
+                        command.ExecuteNonQuery();
+                        limparText();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Produto do códido de barras "+ txtCodBarras.Text +" não Cadastrado");
+                        limparText();
+                    }
+                    commandTotalProduto.Connection.Close();
+                }
+                catch (Exception)
+                {
+
+                }
             }
             catch (Exception Erro)
             {
@@ -245,21 +267,6 @@ namespace CadastroClientes
             finally
             {
                 ClassConexao.DBSCV().Close();
-            }
-            try
-            {
-                OleDbCommand command = new OleDbCommand("SELECT COUNT(col_codVendaProduto) FROM TB_VendasDBSCV WHERE col_codVendaProduto = " + txtVendaCod.Text + "", ClassConexao.DBSCV());
-                command.ExecuteNonQuery();
-                int consultDB = Convert.ToInt32(command.ExecuteScalar());
-                if (consultDB > 0)
-                {
-                    txtItensDoPedido.Text = consultDB.ToString();
-                }
-                command.Connection.Close();
-            }
-            catch (Exception)
-            {
-
             }
             try
             {
