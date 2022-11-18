@@ -114,6 +114,10 @@ namespace CadastroClientes
         int codigoBarrasID;
         private void adicionarProdutos()
         {
+            if (string.IsNullOrEmpty(txtQtde.Text))
+            {
+                txtQtde.Text = "1";
+            }
             try
             {
                 double result;
@@ -133,7 +137,7 @@ namespace CadastroClientes
             }
             catch (Exception Erro)
             {
-                MessageBox.Show("Erro ao preencher o BoxCliente! - Contate o Desenvolvedor\r\n" + Erro.Message, "<- Banco de Dados ->", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Erro ao inserir Item! - Contate o Desenvolvedor\r\n" + Erro.Message, "<- Banco de Dados ->", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
         private void limparText()
@@ -146,7 +150,8 @@ namespace CadastroClientes
         }
         private void btnAdicionarItem_Click(object sender, EventArgs e)
         {
-
+            carregarCodigoDeBarras();
+            adicionarProdutos();
         }
 
         private void txtQuantidade_KeyUp(object sender, KeyEventArgs e)
@@ -200,6 +205,12 @@ namespace CadastroClientes
                 double margLucro = Double.Parse(reader.GetValue(4).ToString());
                 double vlLucro = Double.Parse(reader.GetValue(5).ToString());
 
+                if (string.IsNullOrEmpty(txtQtde.Text))
+                {
+                    txtQtde.Text = "1";
+                }
+
+
                 vlTotal = Convert.ToDouble(txtPrecoVenda.Text.Replace("R$ ","")) * Convert.ToDouble(txtQtde.Text);
                 vlLiquido = Convert.ToDouble(txtPrecoVenda.Text.Replace("R$ ","")) * Convert.ToDouble(txtQtde.Text);
 
@@ -234,6 +245,51 @@ namespace CadastroClientes
             finally
             {
                 ClassConexao.DBSCV().Close();
+            }
+            try
+            {
+                OleDbCommand command = new OleDbCommand("SELECT COUNT(col_codVendaProduto) FROM TB_VendasDBSCV WHERE col_codVendaProduto = " + txtVendaCod.Text + "", ClassConexao.DBSCV());
+                command.ExecuteNonQuery();
+                int consultDB = Convert.ToInt32(command.ExecuteScalar());
+                if (consultDB > 0)
+                {
+                    txtItensDoPedido.Text = consultDB.ToString();
+                }
+                command.Connection.Close();
+            }
+            catch (Exception)
+            {
+
+            }
+            try
+            {
+                OleDbCommand commandTotalProduto = new OleDbCommand("SELECT SUM(col_valorTotalProduto) FROM TB_VendasDBSCV WHERE col_codVendaProduto = " + txtVendaCod.Text + "", ClassConexao.DBSCV());
+                commandTotalProduto.ExecuteNonQuery();
+                double consultTotalBruto = Convert.ToDouble(commandTotalProduto.ExecuteScalar());
+                if (consultTotalBruto > 0)
+                {
+                    txtTotalBruto.Text = consultTotalBruto.ToString("C2");
+                }
+                commandTotalProduto.Connection.Close();
+            }
+            catch (Exception)
+            {
+
+            }
+            try
+            {
+                OleDbCommand commandTotalLiquido = new OleDbCommand("SELECT SUM(col_valorLiquidoProduto) FROM TB_VendasDBSCV WHERE col_codVendaProduto = " + txtVendaCod.Text + "", ClassConexao.DBSCV());
+                commandTotalLiquido.ExecuteNonQuery();
+                double consultTotalLiquido = Convert.ToDouble(commandTotalLiquido.ExecuteScalar());
+                if (consultTotalLiquido > 0)
+                {
+                    txtLiquido.Text = consultTotalLiquido.ToString("C2");
+                }
+                commandTotalLiquido.Connection.Close();
+            }
+            catch (Exception)
+            {
+
             }
         }
         private void txtCodBarras_KeyDown(object sender, KeyEventArgs e)

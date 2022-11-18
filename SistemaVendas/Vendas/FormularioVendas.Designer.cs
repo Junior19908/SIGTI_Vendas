@@ -75,28 +75,28 @@ namespace CadastroClientes
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.txtTotalBruto = new System.Windows.Forms.TextBox();
             this.txtDescontoPorcent = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.txtLiquido = new System.Windows.Forms.TextBox();
+            this.txtItensDoPedido = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.txtTotalPago = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.txtTroco = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.txtValorPago2 = new System.Windows.Forms.TextBox();
+            this.txtValorPago1 = new System.Windows.Forms.TextBox();
+            this.cmbFormaPagamento1 = new System.Windows.Forms.ComboBox();
+            this.cmbFormaPagamento2 = new System.Windows.Forms.ComboBox();
             this.btnVender = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.rdOrcamento = new System.Windows.Forms.RadioButton();
+            this.rdVenda = new System.Windows.Forms.RadioButton();
             this.button1 = new System.Windows.Forms.Button();
             this.refreshTimer = new System.Windows.Forms.Timer(this.components);
             this.checkBox1 = new System.Windows.Forms.CheckBox();
@@ -527,16 +527,16 @@ namespace CadastroClientes
             this.label12.TabIndex = 33;
             this.label12.Text = "TOTAL LIQUIDO";
             // 
-            // textBox7
+            // txtTotalBruto
             // 
-            this.textBox7.Font = new System.Drawing.Font("Cascadia Code SemiBold", 12F, System.Drawing.FontStyle.Bold);
-            this.textBox7.Location = new System.Drawing.Point(23, 408);
-            this.textBox7.Multiline = true;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(180, 31);
-            this.textBox7.TabIndex = 35;
-            this.textBox7.Text = "R$: 0,00";
-            this.textBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtTotalBruto.Font = new System.Drawing.Font("Cascadia Code SemiBold", 12F, System.Drawing.FontStyle.Bold);
+            this.txtTotalBruto.Location = new System.Drawing.Point(23, 408);
+            this.txtTotalBruto.Multiline = true;
+            this.txtTotalBruto.Name = "txtTotalBruto";
+            this.txtTotalBruto.Size = new System.Drawing.Size(180, 31);
+            this.txtTotalBruto.TabIndex = 35;
+            this.txtTotalBruto.Text = "R$: 0,00";
+            this.txtTotalBruto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtDescontoPorcent
             // 
@@ -549,28 +549,28 @@ namespace CadastroClientes
             this.txtDescontoPorcent.Text = "10%";
             this.txtDescontoPorcent.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox9
+            // txtLiquido
             // 
-            this.textBox9.BackColor = System.Drawing.SystemColors.Info;
-            this.textBox9.Font = new System.Drawing.Font("Cascadia Code SemiBold", 12F, System.Drawing.FontStyle.Bold);
-            this.textBox9.Location = new System.Drawing.Point(375, 408);
-            this.textBox9.Multiline = true;
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(160, 31);
-            this.textBox9.TabIndex = 37;
-            this.textBox9.Text = "R$: 0,00";
-            this.textBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtLiquido.BackColor = System.Drawing.SystemColors.Info;
+            this.txtLiquido.Font = new System.Drawing.Font("Cascadia Code SemiBold", 12F, System.Drawing.FontStyle.Bold);
+            this.txtLiquido.Location = new System.Drawing.Point(375, 408);
+            this.txtLiquido.Multiline = true;
+            this.txtLiquido.Name = "txtLiquido";
+            this.txtLiquido.Size = new System.Drawing.Size(160, 31);
+            this.txtLiquido.TabIndex = 37;
+            this.txtLiquido.Text = "R$: 0,00";
+            this.txtLiquido.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox10
+            // txtItensDoPedido
             // 
-            this.textBox10.Font = new System.Drawing.Font("Cascadia Code SemiBold", 12F, System.Drawing.FontStyle.Bold);
-            this.textBox10.Location = new System.Drawing.Point(541, 408);
-            this.textBox10.Multiline = true;
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(160, 31);
-            this.textBox10.TabIndex = 39;
-            this.textBox10.Text = "0";
-            this.textBox10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtItensDoPedido.Font = new System.Drawing.Font("Cascadia Code SemiBold", 12F, System.Drawing.FontStyle.Bold);
+            this.txtItensDoPedido.Location = new System.Drawing.Point(541, 408);
+            this.txtItensDoPedido.Multiline = true;
+            this.txtItensDoPedido.Name = "txtItensDoPedido";
+            this.txtItensDoPedido.Size = new System.Drawing.Size(160, 31);
+            this.txtItensDoPedido.TabIndex = 39;
+            this.txtItensDoPedido.Text = "0";
+            this.txtItensDoPedido.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label13
             // 
@@ -584,16 +584,16 @@ namespace CadastroClientes
             this.label13.TabIndex = 38;
             this.label13.Text = "TOTAL DE ITENS";
             // 
-            // textBox11
+            // txtTotalPago
             // 
-            this.textBox11.Font = new System.Drawing.Font("Cascadia Code SemiBold", 12F, System.Drawing.FontStyle.Bold);
-            this.textBox11.Location = new System.Drawing.Point(708, 408);
-            this.textBox11.Multiline = true;
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(170, 31);
-            this.textBox11.TabIndex = 41;
-            this.textBox11.Text = "R$: 0,00";
-            this.textBox11.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtTotalPago.Font = new System.Drawing.Font("Cascadia Code SemiBold", 12F, System.Drawing.FontStyle.Bold);
+            this.txtTotalPago.Location = new System.Drawing.Point(708, 408);
+            this.txtTotalPago.Multiline = true;
+            this.txtTotalPago.Name = "txtTotalPago";
+            this.txtTotalPago.Size = new System.Drawing.Size(170, 31);
+            this.txtTotalPago.TabIndex = 41;
+            this.txtTotalPago.Text = "R$: 0,00";
+            this.txtTotalPago.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label14
             // 
@@ -607,16 +607,16 @@ namespace CadastroClientes
             this.label14.TabIndex = 40;
             this.label14.Text = "TOTAL PAGO";
             // 
-            // textBox12
+            // txtTroco
             // 
-            this.textBox12.Font = new System.Drawing.Font("Cascadia Code SemiBold", 12F, System.Drawing.FontStyle.Bold);
-            this.textBox12.Location = new System.Drawing.Point(883, 408);
-            this.textBox12.Multiline = true;
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(180, 31);
-            this.textBox12.TabIndex = 43;
-            this.textBox12.Text = "R$: 0,00";
-            this.textBox12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtTroco.Font = new System.Drawing.Font("Cascadia Code SemiBold", 12F, System.Drawing.FontStyle.Bold);
+            this.txtTroco.Location = new System.Drawing.Point(883, 408);
+            this.txtTroco.Multiline = true;
+            this.txtTroco.Name = "txtTroco";
+            this.txtTroco.Size = new System.Drawing.Size(180, 31);
+            this.txtTroco.TabIndex = 43;
+            this.txtTroco.Text = "R$: 0,00";
+            this.txtTroco.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label15
             // 
@@ -636,10 +636,10 @@ namespace CadastroClientes
             this.groupBox3.Controls.Add(this.label20);
             this.groupBox3.Controls.Add(this.label18);
             this.groupBox3.Controls.Add(this.label16);
-            this.groupBox3.Controls.Add(this.textBox14);
-            this.groupBox3.Controls.Add(this.textBox13);
-            this.groupBox3.Controls.Add(this.comboBox2);
-            this.groupBox3.Controls.Add(this.comboBox3);
+            this.groupBox3.Controls.Add(this.txtValorPago2);
+            this.groupBox3.Controls.Add(this.txtValorPago1);
+            this.groupBox3.Controls.Add(this.cmbFormaPagamento1);
+            this.groupBox3.Controls.Add(this.cmbFormaPagamento2);
             this.groupBox3.Font = new System.Drawing.Font("Cascadia Code SemiBold", 8.25F, System.Drawing.FontStyle.Bold);
             this.groupBox3.Location = new System.Drawing.Point(20, 445);
             this.groupBox3.Name = "groupBox3";
@@ -696,63 +696,63 @@ namespace CadastroClientes
             this.label16.TabIndex = 47;
             this.label16.Text = "Valor Pago (1)";
             // 
-            // textBox14
+            // txtValorPago2
             // 
-            this.textBox14.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.textBox14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox14.Enabled = false;
-            this.textBox14.Location = new System.Drawing.Point(237, 82);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(100, 20);
-            this.textBox14.TabIndex = 50;
-            this.textBox14.Text = "R$: 0,00";
-            this.textBox14.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtValorPago2.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtValorPago2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtValorPago2.Enabled = false;
+            this.txtValorPago2.Location = new System.Drawing.Point(237, 82);
+            this.txtValorPago2.Name = "txtValorPago2";
+            this.txtValorPago2.Size = new System.Drawing.Size(100, 20);
+            this.txtValorPago2.TabIndex = 50;
+            this.txtValorPago2.Text = "R$: 0,00";
+            this.txtValorPago2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox13
+            // txtValorPago1
             // 
-            this.textBox13.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.textBox13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox13.Enabled = false;
-            this.textBox13.Location = new System.Drawing.Point(237, 32);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(100, 20);
-            this.textBox13.TabIndex = 46;
-            this.textBox13.Text = "R$: 0,00";
-            this.textBox13.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtValorPago1.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtValorPago1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtValorPago1.Enabled = false;
+            this.txtValorPago1.Location = new System.Drawing.Point(237, 32);
+            this.txtValorPago1.Name = "txtValorPago1";
+            this.txtValorPago1.Size = new System.Drawing.Size(100, 20);
+            this.txtValorPago1.TabIndex = 46;
+            this.txtValorPago1.Text = "R$: 0,00";
+            this.txtValorPago1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // comboBox2
+            // cmbFormaPagamento1
             // 
-            this.comboBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.cmbFormaPagamento1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox2.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.cmbFormaPagamento1.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.cmbFormaPagamento1.FormattingEnabled = true;
+            this.cmbFormaPagamento1.Items.AddRange(new object[] {
             "Á VISTA",
             "CARTÃO DE CRÉDITO",
             "CARTÃO DE DÉBITO",
             "BOLETO",
             "CARNÊ"});
-            this.comboBox2.Location = new System.Drawing.Point(6, 32);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(126, 23);
-            this.comboBox2.TabIndex = 45;
+            this.cmbFormaPagamento1.Location = new System.Drawing.Point(6, 32);
+            this.cmbFormaPagamento1.Name = "cmbFormaPagamento1";
+            this.cmbFormaPagamento1.Size = new System.Drawing.Size(126, 23);
+            this.cmbFormaPagamento1.TabIndex = 45;
             // 
-            // comboBox3
+            // cmbFormaPagamento2
             // 
-            this.comboBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.cmbFormaPagamento2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox3.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
+            this.cmbFormaPagamento2.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.cmbFormaPagamento2.FormattingEnabled = true;
+            this.cmbFormaPagamento2.Items.AddRange(new object[] {
             "Á VISTA",
             "CARTÃO DE CRÉDITO",
             "CARTÃO DE DÉBITO",
             "BOLETO",
             "CARNÊ"});
-            this.comboBox3.Location = new System.Drawing.Point(6, 79);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(126, 23);
-            this.comboBox3.TabIndex = 49;
+            this.cmbFormaPagamento2.Location = new System.Drawing.Point(6, 79);
+            this.cmbFormaPagamento2.Name = "cmbFormaPagamento2";
+            this.cmbFormaPagamento2.Size = new System.Drawing.Size(126, 23);
+            this.cmbFormaPagamento2.TabIndex = 49;
             // 
             // btnVender
             // 
@@ -767,8 +767,8 @@ namespace CadastroClientes
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.radioButton2);
-            this.groupBox4.Controls.Add(this.radioButton1);
+            this.groupBox4.Controls.Add(this.rdOrcamento);
+            this.groupBox4.Controls.Add(this.rdVenda);
             this.groupBox4.Font = new System.Drawing.Font("Cascadia Code SemiBold", 7F, System.Drawing.FontStyle.Bold);
             this.groupBox4.Location = new System.Drawing.Point(369, 446);
             this.groupBox4.Name = "groupBox4";
@@ -777,27 +777,27 @@ namespace CadastroClientes
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Operação Destinada";
             // 
-            // radioButton2
+            // rdOrcamento
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(24, 34);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(115, 17);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.Text = "&Criar Orçamento";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rdOrcamento.AutoSize = true;
+            this.rdOrcamento.Location = new System.Drawing.Point(24, 34);
+            this.rdOrcamento.Name = "rdOrcamento";
+            this.rdOrcamento.Size = new System.Drawing.Size(115, 17);
+            this.rdOrcamento.TabIndex = 1;
+            this.rdOrcamento.Text = "&Criar Orçamento";
+            this.rdOrcamento.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // rdVenda
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Checked = true;
-            this.radioButton1.Location = new System.Drawing.Point(24, 19);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(91, 17);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "&Criar Venda";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rdVenda.AutoSize = true;
+            this.rdVenda.Checked = true;
+            this.rdVenda.Location = new System.Drawing.Point(24, 19);
+            this.rdVenda.Name = "rdVenda";
+            this.rdVenda.Size = new System.Drawing.Size(91, 17);
+            this.rdVenda.TabIndex = 0;
+            this.rdVenda.TabStop = true;
+            this.rdVenda.Text = "&Criar Venda";
+            this.rdVenda.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
@@ -889,6 +889,8 @@ namespace CadastroClientes
             // 
             this.Column9.DataPropertyName = "col_porcentagemProduto";
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.Format = "%";
+            dataGridViewCellStyle6.NullValue = null;
             this.Column9.DefaultCellStyle = dataGridViewCellStyle6;
             this.Column9.HeaderText = "% Desc";
             this.Column9.Name = "Column9";
@@ -897,17 +899,21 @@ namespace CadastroClientes
             // 
             this.Column10.DataPropertyName = "col_valorDesconto";
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle7.Format = "C2";
             this.Column10.DefaultCellStyle = dataGridViewCellStyle7;
             this.Column10.HeaderText = "R$ Desc";
             this.Column10.Name = "Column10";
             // 
             // Column8
             // 
+            this.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.Column8.DataPropertyName = "col_valorLiquidoProduto";
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle8.Format = "C2";
             this.Column8.DefaultCellStyle = dataGridViewCellStyle8;
             this.Column8.HeaderText = "Total Líquido";
             this.Column8.Name = "Column8";
+            this.Column8.Width = 101;
             // 
             // Column6
             // 
@@ -939,15 +945,15 @@ namespace CadastroClientes
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.btnVender);
             this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.textBox12);
+            this.Controls.Add(this.txtTroco);
             this.Controls.Add(this.label15);
-            this.Controls.Add(this.textBox11);
+            this.Controls.Add(this.txtTotalPago);
             this.Controls.Add(this.label14);
-            this.Controls.Add(this.textBox10);
+            this.Controls.Add(this.txtItensDoPedido);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.textBox9);
+            this.Controls.Add(this.txtLiquido);
             this.Controls.Add(this.txtDescontoPorcent);
-            this.Controls.Add(this.textBox7);
+            this.Controls.Add(this.txtTotalBruto);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label11);
@@ -1012,28 +1018,28 @@ namespace CadastroClientes
         private Label label11;
         private Label label10;
         private Label label12;
-        private TextBox textBox7;
+        private TextBox txtTotalBruto;
         private TextBox txtDescontoPorcent;
-        private TextBox textBox9;
-        private TextBox textBox10;
+        private TextBox txtLiquido;
+        private TextBox txtItensDoPedido;
         private Label label13;
-        private TextBox textBox11;
+        private TextBox txtTotalPago;
         private Label label14;
-        private TextBox textBox12;
+        private TextBox txtTroco;
         private Label label15;
         private GroupBox groupBox3;
         private Label label19;
         private Label label20;
         private Label label18;
         private Label label16;
-        private TextBox textBox14;
-        private TextBox textBox13;
-        private ComboBox comboBox2;
-        private ComboBox comboBox3;
+        private TextBox txtValorPago2;
+        private TextBox txtValorPago1;
+        private ComboBox cmbFormaPagamento1;
+        private ComboBox cmbFormaPagamento2;
         private Button btnVender;
         private GroupBox groupBox4;
-        private RadioButton radioButton2;
-        private RadioButton radioButton1;
+        private RadioButton rdOrcamento;
+        private RadioButton rdVenda;
         private Button button1;
         private Timer refreshTimer;
         private CheckBox checkBox1;

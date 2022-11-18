@@ -150,8 +150,8 @@ namespace CadastroClientes
         {
             txtCodBarras.Clear();
             txtDescricaoItem.Clear();
-            cmbFornecedor.Items.Clear();
-            cmbUnidadeMedida.Items.Clear();
+            //cmbFornecedor.Items.Clear();
+            //cmbUnidadeMedida.Items.Clear();
             txtMargemLucro.Clear();
             txtLucroValor.Clear();
             txtPrecoVenda.Clear();
@@ -160,7 +160,6 @@ namespace CadastroClientes
             txtReferencia.Clear();
             txtLocalizacaoDeposito.Clear();
             richTextObeservacao.Clear();
-
         }
         byte[] foto;
         string caminhoArquivo;
