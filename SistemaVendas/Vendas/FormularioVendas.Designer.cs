@@ -32,16 +32,14 @@ namespace CadastroClientes
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormularioVendas));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label17 = new System.Windows.Forms.Label();
@@ -109,8 +107,6 @@ namespace CadastroClientes
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.datagridVenda)).BeginInit();
@@ -170,9 +166,7 @@ namespace CadastroClientes
             this.Column5,
             this.Column9,
             this.Column10,
-            this.Column8,
-            this.Column6,
-            this.Column7});
+            this.Column8});
             this.datagridVenda.Location = new System.Drawing.Point(3, 16);
             this.datagridVenda.Name = "datagridVenda";
             this.datagridVenda.RowTemplate.Height = 25;
@@ -700,25 +694,22 @@ namespace CadastroClientes
             // 
             this.txtValorPago2.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.txtValorPago2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtValorPago2.Enabled = false;
             this.txtValorPago2.Location = new System.Drawing.Point(237, 82);
             this.txtValorPago2.Name = "txtValorPago2";
             this.txtValorPago2.Size = new System.Drawing.Size(100, 20);
             this.txtValorPago2.TabIndex = 50;
-            this.txtValorPago2.Text = "R$: 0,00";
             this.txtValorPago2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtValorPago1
             // 
             this.txtValorPago1.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.txtValorPago1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtValorPago1.Enabled = false;
             this.txtValorPago1.Location = new System.Drawing.Point(237, 32);
             this.txtValorPago1.Name = "txtValorPago1";
             this.txtValorPago1.Size = new System.Drawing.Size(100, 20);
             this.txtValorPago1.TabIndex = 46;
-            this.txtValorPago1.Text = "R$: 0,00";
             this.txtValorPago1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtValorPago1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtValorPago1_KeyDown);
             // 
             // cmbFormaPagamento1
             // 
@@ -830,8 +821,8 @@ namespace CadastroClientes
             // 
             this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.Column1.DataPropertyName = "col_codProduto";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle9;
             this.Column1.HeaderText = "Código do Produto";
             this.Column1.Name = "Column1";
             this.Column1.Width = 123;
@@ -839,8 +830,8 @@ namespace CadastroClientes
             // Column2
             // 
             this.Column2.DataPropertyName = "col_descricaoProduto";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            this.Column2.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            this.Column2.DefaultCellStyle = dataGridViewCellStyle10;
             this.Column2.HeaderText = "Descrição do Produto";
             this.Column2.Name = "Column2";
             this.Column2.Width = 350;
@@ -855,8 +846,8 @@ namespace CadastroClientes
             // 
             this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.Column4.DataPropertyName = "col_quantidadeVendaProduto";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            this.Column4.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            this.Column4.DefaultCellStyle = dataGridViewCellStyle11;
             this.Column4.HeaderText = "Qtde";
             this.Column4.Name = "Column4";
             this.Column4.Width = 56;
@@ -865,10 +856,10 @@ namespace CadastroClientes
             // 
             this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.Column3.DataPropertyName = "col_valorProdutoUnidade";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            dataGridViewCellStyle4.Format = "C2";
-            dataGridViewCellStyle4.NullValue = null;
-            this.Column3.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle12.Format = "C2";
+            dataGridViewCellStyle12.NullValue = null;
+            this.Column3.DefaultCellStyle = dataGridViewCellStyle12;
             this.Column3.HeaderText = "Valor Un.";
             this.Column3.Name = "Column3";
             this.Column3.Width = 63;
@@ -877,10 +868,10 @@ namespace CadastroClientes
             // 
             this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.Column5.DataPropertyName = "col_valorTotalProduto";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            dataGridViewCellStyle5.Format = "C2";
-            dataGridViewCellStyle5.NullValue = null;
-            this.Column5.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle13.Format = "C2";
+            dataGridViewCellStyle13.NullValue = null;
+            this.Column5.DefaultCellStyle = dataGridViewCellStyle13;
             this.Column5.HeaderText = "Total Bruto";
             this.Column5.Name = "Column5";
             this.Column5.Width = 63;
@@ -888,19 +879,19 @@ namespace CadastroClientes
             // Column9
             // 
             this.Column9.DataPropertyName = "col_porcentagemProduto";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.Format = "%";
-            dataGridViewCellStyle6.NullValue = null;
-            this.Column9.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle14.Format = "%";
+            dataGridViewCellStyle14.NullValue = null;
+            this.Column9.DefaultCellStyle = dataGridViewCellStyle14;
             this.Column9.HeaderText = "% Desc";
             this.Column9.Name = "Column9";
             // 
             // Column10
             // 
             this.Column10.DataPropertyName = "col_valorDesconto";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle7.Format = "C2";
-            this.Column10.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle15.Format = "C2";
+            this.Column10.DefaultCellStyle = dataGridViewCellStyle15;
             this.Column10.HeaderText = "R$ Desc";
             this.Column10.Name = "Column10";
             // 
@@ -908,32 +899,12 @@ namespace CadastroClientes
             // 
             this.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.Column8.DataPropertyName = "col_valorLiquidoProduto";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle8.Format = "C2";
-            this.Column8.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle16.Format = "C2";
+            this.Column8.DefaultCellStyle = dataGridViewCellStyle16;
             this.Column8.HeaderText = "Total Líquido";
             this.Column8.Name = "Column8";
             this.Column8.Width = 101;
-            // 
-            // Column6
-            // 
-            this.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Column6.DataPropertyName = "col_codVendaProduto";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            this.Column6.DefaultCellStyle = dataGridViewCellStyle9;
-            this.Column6.HeaderText = "Código da Venda";
-            this.Column6.Name = "Column6";
-            this.Column6.Width = 85;
-            // 
-            // Column7
-            // 
-            this.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Column7.DataPropertyName = "col_codCliente";
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            this.Column7.DefaultCellStyle = dataGridViewCellStyle10;
-            this.Column7.HeaderText = "Código do Cliente";
-            this.Column7.Name = "Column7";
-            this.Column7.Width = 123;
             // 
             // FormularioVendas
             // 
@@ -1052,7 +1023,5 @@ namespace CadastroClientes
         private DataGridViewTextBoxColumn Column9;
         private DataGridViewTextBoxColumn Column10;
         private DataGridViewTextBoxColumn Column8;
-        private DataGridViewTextBoxColumn Column6;
-        private DataGridViewTextBoxColumn Column7;
     }
 }
