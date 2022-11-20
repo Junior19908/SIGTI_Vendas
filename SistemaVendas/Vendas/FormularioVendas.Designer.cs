@@ -32,18 +32,27 @@ namespace CadastroClientes
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormularioVendas));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label17 = new System.Windows.Forms.Label();
             this.datagridVenda = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MEDIDA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label9 = new System.Windows.Forms.Label();
             this.cbVendedor = new System.Windows.Forms.ComboBox();
@@ -73,22 +82,16 @@ namespace CadastroClientes
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.txtTotalBruto = new System.Windows.Forms.TextBox();
             this.txtDescontoPorcent = new System.Windows.Forms.TextBox();
-            this.txtLiquido = new System.Windows.Forms.TextBox();
             this.txtItensDoPedido = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.txtTotalPago = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.txtTroco = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.txtValorPago2 = new System.Windows.Forms.TextBox();
-            this.txtValorPago1 = new System.Windows.Forms.TextBox();
             this.cmbFormaPagamento1 = new System.Windows.Forms.ComboBox();
             this.cmbFormaPagamento2 = new System.Windows.Forms.ComboBox();
             this.btnVender = new System.Windows.Forms.Button();
@@ -98,15 +101,17 @@ namespace CadastroClientes
             this.button1 = new System.Windows.Forms.Button();
             this.refreshTimer = new System.Windows.Forms.Timer(this.components);
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MEDIDA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtTotalPago = new SistemaVendas.Classes.textValor();
+            this.txtTotalBruto = new SistemaVendas.Classes.textValor();
+            this.txtLiquido = new SistemaVendas.Classes.textValor();
+            this.txtTroco = new SistemaVendas.Classes.textValor();
+            this.txtValorPago2 = new SistemaVendas.Classes.textValor();
+            this.txtValorPago1 = new SistemaVendas.Classes.textValor();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.txtStatusBarCaixa = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.txtStatusCaixa = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.datagridVenda)).BeginInit();
@@ -114,6 +119,7 @@ namespace CadastroClientes
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -173,6 +179,95 @@ namespace CadastroClientes
             this.datagridVenda.Size = new System.Drawing.Size(1043, 152);
             this.datagridVenda.TabIndex = 2;
             this.datagridVenda.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datagridVenda_CellContentClick);
+            // 
+            // Column1
+            // 
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Column1.DataPropertyName = "col_codProduto";
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle17;
+            this.Column1.HeaderText = "Código do Produto";
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 123;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "col_descricaoProduto";
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            this.Column2.DefaultCellStyle = dataGridViewCellStyle18;
+            this.Column2.HeaderText = "Descrição do Produto";
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 350;
+            // 
+            // MEDIDA
+            // 
+            this.MEDIDA.DataPropertyName = "col_unidadeMedida";
+            this.MEDIDA.HeaderText = "Um.";
+            this.MEDIDA.Name = "MEDIDA";
+            // 
+            // Column4
+            // 
+            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Column4.DataPropertyName = "col_quantidadeVendaProduto";
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            this.Column4.DefaultCellStyle = dataGridViewCellStyle19;
+            this.Column4.HeaderText = "Qtde";
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 56;
+            // 
+            // Column3
+            // 
+            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Column3.DataPropertyName = "col_valorProdutoUnidade";
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle20.Format = "C2";
+            dataGridViewCellStyle20.NullValue = null;
+            this.Column3.DefaultCellStyle = dataGridViewCellStyle20;
+            this.Column3.HeaderText = "Valor Un.";
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 63;
+            // 
+            // Column5
+            // 
+            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Column5.DataPropertyName = "col_valorTotalProduto";
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle21.Format = "C2";
+            dataGridViewCellStyle21.NullValue = null;
+            this.Column5.DefaultCellStyle = dataGridViewCellStyle21;
+            this.Column5.HeaderText = "Total Bruto";
+            this.Column5.Name = "Column5";
+            this.Column5.Width = 63;
+            // 
+            // Column9
+            // 
+            this.Column9.DataPropertyName = "col_porcentagemProduto";
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle22.Format = "%";
+            dataGridViewCellStyle22.NullValue = null;
+            this.Column9.DefaultCellStyle = dataGridViewCellStyle22;
+            this.Column9.HeaderText = "% Desc";
+            this.Column9.Name = "Column9";
+            // 
+            // Column10
+            // 
+            this.Column10.DataPropertyName = "col_valorDesconto";
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle23.Format = "C2";
+            this.Column10.DefaultCellStyle = dataGridViewCellStyle23;
+            this.Column10.HeaderText = "R$ Desc";
+            this.Column10.Name = "Column10";
+            // 
+            // Column8
+            // 
+            this.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Column8.DataPropertyName = "col_valorLiquidoProduto";
+            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle24.Format = "C2";
+            this.Column8.DefaultCellStyle = dataGridViewCellStyle24;
+            this.Column8.HeaderText = "Total Líquido";
+            this.Column8.Name = "Column8";
+            this.Column8.Width = 101;
             // 
             // groupBox1
             // 
@@ -454,7 +549,7 @@ namespace CadastroClientes
             // btnLimpar
             // 
             this.btnLimpar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnLimpar.Location = new System.Drawing.Point(87, 580);
+            this.btnLimpar.Location = new System.Drawing.Point(439, 554);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(64, 20);
             this.btnLimpar.TabIndex = 5;
@@ -477,7 +572,7 @@ namespace CadastroClientes
             // btnVoltar
             // 
             this.btnVoltar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnVoltar.Location = new System.Drawing.Point(17, 580);
+            this.btnVoltar.Location = new System.Drawing.Point(369, 554);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(64, 20);
             this.btnVoltar.TabIndex = 12;
@@ -521,17 +616,6 @@ namespace CadastroClientes
             this.label12.TabIndex = 33;
             this.label12.Text = "TOTAL LIQUIDO";
             // 
-            // txtTotalBruto
-            // 
-            this.txtTotalBruto.Font = new System.Drawing.Font("Cascadia Code SemiBold", 12F, System.Drawing.FontStyle.Bold);
-            this.txtTotalBruto.Location = new System.Drawing.Point(23, 408);
-            this.txtTotalBruto.Multiline = true;
-            this.txtTotalBruto.Name = "txtTotalBruto";
-            this.txtTotalBruto.Size = new System.Drawing.Size(180, 31);
-            this.txtTotalBruto.TabIndex = 35;
-            this.txtTotalBruto.Text = "R$: 0,00";
-            this.txtTotalBruto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // txtDescontoPorcent
             // 
             this.txtDescontoPorcent.Font = new System.Drawing.Font("Cascadia Code SemiBold", 12F, System.Drawing.FontStyle.Bold);
@@ -540,23 +624,12 @@ namespace CadastroClientes
             this.txtDescontoPorcent.Name = "txtDescontoPorcent";
             this.txtDescontoPorcent.Size = new System.Drawing.Size(160, 31);
             this.txtDescontoPorcent.TabIndex = 36;
-            this.txtDescontoPorcent.Text = "10%";
+            this.txtDescontoPorcent.Text = "0%";
             this.txtDescontoPorcent.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtLiquido
-            // 
-            this.txtLiquido.BackColor = System.Drawing.SystemColors.Info;
-            this.txtLiquido.Font = new System.Drawing.Font("Cascadia Code SemiBold", 12F, System.Drawing.FontStyle.Bold);
-            this.txtLiquido.Location = new System.Drawing.Point(375, 408);
-            this.txtLiquido.Multiline = true;
-            this.txtLiquido.Name = "txtLiquido";
-            this.txtLiquido.Size = new System.Drawing.Size(160, 31);
-            this.txtLiquido.TabIndex = 37;
-            this.txtLiquido.Text = "R$: 0,00";
-            this.txtLiquido.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtItensDoPedido
             // 
+            this.txtItensDoPedido.Enabled = false;
             this.txtItensDoPedido.Font = new System.Drawing.Font("Cascadia Code SemiBold", 12F, System.Drawing.FontStyle.Bold);
             this.txtItensDoPedido.Location = new System.Drawing.Point(541, 408);
             this.txtItensDoPedido.Multiline = true;
@@ -578,17 +651,6 @@ namespace CadastroClientes
             this.label13.TabIndex = 38;
             this.label13.Text = "TOTAL DE ITENS";
             // 
-            // txtTotalPago
-            // 
-            this.txtTotalPago.Font = new System.Drawing.Font("Cascadia Code SemiBold", 12F, System.Drawing.FontStyle.Bold);
-            this.txtTotalPago.Location = new System.Drawing.Point(708, 408);
-            this.txtTotalPago.Multiline = true;
-            this.txtTotalPago.Name = "txtTotalPago";
-            this.txtTotalPago.Size = new System.Drawing.Size(170, 31);
-            this.txtTotalPago.TabIndex = 41;
-            this.txtTotalPago.Text = "R$: 0,00";
-            this.txtTotalPago.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // label14
             // 
             this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
@@ -600,17 +662,6 @@ namespace CadastroClientes
             this.label14.Size = new System.Drawing.Size(88, 18);
             this.label14.TabIndex = 40;
             this.label14.Text = "TOTAL PAGO";
-            // 
-            // txtTroco
-            // 
-            this.txtTroco.Font = new System.Drawing.Font("Cascadia Code SemiBold", 12F, System.Drawing.FontStyle.Bold);
-            this.txtTroco.Location = new System.Drawing.Point(883, 408);
-            this.txtTroco.Multiline = true;
-            this.txtTroco.Name = "txtTroco";
-            this.txtTroco.Size = new System.Drawing.Size(180, 31);
-            this.txtTroco.TabIndex = 43;
-            this.txtTroco.Text = "R$: 0,00";
-            this.txtTroco.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label15
             // 
@@ -626,12 +677,12 @@ namespace CadastroClientes
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.txtValorPago2);
+            this.groupBox3.Controls.Add(this.txtValorPago1);
             this.groupBox3.Controls.Add(this.label19);
             this.groupBox3.Controls.Add(this.label20);
             this.groupBox3.Controls.Add(this.label18);
             this.groupBox3.Controls.Add(this.label16);
-            this.groupBox3.Controls.Add(this.txtValorPago2);
-            this.groupBox3.Controls.Add(this.txtValorPago1);
             this.groupBox3.Controls.Add(this.cmbFormaPagamento1);
             this.groupBox3.Controls.Add(this.cmbFormaPagamento2);
             this.groupBox3.Font = new System.Drawing.Font("Cascadia Code SemiBold", 8.25F, System.Drawing.FontStyle.Bold);
@@ -690,27 +741,6 @@ namespace CadastroClientes
             this.label16.TabIndex = 47;
             this.label16.Text = "Valor Pago (1)";
             // 
-            // txtValorPago2
-            // 
-            this.txtValorPago2.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtValorPago2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtValorPago2.Location = new System.Drawing.Point(237, 82);
-            this.txtValorPago2.Name = "txtValorPago2";
-            this.txtValorPago2.Size = new System.Drawing.Size(100, 20);
-            this.txtValorPago2.TabIndex = 50;
-            this.txtValorPago2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtValorPago1
-            // 
-            this.txtValorPago1.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtValorPago1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtValorPago1.Location = new System.Drawing.Point(237, 32);
-            this.txtValorPago1.Name = "txtValorPago1";
-            this.txtValorPago1.Size = new System.Drawing.Size(100, 20);
-            this.txtValorPago1.TabIndex = 46;
-            this.txtValorPago1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtValorPago1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtValorPago1_KeyDown);
-            // 
             // cmbFormaPagamento1
             // 
             this.cmbFormaPagamento1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -755,15 +785,16 @@ namespace CadastroClientes
             this.btnVender.TabIndex = 45;
             this.btnVender.Text = "&Finalizar Venda";
             this.btnVender.UseVisualStyleBackColor = true;
+            this.btnVender.Click += new System.EventHandler(this.btnVender_Click_1);
             // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.rdOrcamento);
             this.groupBox4.Controls.Add(this.rdVenda);
             this.groupBox4.Font = new System.Drawing.Font("Cascadia Code SemiBold", 7F, System.Drawing.FontStyle.Bold);
-            this.groupBox4.Location = new System.Drawing.Point(369, 446);
+            this.groupBox4.Location = new System.Drawing.Point(375, 445);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(156, 62);
+            this.groupBox4.Size = new System.Drawing.Size(160, 62);
             this.groupBox4.TabIndex = 46;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Operação Destinada";
@@ -809,7 +840,7 @@ namespace CadastroClientes
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(589, 448);
+            this.checkBox1.Location = new System.Drawing.Point(541, 448);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(104, 17);
             this.checkBox1.TabIndex = 48;
@@ -817,114 +848,134 @@ namespace CadastroClientes
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
-            // Column1
+            // txtTotalPago
             // 
-            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Column1.DataPropertyName = "col_codProduto";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle9;
-            this.Column1.HeaderText = "Código do Produto";
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 123;
+            this.txtTotalPago.Enabled = false;
+            this.txtTotalPago.Font = new System.Drawing.Font("Cascadia Code SemiBold", 12F, System.Drawing.FontStyle.Bold);
+            this.txtTotalPago.Location = new System.Drawing.Point(708, 408);
+            this.txtTotalPago.Multiline = true;
+            this.txtTotalPago.Name = "txtTotalPago";
+            this.txtTotalPago.Size = new System.Drawing.Size(170, 31);
+            this.txtTotalPago.TabIndex = 53;
+            this.txtTotalPago.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // Column2
+            // txtTotalBruto
             // 
-            this.Column2.DataPropertyName = "col_descricaoProduto";
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            this.Column2.DefaultCellStyle = dataGridViewCellStyle10;
-            this.Column2.HeaderText = "Descrição do Produto";
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 350;
+            this.txtTotalBruto.Enabled = false;
+            this.txtTotalBruto.Font = new System.Drawing.Font("Cascadia Code SemiBold", 12F, System.Drawing.FontStyle.Bold);
+            this.txtTotalBruto.Location = new System.Drawing.Point(23, 408);
+            this.txtTotalBruto.Multiline = true;
+            this.txtTotalBruto.Name = "txtTotalBruto";
+            this.txtTotalBruto.Size = new System.Drawing.Size(180, 31);
+            this.txtTotalBruto.TabIndex = 52;
+            this.txtTotalBruto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // MEDIDA
+            // txtLiquido
             // 
-            this.MEDIDA.DataPropertyName = "col_unidadeMedida";
-            this.MEDIDA.HeaderText = "Um.";
-            this.MEDIDA.Name = "MEDIDA";
+            this.txtLiquido.BackColor = System.Drawing.SystemColors.Info;
+            this.txtLiquido.Enabled = false;
+            this.txtLiquido.Font = new System.Drawing.Font("Cascadia Code SemiBold", 12F, System.Drawing.FontStyle.Bold);
+            this.txtLiquido.Location = new System.Drawing.Point(375, 408);
+            this.txtLiquido.Multiline = true;
+            this.txtLiquido.Name = "txtLiquido";
+            this.txtLiquido.Size = new System.Drawing.Size(160, 31);
+            this.txtLiquido.TabIndex = 51;
+            this.txtLiquido.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // Column4
+            // txtTroco
             // 
-            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Column4.DataPropertyName = "col_quantidadeVendaProduto";
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            this.Column4.DefaultCellStyle = dataGridViewCellStyle11;
-            this.Column4.HeaderText = "Qtde";
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 56;
+            this.txtTroco.Enabled = false;
+            this.txtTroco.Font = new System.Drawing.Font("Cascadia Code SemiBold", 12F, System.Drawing.FontStyle.Bold);
+            this.txtTroco.Location = new System.Drawing.Point(884, 408);
+            this.txtTroco.Multiline = true;
+            this.txtTroco.Name = "txtTroco";
+            this.txtTroco.Size = new System.Drawing.Size(180, 31);
+            this.txtTroco.TabIndex = 50;
+            this.txtTroco.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // Column3
+            // txtValorPago2
             // 
-            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Column3.DataPropertyName = "col_valorProdutoUnidade";
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            dataGridViewCellStyle12.Format = "C2";
-            dataGridViewCellStyle12.NullValue = null;
-            this.Column3.DefaultCellStyle = dataGridViewCellStyle12;
-            this.Column3.HeaderText = "Valor Un.";
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 63;
+            this.txtValorPago2.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtValorPago2.Location = new System.Drawing.Point(237, 79);
+            this.txtValorPago2.Name = "txtValorPago2";
+            this.txtValorPago2.Size = new System.Drawing.Size(100, 20);
+            this.txtValorPago2.TabIndex = 49;
+            this.txtValorPago2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtValorPago2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtValorPago2_KeyDown);
             // 
-            // Column5
+            // txtValorPago1
             // 
-            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Column5.DataPropertyName = "col_valorTotalProduto";
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            dataGridViewCellStyle13.Format = "C2";
-            dataGridViewCellStyle13.NullValue = null;
-            this.Column5.DefaultCellStyle = dataGridViewCellStyle13;
-            this.Column5.HeaderText = "Total Bruto";
-            this.Column5.Name = "Column5";
-            this.Column5.Width = 63;
+            this.txtValorPago1.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtValorPago1.Location = new System.Drawing.Point(237, 35);
+            this.txtValorPago1.Name = "txtValorPago1";
+            this.txtValorPago1.Size = new System.Drawing.Size(100, 20);
+            this.txtValorPago1.TabIndex = 49;
+            this.txtValorPago1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtValorPago1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtValorPago1_KeyDown_1);
             // 
-            // Column9
+            // statusStrip1
             // 
-            this.Column9.DataPropertyName = "col_porcentagemProduto";
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle14.Format = "%";
-            dataGridViewCellStyle14.NullValue = null;
-            this.Column9.DefaultCellStyle = dataGridViewCellStyle14;
-            this.Column9.HeaderText = "% Desc";
-            this.Column9.Name = "Column9";
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel2,
+            this.txtStatusBarCaixa,
+            this.toolStripStatusLabel1,
+            this.txtStatusCaixa});
+            this.statusStrip1.Location = new System.Drawing.Point(17, 581);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(1049, 22);
+            this.statusStrip1.TabIndex = 54;
+            this.statusStrip1.Text = "statusStrip1";
             // 
-            // Column10
+            // txtStatusBarCaixa
             // 
-            this.Column10.DataPropertyName = "col_valorDesconto";
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle15.Format = "C2";
-            this.Column10.DefaultCellStyle = dataGridViewCellStyle15;
-            this.Column10.HeaderText = "R$ Desc";
-            this.Column10.Name = "Column10";
+            this.txtStatusBarCaixa.BackColor = System.Drawing.Color.Red;
+            this.txtStatusBarCaixa.Font = new System.Drawing.Font("Cascadia Code SemiBold", 8F, System.Drawing.FontStyle.Bold);
+            this.txtStatusBarCaixa.Name = "txtStatusBarCaixa";
+            this.txtStatusBarCaixa.Size = new System.Drawing.Size(37, 17);
+            this.txtStatusBarCaixa.Text = "Caixa";
             // 
-            // Column8
+            // toolStripStatusLabel1
             // 
-            this.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Column8.DataPropertyName = "col_valorLiquidoProduto";
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle16.Format = "C2";
-            this.Column8.DefaultCellStyle = dataGridViewCellStyle16;
-            this.Column8.HeaderText = "Total Líquido";
-            this.Column8.Name = "Column8";
-            this.Column8.Width = 101;
+            this.toolStripStatusLabel1.Font = new System.Drawing.Font("Cascadia Code SemiBold", 8F, System.Drawing.FontStyle.Bold);
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(103, 17);
+            this.toolStripStatusLabel1.Text = "Status do Caixa:";
+            // 
+            // txtStatusCaixa
+            // 
+            this.txtStatusCaixa.BackColor = System.Drawing.Color.Lime;
+            this.txtStatusCaixa.Font = new System.Drawing.Font("Cascadia Code SemiBold", 8F, System.Drawing.FontStyle.Bold);
+            this.txtStatusCaixa.Name = "txtStatusCaixa";
+            this.txtStatusCaixa.Size = new System.Drawing.Size(43, 17);
+            this.txtStatusCaixa.Text = "Aberto";
+            // 
+            // toolStripStatusLabel2
+            // 
+            this.toolStripStatusLabel2.Font = new System.Drawing.Font("Cascadia Code SemiBold", 8F, System.Drawing.FontStyle.Bold);
+            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(91, 17);
+            this.toolStripStatusLabel2.Text = "Nome do Caixa:";
             // 
             // FormularioVendas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1083, 620);
+            this.Controls.Add(this.statusStrip1);
+            this.Controls.Add(this.txtTotalPago);
+            this.Controls.Add(this.txtTotalBruto);
+            this.Controls.Add(this.txtLiquido);
+            this.Controls.Add(this.txtTroco);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.btnVender);
             this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.txtTroco);
             this.Controls.Add(this.label15);
-            this.Controls.Add(this.txtTotalPago);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.txtItensDoPedido);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.txtLiquido);
             this.Controls.Add(this.txtDescontoPorcent);
-            this.Controls.Add(this.txtTotalBruto);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label11);
@@ -949,6 +1000,8 @@ namespace CadastroClientes
             this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -989,22 +1042,16 @@ namespace CadastroClientes
         private Label label11;
         private Label label10;
         private Label label12;
-        private TextBox txtTotalBruto;
         private TextBox txtDescontoPorcent;
-        private TextBox txtLiquido;
         private TextBox txtItensDoPedido;
         private Label label13;
-        private TextBox txtTotalPago;
         private Label label14;
-        private TextBox txtTroco;
         private Label label15;
         private GroupBox groupBox3;
         private Label label19;
         private Label label20;
         private Label label18;
         private Label label16;
-        private TextBox txtValorPago2;
-        private TextBox txtValorPago1;
         private ComboBox cmbFormaPagamento1;
         private ComboBox cmbFormaPagamento2;
         private Button btnVender;
@@ -1023,5 +1070,16 @@ namespace CadastroClientes
         private DataGridViewTextBoxColumn Column9;
         private DataGridViewTextBoxColumn Column10;
         private DataGridViewTextBoxColumn Column8;
+        private SistemaVendas.Classes.textValor txtValorPago2;
+        private SistemaVendas.Classes.textValor txtValorPago1;
+        private SistemaVendas.Classes.textValor txtTroco;
+        private SistemaVendas.Classes.textValor txtLiquido;
+        private SistemaVendas.Classes.textValor txtTotalBruto;
+        private SistemaVendas.Classes.textValor txtTotalPago;
+        private StatusStrip statusStrip1;
+        private ToolStripStatusLabel txtStatusBarCaixa;
+        private ToolStripStatusLabel toolStripStatusLabel1;
+        private ToolStripStatusLabel txtStatusCaixa;
+        private ToolStripStatusLabel toolStripStatusLabel2;
     }
 }

@@ -105,6 +105,9 @@
     <Compile Include="ClassConexao.cs" />
     <Compile Include="ClassDadosGEt.cs" />
     <Compile Include="Classes\ClassRandom.cs" />
+    <Compile Include="Classes\textValor.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="ConfBancoDados\ConfigConexao.cs">
       <SubType>Form</SubType>
     </Compile>

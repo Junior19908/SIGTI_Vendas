@@ -21,9 +21,12 @@ namespace CadastroClientes
             carregarGridVendas();
             CarregarComboBoxCliente();
             CarregarComboBoxVendedor();
+
+            txtStatusBarCaixa.Text = nomeCaixa;
         }
-        OleDbCommand command;
-       
+        OleDbCommand command, commandUpdate;
+        string nomeCaixa = System.Environment.MachineName;
+
         private void CarregarComboBoxCliente()
         {
             try
@@ -117,9 +120,6 @@ namespace CadastroClientes
             {
                 txtQtde.Text = "1";
             }
-
-
-
             try
             {
                 double result;
@@ -137,31 +137,30 @@ namespace CadastroClientes
                     double consultTotalBruto = Convert.ToDouble(commandTotalProduto.ExecuteScalar());
                     if (consultTotalBruto > 0)
                     {
-                        OleDbCommand comandoBuscaCliente = new OleDbCommand("SELECT * FROM TB_VendasDBSCV WHERE col_codCliente="+ cbCliente.SelectedValue + " AND col_statusPedido = 0 ", ClassConexao.DBSCV());
-                        OleDbDataReader dreader = comandoBuscaCliente.ExecuteReader();
-                        int _CodigoCliente = 0;
-                        while (dreader.Read())
-                        {
-                            _CodigoCliente = int.Parse(dreader["col_codCliente"].ToString());
-                            break;
-                        }
+                        //OleDbCommand comandoBuscaCliente = new OleDbCommand("SELECT * FROM TB_VendasDBSCV WHERE col_codCliente="+ cbCliente.SelectedValue + " AND col_statusPedido = 0 ", ClassConexao.DBSCV());
+                        //OleDbDataReader dreader = comandoBuscaCliente.ExecuteReader();
+                        //int _CodigoCliente = 0;
+                        //while (dreader.Read())
+                        //{
+                        //    _CodigoCliente = int.Parse(dreader["col_codCliente"].ToString());
+                        //    break;
+                        //}
 
-                        Int64 cbCli = Int64.Parse(cbCliente.SelectedValue.ToString());
-                        
-                        if(_CodigoCliente == cbCli)
-                        {
+                        //Int64 cbCli = Int64.Parse(cbCliente.SelectedValue.ToString());
+                        //if (_CodigoCliente == cbCli)
+                        //{
                             command = ClassConexao.DBSCV().CreateCommand();
                             command.CommandType = CommandType.Text;
-                            command.CommandText = "INSERT INTO TB_VendasDBSCV (col_codVendaProduto, col_codProduto, col_quantidadeVendaProduto, col_valorProdutoUnidade, col_valorTotalProduto, col_porcentagemProduto, col_valorDesconto, col_valorLiquidoProduto, col_descricaoProduto, col_unidadeMedida,col_codCliente,col_dataVenda,col_codigoVendedor) VALUES" +
-                                "(" + txtVendaCod.Text + "," + txtCodBarras.Text + ",'" + txtQtde.Text + "','" + txtPrecoVenda.Text.Replace("R$ ", "") + "','" + vlTotal.ToString("N2") + "', '" + txtDescontoPorcent.Text.Replace("%", "").Replace(" %", "").Replace("% ", "").Trim() + "', '" + valorC.ToString("N2") + "', '" + valorD.ToString("N2") + "','" + txtDescricaoItem.Text + "','" + txtUm.Text + "','" + cbCliente.SelectedValue + "', NOW(), '" + ClassDadosGEt.IDUsuario + "')";
+                            command.CommandText = "INSERT INTO TB_VendasDBSCV (col_codVendaProduto, col_codProduto, col_quantidadeVendaProduto, col_valorProdutoUnidade, col_valorTotalProduto, col_porcentagemProduto, col_valorDesconto, col_valorLiquidoProduto, col_descricaoProduto, col_unidadeMedida,col_codCliente,col_dataVenda,col_codigoVendedor,col_maquinaCaixa) VALUES" +
+                                "(" + txtVendaCod.Text + "," + txtCodBarras.Text + ",'" + txtQtde.Text + "','" + txtPrecoVenda.Text.Replace("R$ ", "") + "','" + vlTotal.ToString("N2") + "', '" + txtDescontoPorcent.Text.Replace("%", "").Replace(" %", "").Replace("% ", "").Trim() + "', '" + valorC.ToString("N2") + "', '" + valorD.ToString("N2") + "','" + txtDescricaoItem.Text + "','" + txtUm.Text + "','" + cbCliente.SelectedValue + "', NOW(), '" + ClassDadosGEt.IDUsuario + "','"+ nomeCaixa +"')";
                             command.ExecuteNonQuery();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Pedido Referente a outro Cliente!..");
-                        }
+                        //}
+                        //else
+                        //{
+                        //    MessageBox.Show("Pedido Referente a outro Cliente!..");
+                        //}
                         limparText();
-                        comandoBuscaCliente.Connection.Close();
+                        //comandoBuscaCliente.Connection.Close();
                     }
                     else
                     {
@@ -187,6 +186,19 @@ namespace CadastroClientes
             txtDescricaoItem.Clear();
             txtUm.Clear();
             txtPrecoVenda.Clear();
+        }
+        private void limparTexto()
+        {
+            txtTotalBruto.Clear();
+            txtDescontoPorcent.Text = "0%";
+            txtLiquido.Clear();
+            txtItensDoPedido.Text = "0";
+            txtTotalPago.Clear();
+            txtTroco.Clear();
+            txtValorPago1.Clear();
+            txtValorPago2.Clear();
+            cmbFormaPagamento1.Text = "";
+            cmbFormaPagamento2.Text = "";
         }
         private void btnAdicionarItem_Click(object sender, EventArgs e)
         {
@@ -285,7 +297,7 @@ namespace CadastroClientes
             }
             try
             {
-                OleDbCommand commandItensPedido = new OleDbCommand("SELECT COUNT(col_codVendaProduto) FROM TB_VendasDBSCV WHERE col_codVendaProduto = " + txtVendaCod.Text + "", ClassConexao.DBSCV());
+                OleDbCommand commandItensPedido = new OleDbCommand("SELECT COUNT(col_codVendaProduto) FROM TB_VendasDBSCV WHERE col_codVendaProduto = " + txtVendaCod.Text + " AND col_statusPedido = 0", ClassConexao.DBSCV());
                 commandItensPedido.ExecuteNonQuery();
                 double consultItensPedido = Convert.ToDouble(commandItensPedido.ExecuteScalar());
                 if (consultItensPedido > 0)
@@ -300,7 +312,7 @@ namespace CadastroClientes
             }
             try
             {
-                OleDbCommand commandTotalProduto = new OleDbCommand("SELECT SUM(col_valorTotalProduto) FROM TB_VendasDBSCV WHERE col_codVendaProduto = " + txtVendaCod.Text + "", ClassConexao.DBSCV());
+                OleDbCommand commandTotalProduto = new OleDbCommand("SELECT SUM(col_valorTotalProduto) FROM TB_VendasDBSCV WHERE col_codVendaProduto = " + txtVendaCod.Text + " AND col_statusPedido = 0", ClassConexao.DBSCV());
                 commandTotalProduto.ExecuteNonQuery();
                 double consultTotalBruto = Convert.ToDouble(commandTotalProduto.ExecuteScalar());
                 if (consultTotalBruto > 0)
@@ -315,7 +327,7 @@ namespace CadastroClientes
             }
             try
             {
-                OleDbCommand commandTotalLiquido = new OleDbCommand("SELECT SUM(col_valorLiquidoProduto) FROM TB_VendasDBSCV WHERE col_codVendaProduto = " + txtVendaCod.Text + "", ClassConexao.DBSCV());
+                OleDbCommand commandTotalLiquido = new OleDbCommand("SELECT SUM(col_valorLiquidoProduto) FROM TB_VendasDBSCV WHERE col_codVendaProduto = " + txtVendaCod.Text + " AND col_statusPedido = 0", ClassConexao.DBSCV());
                 commandTotalLiquido.ExecuteNonQuery();
                 double consultTotalLiquido = Convert.ToDouble(commandTotalLiquido.ExecuteScalar());
                 if (consultTotalLiquido > 0)
@@ -356,21 +368,139 @@ namespace CadastroClientes
         }
         double _ValorPagoReultado;
         double _ValorPagoReultadoTroco;
+        double _ValorPagoTratamento;
         private void txtValorPago1_KeyDown(object sender, KeyEventArgs e)
+        {
+        }
+
+        private void txtValorPago1_KeyDown_1(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-                try
+                if (string.IsNullOrEmpty(txtValorPago2.Text))
                 {
-                    _ValorPagoReultado = Convert.ToDouble(txtLiquido.Text.Replace("R$ ", "").Replace("R$", "").Trim()) - (Convert.ToDouble(txtValorPago1.Text) + Convert.ToDouble(txtValorPago2.Text));
-                    txtTotalPago.Text = _ValorPagoReultado.ToString("C2");
+                    try
+                    {
+                        _ValorPagoReultado = Convert.ToDouble(txtValorPago1.Text.Replace("R$ ", "").Replace("R$", "").Trim());
+                        txtTotalPago.Text = _ValorPagoReultado.ToString("C2");
+
+
+                        _ValorPagoReultadoTroco = _ValorPagoReultado - Convert.ToDouble(txtLiquido.Text.Replace("R$ ", "").Replace("R$", "").Trim());
+                        if (_ValorPagoReultadoTroco < 0)
+                        {
+
+                        }
+                        else
+                        {
+                            txtTroco.Text = _ValorPagoReultadoTroco.ToString("C2");
+                        }
+                    }
+                    catch (Exception)
+                    {
+
+                    }
                 }
-                catch (Exception)
+                else
                 {
+                    try
+                    {
 
+                        _ValorPagoReultado = Convert.ToDouble(txtValorPago1.Text.Replace("R$ ", "").Replace("R$", "").Trim()) + Convert.ToDouble(txtValorPago2.Text.Replace("R$ ", "").Replace("R$", "").Trim());
+                        txtTotalPago.Text = _ValorPagoReultado.ToString("C2");
+
+                        _ValorPagoReultadoTroco = _ValorPagoReultado - Convert.ToDouble(txtLiquido.Text.Replace("R$ ", "").Replace("R$", "").Trim());
+                        if (_ValorPagoReultadoTroco < 0)
+                        {
+
+                        }
+                        else
+                        {
+                            txtTroco.Text = _ValorPagoReultadoTroco.ToString("C2");
+                        }
+                    }
+                    catch (Exception)
+                    {
+
+                    }
                 }
+            }
+        }
 
-                //_ValorPagoReultadoTroco = txtTotalPago.Text
+        private void txtValorPago2_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (string.IsNullOrEmpty(txtValorPago2.Text))
+                {
+                    try
+                    {
+                        _ValorPagoReultado = Convert.ToDouble(txtValorPago1.Text.Replace("R$ ", "").Replace("R$", "").Trim());
+                        txtTotalPago.Text = _ValorPagoReultado.ToString("C2");
+
+
+                        _ValorPagoReultadoTroco = _ValorPagoReultado - Convert.ToDouble(txtLiquido.Text.Replace("R$ ", "").Replace("R$", "").Trim());
+                        if (_ValorPagoReultadoTroco < 0)
+                        {
+
+                        }
+                        else
+                        {
+                            txtTroco.Text = _ValorPagoReultadoTroco.ToString("C2");
+                        }
+                    }
+                    catch (Exception)
+                    {
+
+                    }
+                }
+                else
+                {
+                    try
+                    {
+
+                        _ValorPagoReultado = Convert.ToDouble(txtValorPago1.Text.Replace("R$ ", "").Replace("R$", "").Trim()) + Convert.ToDouble(txtValorPago2.Text.Replace("R$ ", "").Replace("R$", "").Trim());
+                        txtTotalPago.Text = _ValorPagoReultado.ToString("C2");
+
+                        _ValorPagoReultadoTroco = _ValorPagoReultado - Convert.ToDouble(txtLiquido.Text.Replace("R$ ", "").Replace("R$", "").Trim());
+                        if (_ValorPagoReultadoTroco < 0)
+                        {
+
+                        }
+                        else
+                        {
+                            txtTroco.Text = _ValorPagoReultadoTroco.ToString("C2");
+                        }
+                    }
+                    catch (Exception)
+                    {
+
+                    }
+                }
+            }
+        }
+        private void btnVender_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                commandUpdate = ClassConexao.DBSCV().CreateCommand();
+                commandUpdate.CommandType = CommandType.Text;
+                commandUpdate.CommandText = "UPDATE TB_VendasDBSCV SET col_statusPedido = 1  WHERE col_codCliente = "+ cbCliente.SelectedValue +" AND col_maquinaCaixa = '"+ nomeCaixa +"' ";
+                commandUpdate.ExecuteNonQuery();
+
+
+
+                command = ClassConexao.DBSCV().CreateCommand();
+                command.CommandType = CommandType.Text;
+                command.CommandText = "INSERT INTO TB_FormaPagamentoDBSCV (col_codVendaProduto, col_codCliente,col_codigoVendedor,col_valorFinanceiroVenda1,col_valorFinanceiroVenda2,col_formaDePagamento1,col_formaDePagamento2,col_valorDoPedido) VALUES" +
+                    "(" + txtVendaCod.Text + "," + cbCliente.SelectedValue + ",'"+ cbVendedor.SelectedValue +"','"+ txtValorPago1.Text.Replace("R$ ", "").Replace("R$", "").Trim() + "','"+ txtValorPago2.Text.Replace("R$ ", "").Replace("R$", "").Trim() + "','"+ cmbFormaPagamento1.Text +"','"+ cmbFormaPagamento2.Text +"','"+ txtLiquido.Text.Replace("R$ ", "").Replace("R$", "").Trim() + "')";
+                command.ExecuteNonQuery();
+
+                limparText();
+                limparTexto();
+            }
+            catch
+            {
+
             }
         }
     }
