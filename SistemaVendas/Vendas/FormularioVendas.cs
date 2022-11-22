@@ -16,17 +16,44 @@ namespace CadastroClientes
     {
         public FormularioVendas()
         {
+
             InitializeComponent();
+            carregarPedidos();
             txtCodBarras.Focus();
             carregarGridVendas();
             CarregarComboBoxCliente();
             CarregarComboBoxVendedor();
-
             txtStatusBarCaixa.Text = nomeCaixa;
         }
         OleDbCommand command, commandUpdate;
         string nomeCaixa = System.Environment.MachineName;
+        Int64 numeroPedido;
+        private void carregarPedidos()
+        {
+            try
+            {
+                OleDbCommand pedidosN = new OleDbCommand("SELECT TOP 1 col_codVendaProduto FROM TB_VendasDBSCV WHERE col_statusPedido = 1 ORDER BY col_codItemVendaProduto DESC", ClassConexao.DBSCV());
+                OleDbDataReader readerPedido = pedidosN.ExecuteReader();
+                while (readerPedido.Read())
+                {
+                    txtVendaCod.Text = readerPedido.GetValue(0).ToString();
+                    break;
+                }
+                readerPedido.Close();
 
+                numeroPedido = Int64.Parse(txtVendaCod.Text);
+                numeroPedido += 1;
+                txtVendaCod.Text = numeroPedido.ToString();
+            }
+            catch (Exception ErroEx)
+            {
+                MessageBox.Show("Erro ao carregar número de pedidos. " + ErroEx.Message, "Info",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            }
+            finally
+            {
+                ClassConexao.DBSCV().Close();
+            }
+        }
         private void CarregarComboBoxCliente()
         {
             try
@@ -478,6 +505,12 @@ namespace CadastroClientes
                 }
             }
         }
+
+        private void FormularioVendas_Load(object sender, EventArgs e)
+        {
+
+        }
+
         private void btnVender_Click_1(object sender, EventArgs e)
         {
             try
@@ -488,15 +521,32 @@ namespace CadastroClientes
                 commandUpdate.ExecuteNonQuery();
 
 
-
+                if (string.IsNullOrEmpty(txtValorPago1.Text))
+                {
+                    txtValorPago1.Text = "0";
+                }
+                if (string.IsNullOrEmpty(txtValorPago2.Text))
+                {
+                    txtValorPago2.Text = "0";
+                }
+                if(string.IsNullOrEmpty(cmbFormaPagamento2.Text))
+                {
+                    cmbFormaPagamento2.Text = "Nada";
+                }
+                    
                 command = ClassConexao.DBSCV().CreateCommand();
                 command.CommandType = CommandType.Text;
                 command.CommandText = "INSERT INTO TB_FormaPagamentoDBSCV (col_codVendaProduto, col_codCliente,col_codigoVendedor,col_valorFinanceiroVenda1,col_valorFinanceiroVenda2,col_formaDePagamento1,col_formaDePagamento2,col_valorDoPedido) VALUES" +
                     "(" + txtVendaCod.Text + "," + cbCliente.SelectedValue + ",'"+ cbVendedor.SelectedValue +"','"+ txtValorPago1.Text.Replace("R$ ", "").Replace("R$", "").Trim() + "','"+ txtValorPago2.Text.Replace("R$ ", "").Replace("R$", "").Trim() + "','"+ cmbFormaPagamento1.Text +"','"+ cmbFormaPagamento2.Text +"','"+ txtLiquido.Text.Replace("R$ ", "").Replace("R$", "").Trim() + "')";
                 command.ExecuteNonQuery();
 
+
+
+
                 limparText();
                 limparTexto();
+                MessageBox.Show("Venda realizada com sucesso!");
+                carregarPedidos();
             }
             catch
             {

@@ -102,6 +102,18 @@
     <Compile Include="CadastroUsuario.Designer.cs">
       <DependentUpon>CadastroUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Caixa\AberturaCaixa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Caixa\AberturaCaixa.Designer.cs">
+      <DependentUpon>AberturaCaixa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Caixa\FechamentoCaixa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Caixa\FechamentoCaixa.Designer.cs">
+      <DependentUpon>FechamentoCaixa.cs</DependentUpon>
+    </Compile>
     <Compile Include="ClassConexao.cs" />
     <Compile Include="ClassDadosGEt.cs" />
     <Compile Include="Classes\ClassRandom.cs" />
@@ -156,6 +168,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CadastroUsuario.resx">
       <DependentUpon>CadastroUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Caixa\AberturaCaixa.resx">
+      <DependentUpon>AberturaCaixa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ConfBancoDados\ConfigConexao.resx">
       <DependentUpon>ConfigConexao.cs</DependentUpon>
