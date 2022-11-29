@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SistemaVendas.Caixa;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -86,6 +87,11 @@ namespace CadastroClientes
                 CadastroClientes vendas = new CadastroClientes();
                 vendas.Show();
                 this.Visible = false;
+            }else if(e.KeyCode == Keys.F5)
+            {
+                AberturaCaixa aberturaCaixa = new AberturaCaixa();
+                aberturaCaixa.Show();
+                this.Visible = false;
             }
         }
 
@@ -108,6 +114,13 @@ namespace CadastroClientes
         {
             CadastroProdutos vendas = new CadastroProdutos();
             vendas.Show();
+            this.Visible = false;
+        }
+
+        private void btnAberturaCaixa_Click(object sender, EventArgs e)
+        {
+            AberturaCaixa aberturaCaixa = new AberturaCaixa();
+            aberturaCaixa.Show();
             this.Visible = false;
         }
     }

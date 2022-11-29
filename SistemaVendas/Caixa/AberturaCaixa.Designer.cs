@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AberturaCaixa));
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label17 = new System.Windows.Forms.Label();
@@ -35,11 +36,51 @@
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dtPickerUltimoFechamento = new System.Windows.Forms.DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtStatusCaixa = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtCaixaInicial = new SistemaVendas.Classes.textValor();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.txtRecebimentoCheques = new SistemaVendas.Classes.textValor();
+            this.txtrecebimentoDiversos = new SistemaVendas.Classes.textValor();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtDespesas = new SistemaVendas.Classes.textValor();
+            this.txtsangrias = new SistemaVendas.Classes.textValor();
+            this.txtretornoCaixa = new SistemaVendas.Classes.textValor();
+            this.txtchequesPagos = new SistemaVendas.Classes.textValor();
+            this.dtGridVendasAberturaFechamentoCaixa = new System.Windows.Forms.DataGridView();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.Pedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txtTotalEntradas = new SistemaVendas.Classes.textValor();
+            this.txtTotalSaídas = new SistemaVendas.Classes.textValor();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtCaixa = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.statusStrip1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtGridVendasAberturaFechamentoCaixa)).BeginInit();
+            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -50,14 +91,14 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(20, 60);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(760, 57);
+            this.panel2.Size = new System.Drawing.Size(833, 57);
             this.panel2.TabIndex = 1;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox2.Image = global::SistemaVendas.Properties.Resources.logo_ti;
-            this.pictureBox2.Location = new System.Drawing.Point(665, 9);
+            this.pictureBox2.Location = new System.Drawing.Point(738, 9);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(86, 43);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -80,9 +121,9 @@
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1,
             this.toolStripStatusLabel2});
-            this.statusStrip1.Location = new System.Drawing.Point(20, 570);
+            this.statusStrip1.Location = new System.Drawing.Point(20, 595);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(760, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(833, 22);
             this.statusStrip1.TabIndex = 2;
             this.statusStrip1.Text = "Núm. de Controle";
             // 
@@ -100,41 +141,462 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Location = new System.Drawing.Point(20, 123);
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.dtPickerUltimoFechamento);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.txtStatusCaixa);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.dateTimePicker1);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Font = new System.Drawing.Font("Cascadia Code SemiBold", 7F, System.Drawing.FontStyle.Bold);
+            this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(760, 74);
+            this.groupBox1.Size = new System.Drawing.Size(807, 74);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.groupBox1.Text = "&Situação";
+            // 
+            // dtPickerUltimoFechamento
+            // 
+            this.dtPickerUltimoFechamento.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtPickerUltimoFechamento.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtPickerUltimoFechamento.Location = new System.Drawing.Point(675, 35);
+            this.dtPickerUltimoFechamento.Name = "dtPickerUltimoFechamento";
+            this.dtPickerUltimoFechamento.Size = new System.Drawing.Size(93, 18);
+            this.dtPickerUltimoFechamento.TabIndex = 5;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(641, 14);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(157, 13);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Data do Último Fechamento";
+            // 
+            // txtStatusCaixa
+            // 
+            this.txtStatusCaixa.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtStatusCaixa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.txtStatusCaixa.Enabled = false;
+            this.txtStatusCaixa.Font = new System.Drawing.Font("Cascadia Code SemiBold", 14F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.txtStatusCaixa.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.txtStatusCaixa.Location = new System.Drawing.Point(290, 35);
+            this.txtStatusCaixa.Multiline = true;
+            this.txtStatusCaixa.Name = "txtStatusCaixa";
+            this.txtStatusCaixa.Size = new System.Drawing.Size(209, 30);
+            this.txtStatusCaixa.TabIndex = 3;
+            this.txtStatusCaixa.Text = "Fechado";
+            this.txtStatusCaixa.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Cascadia Code SemiBold", 7F, System.Drawing.FontStyle.Bold);
+            this.label2.Location = new System.Drawing.Point(347, 19);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(103, 13);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Situção do Caixa";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker1.Location = new System.Drawing.Point(30, 35);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(93, 18);
+            this.dateTimePicker1.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(25, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(103, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Data de Abertura";
             // 
             // groupBox2
             // 
-            this.groupBox2.Location = new System.Drawing.Point(20, 203);
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Controls.Add(this.txtCaixa);
+            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Controls.Add(this.txtTotalSaídas);
+            this.groupBox2.Controls.Add(this.txtTotalEntradas);
+            this.groupBox2.Controls.Add(this.label13);
+            this.groupBox2.Controls.Add(this.label12);
+            this.groupBox2.Controls.Add(this.txtDespesas);
+            this.groupBox2.Controls.Add(this.txtchequesPagos);
+            this.groupBox2.Controls.Add(this.label8);
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.txtretornoCaixa);
+            this.groupBox2.Controls.Add(this.label9);
+            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Controls.Add(this.label10);
+            this.groupBox2.Controls.Add(this.txtrecebimentoDiversos);
+            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Controls.Add(this.label11);
+            this.groupBox2.Controls.Add(this.txtsangrias);
+            this.groupBox2.Controls.Add(this.txtRecebimentoCheques);
+            this.groupBox2.Controls.Add(this.txtCaixaInicial);
+            this.groupBox2.Location = new System.Drawing.Point(3, 83);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(760, 166);
+            this.groupBox2.Size = new System.Drawing.Size(807, 166);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "groupBox2";
+            this.groupBox2.Text = "&Movimentação";
+            // 
+            // txtCaixaInicial
+            // 
+            this.txtCaixaInicial.BackColor = System.Drawing.Color.White;
+            this.txtCaixaInicial.Font = new System.Drawing.Font("Cascadia Code SemiBold", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txtCaixaInicial.ForeColor = System.Drawing.Color.Lime;
+            this.txtCaixaInicial.Location = new System.Drawing.Point(191, 19);
+            this.txtCaixaInicial.Multiline = true;
+            this.txtCaixaInicial.Name = "txtCaixaInicial";
+            this.txtCaixaInicial.Size = new System.Drawing.Size(145, 20);
+            this.txtCaixaInicial.TabIndex = 9;
+            this.txtCaixaInicial.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.White;
+            this.label6.Font = new System.Drawing.Font("Cascadia Code SemiBold", 8.25F, System.Drawing.FontStyle.Bold);
+            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.Location = new System.Drawing.Point(52, 73);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(133, 15);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "Recebimentos Diversos";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.White;
+            this.label5.Font = new System.Drawing.Font("Cascadia Code SemiBold", 8.25F, System.Drawing.FontStyle.Bold);
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(46, 47);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(139, 15);
+            this.label5.TabIndex = 7;
+            this.label5.Text = "Recebimento de Cheques";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.White;
+            this.label4.Font = new System.Drawing.Font("Cascadia Code SemiBold", 8.25F, System.Drawing.FontStyle.Bold);
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(100, 21);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(85, 15);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Caixa Inicial";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // groupBox3
             // 
-            this.groupBox3.Location = new System.Drawing.Point(20, 375);
+            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox3.Controls.Add(this.dtGridVendasAberturaFechamentoCaixa);
+            this.groupBox3.Location = new System.Drawing.Point(3, 255);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(760, 192);
+            this.groupBox3.Size = new System.Drawing.Size(807, 202);
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "groupBox3";
+            this.groupBox3.Text = "Histórico de Vendas";
+            // 
+            // txtRecebimentoCheques
+            // 
+            this.txtRecebimentoCheques.BackColor = System.Drawing.Color.White;
+            this.txtRecebimentoCheques.Font = new System.Drawing.Font("Cascadia Code SemiBold", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txtRecebimentoCheques.ForeColor = System.Drawing.Color.Lime;
+            this.txtRecebimentoCheques.Location = new System.Drawing.Point(191, 45);
+            this.txtRecebimentoCheques.Multiline = true;
+            this.txtRecebimentoCheques.Name = "txtRecebimentoCheques";
+            this.txtRecebimentoCheques.Size = new System.Drawing.Size(145, 20);
+            this.txtRecebimentoCheques.TabIndex = 10;
+            this.txtRecebimentoCheques.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtrecebimentoDiversos
+            // 
+            this.txtrecebimentoDiversos.BackColor = System.Drawing.Color.White;
+            this.txtrecebimentoDiversos.Font = new System.Drawing.Font("Cascadia Code SemiBold", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txtrecebimentoDiversos.ForeColor = System.Drawing.Color.Lime;
+            this.txtrecebimentoDiversos.Location = new System.Drawing.Point(191, 71);
+            this.txtrecebimentoDiversos.Multiline = true;
+            this.txtrecebimentoDiversos.Name = "txtrecebimentoDiversos";
+            this.txtrecebimentoDiversos.Size = new System.Drawing.Size(145, 20);
+            this.txtrecebimentoDiversos.TabIndex = 11;
+            this.txtrecebimentoDiversos.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label8
+            // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.White;
+            this.label8.Font = new System.Drawing.Font("Cascadia Code SemiBold", 8.25F, System.Drawing.FontStyle.Bold);
+            this.label8.ForeColor = System.Drawing.Color.Black;
+            this.label8.Location = new System.Drawing.Point(526, 47);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(55, 15);
+            this.label8.TabIndex = 13;
+            this.label8.Text = "Sangrias";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label9
+            // 
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.White;
+            this.label9.Font = new System.Drawing.Font("Cascadia Code SemiBold", 8.25F, System.Drawing.FontStyle.Bold);
+            this.label9.ForeColor = System.Drawing.Color.Black;
+            this.label9.Location = new System.Drawing.Point(526, 21);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(55, 15);
+            this.label9.TabIndex = 12;
+            this.label9.Text = "Despesas";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            // 
+            // label10
+            // 
+            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.White;
+            this.label10.Font = new System.Drawing.Font("Cascadia Code SemiBold", 8.25F, System.Drawing.FontStyle.Bold);
+            this.label10.ForeColor = System.Drawing.Color.Black;
+            this.label10.Location = new System.Drawing.Point(478, 73);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(103, 15);
+            this.label10.TabIndex = 15;
+            this.label10.Text = "Retorno de Caixa";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label11
+            // 
+            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.White;
+            this.label11.Font = new System.Drawing.Font("Cascadia Code SemiBold", 8.25F, System.Drawing.FontStyle.Bold);
+            this.label11.ForeColor = System.Drawing.Color.Black;
+            this.label11.Location = new System.Drawing.Point(496, 97);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(85, 15);
+            this.label11.TabIndex = 16;
+            this.label11.Text = "Cheques Pagos";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtDespesas
+            // 
+            this.txtDespesas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtDespesas.BackColor = System.Drawing.Color.White;
+            this.txtDespesas.Font = new System.Drawing.Font("Cascadia Code SemiBold", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txtDespesas.ForeColor = System.Drawing.Color.Red;
+            this.txtDespesas.Location = new System.Drawing.Point(587, 19);
+            this.txtDespesas.Multiline = true;
+            this.txtDespesas.Name = "txtDespesas";
+            this.txtDespesas.Size = new System.Drawing.Size(145, 20);
+            this.txtDespesas.TabIndex = 17;
+            this.txtDespesas.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtsangrias
+            // 
+            this.txtsangrias.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtsangrias.BackColor = System.Drawing.Color.White;
+            this.txtsangrias.Font = new System.Drawing.Font("Cascadia Code SemiBold", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txtsangrias.ForeColor = System.Drawing.Color.Red;
+            this.txtsangrias.Location = new System.Drawing.Point(587, 45);
+            this.txtsangrias.Multiline = true;
+            this.txtsangrias.Name = "txtsangrias";
+            this.txtsangrias.Size = new System.Drawing.Size(145, 20);
+            this.txtsangrias.TabIndex = 18;
+            this.txtsangrias.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtretornoCaixa
+            // 
+            this.txtretornoCaixa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtretornoCaixa.BackColor = System.Drawing.Color.White;
+            this.txtretornoCaixa.Font = new System.Drawing.Font("Cascadia Code SemiBold", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txtretornoCaixa.ForeColor = System.Drawing.Color.Red;
+            this.txtretornoCaixa.Location = new System.Drawing.Point(587, 71);
+            this.txtretornoCaixa.Multiline = true;
+            this.txtretornoCaixa.Name = "txtretornoCaixa";
+            this.txtretornoCaixa.Size = new System.Drawing.Size(145, 20);
+            this.txtretornoCaixa.TabIndex = 20;
+            this.txtretornoCaixa.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtchequesPagos
+            // 
+            this.txtchequesPagos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtchequesPagos.BackColor = System.Drawing.Color.White;
+            this.txtchequesPagos.Font = new System.Drawing.Font("Cascadia Code SemiBold", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txtchequesPagos.ForeColor = System.Drawing.Color.Red;
+            this.txtchequesPagos.Location = new System.Drawing.Point(587, 97);
+            this.txtchequesPagos.Multiline = true;
+            this.txtchequesPagos.Name = "txtchequesPagos";
+            this.txtchequesPagos.Size = new System.Drawing.Size(145, 20);
+            this.txtchequesPagos.TabIndex = 21;
+            this.txtchequesPagos.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // dtGridVendasAberturaFechamentoCaixa
+            // 
+            this.dtGridVendasAberturaFechamentoCaixa.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtGridVendasAberturaFechamentoCaixa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtGridVendasAberturaFechamentoCaixa.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Pedido,
+            this.Cliente,
+            this.Valor,
+            this.Column2,
+            this.Column4,
+            this.Column1});
+            this.dtGridVendasAberturaFechamentoCaixa.Location = new System.Drawing.Point(6, 19);
+            this.dtGridVendasAberturaFechamentoCaixa.Name = "dtGridVendasAberturaFechamentoCaixa";
+            this.dtGridVendasAberturaFechamentoCaixa.Size = new System.Drawing.Size(801, 177);
+            this.dtGridVendasAberturaFechamentoCaixa.TabIndex = 1;
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox5.Location = new System.Drawing.Point(3, 463);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(807, 180);
+            this.groupBox5.TabIndex = 6;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "groupBox5";
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.Controls.Add(this.groupBox1);
+            this.flowLayoutPanel1.Controls.Add(this.groupBox2);
+            this.flowLayoutPanel1.Controls.Add(this.groupBox3);
+            this.flowLayoutPanel1.Controls.Add(this.groupBox5);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(20, 123);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(833, 469);
+            this.flowLayoutPanel1.TabIndex = 7;
+            // 
+            // Pedido
+            // 
+            this.Pedido.HeaderText = "Número do Pedido";
+            this.Pedido.Name = "Pedido";
+            // 
+            // Cliente
+            // 
+            this.Cliente.HeaderText = "Cliente";
+            this.Cliente.Name = "Cliente";
+            // 
+            // Valor
+            // 
+            this.Valor.HeaderText = "Valor do Pedido";
+            this.Valor.Name = "Valor";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Condição de Pagamento";
+            this.Column2.Name = "Column2";
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Vendedor";
+            this.Column4.Name = "Column4";
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Nome do Caixa";
+            this.Column1.Name = "Column1";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Cascadia Code SemiBold", 10F, System.Drawing.FontStyle.Bold);
+            this.label12.Location = new System.Drawing.Point(212, 103);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(80, 18);
+            this.label12.TabIndex = 22;
+            this.label12.Text = "Entradas:";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Cascadia Code SemiBold", 10F, System.Drawing.FontStyle.Bold);
+            this.label13.Location = new System.Drawing.Point(228, 138);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(64, 18);
+            this.label13.TabIndex = 23;
+            this.label13.Text = "Saídas:";
+            // 
+            // txtTotalEntradas
+            // 
+            this.txtTotalEntradas.BackColor = System.Drawing.Color.LightGreen;
+            this.txtTotalEntradas.Enabled = false;
+            this.txtTotalEntradas.Font = new System.Drawing.Font("Cascadia Code SemiBold", 13F, System.Drawing.FontStyle.Bold);
+            this.txtTotalEntradas.Location = new System.Drawing.Point(298, 99);
+            this.txtTotalEntradas.Multiline = true;
+            this.txtTotalEntradas.Name = "txtTotalEntradas";
+            this.txtTotalEntradas.Size = new System.Drawing.Size(145, 29);
+            this.txtTotalEntradas.TabIndex = 24;
+            this.txtTotalEntradas.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtTotalSaídas
+            // 
+            this.txtTotalSaídas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtTotalSaídas.BackColor = System.Drawing.Color.Salmon;
+            this.txtTotalSaídas.Enabled = false;
+            this.txtTotalSaídas.Font = new System.Drawing.Font("Cascadia Code SemiBold", 13F, System.Drawing.FontStyle.Bold);
+            this.txtTotalSaídas.Location = new System.Drawing.Point(298, 134);
+            this.txtTotalSaídas.Multiline = true;
+            this.txtTotalSaídas.Name = "txtTotalSaídas";
+            this.txtTotalSaídas.Size = new System.Drawing.Size(145, 29);
+            this.txtTotalSaídas.TabIndex = 25;
+            this.txtTotalSaídas.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label7
+            // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.White;
+            this.label7.Font = new System.Drawing.Font("Cascadia Code SemiBold", 8.25F, System.Drawing.FontStyle.Bold);
+            this.label7.ForeColor = System.Drawing.Color.Black;
+            this.label7.Location = new System.Drawing.Point(565, 143);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(85, 15);
+            this.label7.TabIndex = 26;
+            this.label7.Text = "Nome do Caixa";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtCaixa
+            // 
+            this.txtCaixa.Enabled = false;
+            this.txtCaixa.Font = new System.Drawing.Font("Cascadia Code SemiBold", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txtCaixa.Location = new System.Drawing.Point(656, 141);
+            this.txtCaixa.Name = "txtCaixa";
+            this.txtCaixa.Size = new System.Drawing.Size(142, 20);
+            this.txtCaixa.TabIndex = 27;
+            this.txtCaixa.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // AberturaCaixa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 612);
-            this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.ClientSize = new System.Drawing.Size(873, 637);
+            this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.panel2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AberturaCaixa";
             this.Style = MetroFramework.MetroColorStyle.Silver;
             this.panel2.ResumeLayout(false);
@@ -142,6 +604,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtGridVendasAberturaFechamentoCaixa)).EndInit();
+            this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -158,5 +627,40 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtStatusCaixa;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtPickerUltimoFechamento;
+        private System.Windows.Forms.Label label3;
+        private Classes.textValor txtCaixaInicial;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private Classes.textValor txtDespesas;
+        private Classes.textValor txtchequesPagos;
+        private System.Windows.Forms.Label label8;
+        private Classes.textValor txtretornoCaixa;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private Classes.textValor txtrecebimentoDiversos;
+        private System.Windows.Forms.Label label11;
+        private Classes.textValor txtsangrias;
+        private Classes.textValor txtRecebimentoCheques;
+        private System.Windows.Forms.DataGridView dtGridVendasAberturaFechamentoCaixa;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private Classes.textValor txtTotalSaídas;
+        private Classes.textValor txtTotalEntradas;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Pedido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Valor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.TextBox txtCaixa;
+        private System.Windows.Forms.Label label7;
     }
 }
