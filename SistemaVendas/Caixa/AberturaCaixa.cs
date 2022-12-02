@@ -18,8 +18,9 @@ namespace SistemaVendas.Caixa
         {
             InitializeComponent();
             txtCaixa.Text = System.Environment.MachineName;
+            txtUser.Text = System.Environment.MachineName;
             consultaCaixa();
-            
+            movimentacoesVendas();
         }
         private void consultaCaixa()
         {
@@ -38,7 +39,33 @@ namespace SistemaVendas.Caixa
         }
         private void movimentacoesVendas()
         {
-
+            try
+            {
+                if (ClassConexao.DBSCV().State == ConnectionState.Open)
+                {
+                    OleDbCommand selectCMD = new OleDbCommand("SELECT * FROM TB_FormaPagamentoDBSCV WHERE col_statusCaixa = 1 AND col_maquinaCaixa = '" + txtCaixa.Text.Trim() + "'", ClassConexao.DBSCV());
+                    OleDbDataAdapter daAdapter = new OleDbDataAdapter(selectCMD);
+                    DataSet tableGridVendas = new DataSet();
+                    daAdapter.Fill(tableGridVendas);
+                    dtGridVendasAberturaFechamentoCaixa.DataSource = tableGridVendas.Tables[0];
+                }
+                else
+                {
+                    MessageBox.Show("Erro ao Conectar!");
+                }
+            }
+            catch (OleDbException ex)
+            {
+                MessageBox.Show("Erro relacionado ao banco de dados " + ex.Message + " !", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception Er)
+            {
+                MessageBox.Show(Er.Message);
+            }
+            finally
+            {
+                ClassConexao.DBSCV().Close();
+            }
         }
     }
 }
