@@ -45,3 +45,4 @@ E:\Projetos\VisualStudio\SistemaVendas\SistemaVendas\obj\Debug\SistemaVendas.csp
 E:\Projetos\VisualStudio\SistemaVendas\SistemaVendas\obj\Debug\SistemaVendas.csproj.CopyComplete
 E:\Projetos\VisualStudio\SistemaVendas\SistemaVendas\obj\Debug\SistemaVendas.exe
 E:\Projetos\VisualStudio\SistemaVendas\SistemaVendas\obj\Debug\SistemaVendas.pdb
+E:\Projetos\VisualStudio\SistemaVendas\SistemaVendas\obj\Debug\SistemaVendas.Caixa.AdicionarDespesas.resources

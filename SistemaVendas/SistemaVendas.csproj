@@ -114,6 +114,12 @@
     <Compile Include="Caixa\AberturaCaixa.Designer.cs">
       <DependentUpon>AberturaCaixa.cs</DependentUpon>
     </Compile>
+    <Compile Include="Caixa\AdicionarDespesas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Caixa\AdicionarDespesas.Designer.cs">
+      <DependentUpon>AdicionarDespesas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Caixa\FechamentoCaixa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -178,6 +184,9 @@
     <EmbeddedResource Include="Caixa\AberturaCaixa.resx">
       <DependentUpon>AberturaCaixa.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Caixa\AdicionarDespesas.resx">
+      <DependentUpon>AdicionarDespesas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ConfBancoDados\ConfigConexao.resx">
       <DependentUpon>ConfigConexao.cs</DependentUpon>
     </EmbeddedResource>
@@ -231,6 +240,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="logo_ti.ico" />
+    <None Include="Resources\plus.png" />
+    <None Include="Resources\png-clipart-plus-plus-thumbnail.png" />
     <None Include="Resources\produtos-removebg-preview.png" />
     <None Include="Resources\6078603.png" />
     <None Include="Resources\índices.png" />

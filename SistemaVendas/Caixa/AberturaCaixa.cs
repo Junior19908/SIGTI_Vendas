@@ -18,7 +18,7 @@ namespace SistemaVendas.Caixa
         {
             InitializeComponent();
             txtCaixa.Text = System.Environment.MachineName;
-            txtUser.Text = System.Environment.MachineName;
+            txtUser.Text = ClassDadosGEt.Usuario.ToString();
             consultaCaixa();
             movimentacoesVendas();
         }
@@ -33,7 +33,7 @@ namespace SistemaVendas.Caixa
                 txtrecebimentoDiversos.Text = reader.GetValue(4).ToString();
                 txtDespesas.Text = reader.GetValue(5).ToString();
                 txtsangrias.Text = reader.GetValue(6).ToString();
-                
+
                 break;
             }
         }
@@ -66,6 +66,39 @@ namespace SistemaVendas.Caixa
             {
                 ClassConexao.DBSCV().Close();
             }
+
+            try
+            {
+                decimal valorTotal = 0;
+                string valor = "";
+                for (int i = 0; i <= dtGridVendasAberturaFechamentoCaixa.RowCount - 1; i++)
+                {
+                    if (dtGridVendasAberturaFechamentoCaixa.Rows[i].Cells[8].Value != null)
+                        valorTotal += Convert.ToDecimal(dtGridVendasAberturaFechamentoCaixa.Rows[i].Cells[8].Value);
+                }
+                if (valorTotal == 0)
+                {
+                    MessageBox.Show("Nenhum registro encontrado", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                txtEntradasTotal.Text = valorTotal.ToString("C");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao Calcular, Verifique os Valores Texto_1\n'" + ex.Message + "'", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+
+        }
+
+        private void btnAddDespesas_Click(object sender, EventArgs e)
+        {
+            AdicionarDespesas adicionarDespesas = new AdicionarDespesas();
+            adicionarDespesas.ShowDialog();
+        }
+
+        private void btnReloadDespesas_Click(object sender, EventArgs e)
+        {
+            consultaCaixa();
+            movimentacoesVendas();
         }
     }
 }
