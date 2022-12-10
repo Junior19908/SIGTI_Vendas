@@ -29,20 +29,21 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AberturaCaixa));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label17 = new System.Windows.Forms.Label();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.txtHistoricoCaixa = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
             this.txtUser = new System.Windows.Forms.ToolStripStatusLabel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dtPickerUltimoFechamento = new System.Windows.Forms.DateTimePicker();
+            this.dataUltimoFechamento = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.txtStatusCaixa = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateAbertura = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnReloadChequesPagos = new System.Windows.Forms.Panel();
@@ -56,38 +57,50 @@
             this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
             this.txtCaixa = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.txtTotalSaídas = new SistemaVendas.Classes.textValor();
+            this.txtTotalEntradas = new SistemaVendas.Classes.textValor();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.txtDespesas = new SistemaVendas.Classes.textValor();
+            this.txtchequesPagos = new SistemaVendas.Classes.textValor();
             this.label8 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.txtretornoCaixa = new SistemaVendas.Classes.textValor();
             this.label9 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.txtrecebimentoDiversos = new SistemaVendas.Classes.textValor();
             this.label6 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.txtsangrias = new SistemaVendas.Classes.textValor();
+            this.txtRecebimentoCheques = new SistemaVendas.Classes.textValor();
+            this.txtCaixaInicial = new SistemaVendas.Classes.textValor();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dtGridVendasAberturaFechamentoCaixa = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.textValor4 = new SistemaVendas.Classes.textValor();
             this.label19 = new System.Windows.Forms.Label();
+            this.textValor3 = new SistemaVendas.Classes.textValor();
             this.label18 = new System.Windows.Forms.Label();
+            this.textValor1 = new SistemaVendas.Classes.textValor();
             this.label14 = new System.Windows.Forms.Label();
+            this.txtEntradasTotal = new SistemaVendas.Classes.textValor();
             this.label15 = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.txtTotalSaídas = new SistemaVendas.Classes.textValor();
-            this.txtTotalEntradas = new SistemaVendas.Classes.textValor();
-            this.txtDespesas = new SistemaVendas.Classes.textValor();
-            this.txtchequesPagos = new SistemaVendas.Classes.textValor();
-            this.txtretornoCaixa = new SistemaVendas.Classes.textValor();
-            this.txtrecebimentoDiversos = new SistemaVendas.Classes.textValor();
-            this.txtsangrias = new SistemaVendas.Classes.textValor();
-            this.txtRecebimentoCheques = new SistemaVendas.Classes.textValor();
-            this.txtCaixaInicial = new SistemaVendas.Classes.textValor();
-            this.textValor4 = new SistemaVendas.Classes.textValor();
-            this.textValor3 = new SistemaVendas.Classes.textValor();
-            this.textValor1 = new SistemaVendas.Classes.textValor();
-            this.txtEntradasTotal = new SistemaVendas.Classes.textValor();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.statusStrip1.SuspendLayout();
@@ -136,7 +149,7 @@
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1,
-            this.toolStripStatusLabel2,
+            this.txtHistoricoCaixa,
             this.toolStripStatusLabel3,
             this.txtUser});
             this.statusStrip1.Location = new System.Drawing.Point(20, 595);
@@ -151,11 +164,11 @@
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(121, 17);
             this.toolStripStatusLabel1.Text = "Número de Histórico:";
             // 
-            // toolStripStatusLabel2
+            // txtHistoricoCaixa
             // 
-            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(37, 17);
-            this.toolStripStatusLabel2.Text = "40001";
+            this.txtHistoricoCaixa.Name = "txtHistoricoCaixa";
+            this.txtHistoricoCaixa.Size = new System.Drawing.Size(37, 17);
+            this.txtHistoricoCaixa.Text = "40001";
             // 
             // toolStripStatusLabel3
             // 
@@ -173,11 +186,11 @@
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.dtPickerUltimoFechamento);
+            this.groupBox1.Controls.Add(this.dataUltimoFechamento);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txtStatusCaixa);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
+            this.groupBox1.Controls.Add(this.dateAbertura);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Cascadia Code SemiBold", 7F, System.Drawing.FontStyle.Bold);
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
@@ -187,14 +200,14 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "&Situação";
             // 
-            // dtPickerUltimoFechamento
+            // dataUltimoFechamento
             // 
-            this.dtPickerUltimoFechamento.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.dtPickerUltimoFechamento.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtPickerUltimoFechamento.Location = new System.Drawing.Point(675, 35);
-            this.dtPickerUltimoFechamento.Name = "dtPickerUltimoFechamento";
-            this.dtPickerUltimoFechamento.Size = new System.Drawing.Size(93, 18);
-            this.dtPickerUltimoFechamento.TabIndex = 5;
+            this.dataUltimoFechamento.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataUltimoFechamento.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dataUltimoFechamento.Location = new System.Drawing.Point(675, 35);
+            this.dataUltimoFechamento.Name = "dataUltimoFechamento";
+            this.dataUltimoFechamento.Size = new System.Drawing.Size(93, 18);
+            this.dataUltimoFechamento.TabIndex = 5;
             // 
             // label3
             // 
@@ -218,7 +231,7 @@
             this.txtStatusCaixa.Name = "txtStatusCaixa";
             this.txtStatusCaixa.Size = new System.Drawing.Size(209, 30);
             this.txtStatusCaixa.TabIndex = 3;
-            this.txtStatusCaixa.Text = "Aberto";
+            this.txtStatusCaixa.Text = "Aguardando!";
             this.txtStatusCaixa.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label2
@@ -232,13 +245,13 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Situção do Caixa";
             // 
-            // dateTimePicker1
+            // dateAbertura
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(30, 35);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(93, 18);
-            this.dateTimePicker1.TabIndex = 1;
+            this.dateAbertura.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateAbertura.Location = new System.Drawing.Point(30, 35);
+            this.dateAbertura.Name = "dateAbertura";
+            this.dateAbertura.Size = new System.Drawing.Size(93, 18);
+            this.dateAbertura.TabIndex = 1;
             // 
             // label1
             // 
@@ -316,6 +329,7 @@
             this.btnAddChequesPagos.Name = "btnAddChequesPagos";
             this.btnAddChequesPagos.Size = new System.Drawing.Size(24, 22);
             this.btnAddChequesPagos.TabIndex = 34;
+            this.btnAddChequesPagos.Click += new System.EventHandler(this.btnAddChequesPagos_Click);
             // 
             // btnReloadSangria
             // 
@@ -344,6 +358,7 @@
             this.btnAddRetornoCaixa.Name = "btnAddRetornoCaixa";
             this.btnAddRetornoCaixa.Size = new System.Drawing.Size(24, 22);
             this.btnAddRetornoCaixa.TabIndex = 30;
+            this.btnAddRetornoCaixa.Click += new System.EventHandler(this.btnAddRetornoCaixa_Click);
             // 
             // btnAddDespesas
             // 
@@ -363,6 +378,7 @@
             this.btnAddSangria.Name = "btnAddSangria";
             this.btnAddSangria.Size = new System.Drawing.Size(24, 22);
             this.btnAddSangria.TabIndex = 29;
+            this.btnAddSangria.Click += new System.EventHandler(this.btnAddSangria_Click);
             // 
             // vScrollBar1
             // 
@@ -398,6 +414,31 @@
             this.label7.Text = "Nome do Caixa";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // txtTotalSaídas
+            // 
+            this.txtTotalSaídas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtTotalSaídas.BackColor = System.Drawing.Color.Salmon;
+            this.txtTotalSaídas.Enabled = false;
+            this.txtTotalSaídas.Font = new System.Drawing.Font("Cascadia Code SemiBold", 13F, System.Drawing.FontStyle.Bold);
+            this.txtTotalSaídas.Location = new System.Drawing.Point(191, 132);
+            this.txtTotalSaídas.Multiline = true;
+            this.txtTotalSaídas.Name = "txtTotalSaídas";
+            this.txtTotalSaídas.Size = new System.Drawing.Size(145, 29);
+            this.txtTotalSaídas.TabIndex = 25;
+            this.txtTotalSaídas.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtTotalEntradas
+            // 
+            this.txtTotalEntradas.BackColor = System.Drawing.Color.LightGreen;
+            this.txtTotalEntradas.Enabled = false;
+            this.txtTotalEntradas.Font = new System.Drawing.Font("Cascadia Code SemiBold", 13F, System.Drawing.FontStyle.Bold);
+            this.txtTotalEntradas.Location = new System.Drawing.Point(191, 97);
+            this.txtTotalEntradas.Multiline = true;
+            this.txtTotalEntradas.Name = "txtTotalEntradas";
+            this.txtTotalEntradas.Size = new System.Drawing.Size(145, 29);
+            this.txtTotalEntradas.TabIndex = 24;
+            this.txtTotalEntradas.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // label13
             // 
             this.label13.AutoSize = true;
@@ -417,6 +458,32 @@
             this.label12.Size = new System.Drawing.Size(80, 18);
             this.label12.TabIndex = 22;
             this.label12.Text = "Entradas:";
+            // 
+            // txtDespesas
+            // 
+            this.txtDespesas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtDespesas.BackColor = System.Drawing.Color.White;
+            this.txtDespesas.Font = new System.Drawing.Font("Cascadia Code SemiBold", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txtDespesas.ForeColor = System.Drawing.Color.Red;
+            this.txtDespesas.Location = new System.Drawing.Point(623, 19);
+            this.txtDespesas.Multiline = true;
+            this.txtDespesas.Name = "txtDespesas";
+            this.txtDespesas.Size = new System.Drawing.Size(111, 20);
+            this.txtDespesas.TabIndex = 17;
+            this.txtDespesas.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtchequesPagos
+            // 
+            this.txtchequesPagos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtchequesPagos.BackColor = System.Drawing.Color.White;
+            this.txtchequesPagos.Font = new System.Drawing.Font("Cascadia Code SemiBold", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txtchequesPagos.ForeColor = System.Drawing.Color.Red;
+            this.txtchequesPagos.Location = new System.Drawing.Point(623, 97);
+            this.txtchequesPagos.Multiline = true;
+            this.txtchequesPagos.Name = "txtchequesPagos";
+            this.txtchequesPagos.Size = new System.Drawing.Size(111, 20);
+            this.txtchequesPagos.TabIndex = 21;
+            this.txtchequesPagos.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label8
             // 
@@ -444,6 +511,19 @@
             this.label4.TabIndex = 6;
             this.label4.Text = "Caixa Inicial";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtretornoCaixa
+            // 
+            this.txtretornoCaixa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtretornoCaixa.BackColor = System.Drawing.Color.White;
+            this.txtretornoCaixa.Font = new System.Drawing.Font("Cascadia Code SemiBold", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txtretornoCaixa.ForeColor = System.Drawing.Color.Red;
+            this.txtretornoCaixa.Location = new System.Drawing.Point(623, 71);
+            this.txtretornoCaixa.Multiline = true;
+            this.txtretornoCaixa.Name = "txtretornoCaixa";
+            this.txtretornoCaixa.Size = new System.Drawing.Size(111, 20);
+            this.txtretornoCaixa.TabIndex = 20;
+            this.txtretornoCaixa.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label9
             // 
@@ -486,6 +566,19 @@
             this.label10.Text = "Retorno de Caixa";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // txtrecebimentoDiversos
+            // 
+            this.txtrecebimentoDiversos.BackColor = System.Drawing.Color.White;
+            this.txtrecebimentoDiversos.Enabled = false;
+            this.txtrecebimentoDiversos.Font = new System.Drawing.Font("Cascadia Code SemiBold", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txtrecebimentoDiversos.ForeColor = System.Drawing.Color.Lime;
+            this.txtrecebimentoDiversos.Location = new System.Drawing.Point(191, 71);
+            this.txtrecebimentoDiversos.Multiline = true;
+            this.txtrecebimentoDiversos.Name = "txtrecebimentoDiversos";
+            this.txtrecebimentoDiversos.Size = new System.Drawing.Size(145, 20);
+            this.txtrecebimentoDiversos.TabIndex = 11;
+            this.txtrecebimentoDiversos.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -513,6 +606,45 @@
             this.label11.Text = "Cheques Pagos";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // txtsangrias
+            // 
+            this.txtsangrias.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtsangrias.BackColor = System.Drawing.Color.White;
+            this.txtsangrias.Font = new System.Drawing.Font("Cascadia Code SemiBold", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txtsangrias.ForeColor = System.Drawing.Color.Red;
+            this.txtsangrias.Location = new System.Drawing.Point(623, 45);
+            this.txtsangrias.Multiline = true;
+            this.txtsangrias.Name = "txtsangrias";
+            this.txtsangrias.Size = new System.Drawing.Size(111, 20);
+            this.txtsangrias.TabIndex = 18;
+            this.txtsangrias.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtRecebimentoCheques
+            // 
+            this.txtRecebimentoCheques.BackColor = System.Drawing.Color.White;
+            this.txtRecebimentoCheques.Enabled = false;
+            this.txtRecebimentoCheques.Font = new System.Drawing.Font("Cascadia Code SemiBold", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txtRecebimentoCheques.ForeColor = System.Drawing.Color.Lime;
+            this.txtRecebimentoCheques.Location = new System.Drawing.Point(191, 45);
+            this.txtRecebimentoCheques.Multiline = true;
+            this.txtRecebimentoCheques.Name = "txtRecebimentoCheques";
+            this.txtRecebimentoCheques.Size = new System.Drawing.Size(145, 20);
+            this.txtRecebimentoCheques.TabIndex = 10;
+            this.txtRecebimentoCheques.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtCaixaInicial
+            // 
+            this.txtCaixaInicial.BackColor = System.Drawing.Color.White;
+            this.txtCaixaInicial.Enabled = false;
+            this.txtCaixaInicial.Font = new System.Drawing.Font("Cascadia Code SemiBold", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txtCaixaInicial.ForeColor = System.Drawing.Color.Lime;
+            this.txtCaixaInicial.Location = new System.Drawing.Point(191, 19);
+            this.txtCaixaInicial.Multiline = true;
+            this.txtCaixaInicial.Name = "txtCaixaInicial";
+            this.txtCaixaInicial.Size = new System.Drawing.Size(145, 20);
+            this.txtCaixaInicial.TabIndex = 9;
+            this.txtCaixaInicial.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // groupBox3
             // 
             this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -532,10 +664,105 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dtGridVendasAberturaFechamentoCaixa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtGridVendasAberturaFechamentoCaixa.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5,
+            this.Column6,
+            this.Column7,
+            this.Column8,
+            this.Column9,
+            this.Column10,
+            this.Column11,
+            this.Column12});
             this.dtGridVendasAberturaFechamentoCaixa.Location = new System.Drawing.Point(6, 19);
             this.dtGridVendasAberturaFechamentoCaixa.Name = "dtGridVendasAberturaFechamentoCaixa";
             this.dtGridVendasAberturaFechamentoCaixa.Size = new System.Drawing.Size(801, 177);
             this.dtGridVendasAberturaFechamentoCaixa.TabIndex = 1;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "Código";
+            this.Column1.HeaderText = "Código";
+            this.Column1.Name = "Column1";
+            this.Column1.Visible = false;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "col_codVendaProduto";
+            this.Column2.HeaderText = "Código do Pedido";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "col_codCliente";
+            this.Column3.HeaderText = "Column3";
+            this.Column3.Name = "Column3";
+            this.Column3.Visible = false;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "col_codigoVendedor";
+            this.Column4.HeaderText = "Vendedor";
+            this.Column4.Name = "Column4";
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "col_valorFinanceiroVenda1";
+            this.Column5.HeaderText = "Column5";
+            this.Column5.Name = "Column5";
+            this.Column5.Visible = false;
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "col_valorFinanceiroVenda2";
+            this.Column6.HeaderText = "Column6";
+            this.Column6.Name = "Column6";
+            this.Column6.Visible = false;
+            // 
+            // Column7
+            // 
+            this.Column7.DataPropertyName = "col_formaDePagamento1";
+            this.Column7.HeaderText = "Forma de Pagamento 1";
+            this.Column7.Name = "Column7";
+            this.Column7.Visible = false;
+            // 
+            // Column8
+            // 
+            this.Column8.DataPropertyName = "col_formaDePagamento2";
+            this.Column8.HeaderText = "Forma de Pagamento 2";
+            this.Column8.Name = "Column8";
+            this.Column8.Visible = false;
+            // 
+            // Column9
+            // 
+            this.Column9.DataPropertyName = "col_valorDoPedido";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle1.Format = "C2";
+            dataGridViewCellStyle1.NullValue = "0";
+            this.Column9.DefaultCellStyle = dataGridViewCellStyle1;
+            this.Column9.HeaderText = "Valor do Pedido";
+            this.Column9.Name = "Column9";
+            // 
+            // Column10
+            // 
+            this.Column10.DataPropertyName = "col_dataPagamento";
+            this.Column10.HeaderText = "Data do Pedido";
+            this.Column10.Name = "Column10";
+            // 
+            // Column11
+            // 
+            this.Column11.DataPropertyName = "col_statusCaixa";
+            this.Column11.HeaderText = "Status do Caixa";
+            this.Column11.Name = "Column11";
+            // 
+            // Column12
+            // 
+            this.Column12.DataPropertyName = "col_maquinaCaixa";
+            this.Column12.HeaderText = "Nome do Caixa";
+            this.Column12.Name = "Column12";
             // 
             // groupBox5
             // 
@@ -559,6 +786,18 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Histórico de Abertura do Caixa";
             // 
+            // textValor4
+            // 
+            this.textValor4.BackColor = System.Drawing.Color.Gray;
+            this.textValor4.Enabled = false;
+            this.textValor4.Font = new System.Drawing.Font("Cascadia Code SemiBold", 13F, System.Drawing.FontStyle.Bold);
+            this.textValor4.Location = new System.Drawing.Point(653, 113);
+            this.textValor4.Multiline = true;
+            this.textValor4.Name = "textValor4";
+            this.textValor4.Size = new System.Drawing.Size(145, 29);
+            this.textValor4.TabIndex = 35;
+            this.textValor4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // label19
             // 
             this.label19.AutoSize = true;
@@ -569,6 +808,18 @@
             this.label19.TabIndex = 34;
             this.label19.Text = "Saldo em Caixa:";
             // 
+            // textValor3
+            // 
+            this.textValor3.BackColor = System.Drawing.Color.DarkOrange;
+            this.textValor3.Enabled = false;
+            this.textValor3.Font = new System.Drawing.Font("Cascadia Code SemiBold", 13F, System.Drawing.FontStyle.Bold);
+            this.textValor3.Location = new System.Drawing.Point(653, 78);
+            this.textValor3.Multiline = true;
+            this.textValor3.Name = "textValor3";
+            this.textValor3.Size = new System.Drawing.Size(145, 29);
+            this.textValor3.TabIndex = 33;
+            this.textValor3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // label18
             // 
             this.label18.AutoSize = true;
@@ -578,6 +829,19 @@
             this.label18.Size = new System.Drawing.Size(128, 18);
             this.label18.TabIndex = 32;
             this.label18.Text = "Retirada Caixa:";
+            // 
+            // textValor1
+            // 
+            this.textValor1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textValor1.BackColor = System.Drawing.Color.Salmon;
+            this.textValor1.Enabled = false;
+            this.textValor1.Font = new System.Drawing.Font("Cascadia Code SemiBold", 13F, System.Drawing.FontStyle.Bold);
+            this.textValor1.Location = new System.Drawing.Point(653, 43);
+            this.textValor1.Multiline = true;
+            this.textValor1.Name = "textValor1";
+            this.textValor1.Size = new System.Drawing.Size(145, 29);
+            this.textValor1.TabIndex = 31;
+            this.textValor1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label14
             // 
@@ -592,6 +856,18 @@
             this.label14.TabIndex = 27;
             this.label14.Text = "Observações:";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtEntradasTotal
+            // 
+            this.txtEntradasTotal.BackColor = System.Drawing.Color.LightGreen;
+            this.txtEntradasTotal.Enabled = false;
+            this.txtEntradasTotal.Font = new System.Drawing.Font("Cascadia Code SemiBold", 13F, System.Drawing.FontStyle.Bold);
+            this.txtEntradasTotal.Location = new System.Drawing.Point(653, 8);
+            this.txtEntradasTotal.Multiline = true;
+            this.txtEntradasTotal.Name = "txtEntradasTotal";
+            this.txtEntradasTotal.Size = new System.Drawing.Size(145, 29);
+            this.txtEntradasTotal.TabIndex = 30;
+            this.txtEntradasTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label15
             // 
@@ -636,168 +912,6 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(833, 469);
             this.flowLayoutPanel1.TabIndex = 7;
             // 
-            // txtTotalSaídas
-            // 
-            this.txtTotalSaídas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTotalSaídas.BackColor = System.Drawing.Color.Salmon;
-            this.txtTotalSaídas.Enabled = false;
-            this.txtTotalSaídas.Font = new System.Drawing.Font("Cascadia Code SemiBold", 13F, System.Drawing.FontStyle.Bold);
-            this.txtTotalSaídas.Location = new System.Drawing.Point(191, 132);
-            this.txtTotalSaídas.Multiline = true;
-            this.txtTotalSaídas.Name = "txtTotalSaídas";
-            this.txtTotalSaídas.Size = new System.Drawing.Size(145, 29);
-            this.txtTotalSaídas.TabIndex = 25;
-            this.txtTotalSaídas.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtTotalEntradas
-            // 
-            this.txtTotalEntradas.BackColor = System.Drawing.Color.LightGreen;
-            this.txtTotalEntradas.Enabled = false;
-            this.txtTotalEntradas.Font = new System.Drawing.Font("Cascadia Code SemiBold", 13F, System.Drawing.FontStyle.Bold);
-            this.txtTotalEntradas.Location = new System.Drawing.Point(191, 97);
-            this.txtTotalEntradas.Multiline = true;
-            this.txtTotalEntradas.Name = "txtTotalEntradas";
-            this.txtTotalEntradas.Size = new System.Drawing.Size(145, 29);
-            this.txtTotalEntradas.TabIndex = 24;
-            this.txtTotalEntradas.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtDespesas
-            // 
-            this.txtDespesas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtDespesas.BackColor = System.Drawing.Color.White;
-            this.txtDespesas.Font = new System.Drawing.Font("Cascadia Code SemiBold", 8.25F, System.Drawing.FontStyle.Bold);
-            this.txtDespesas.ForeColor = System.Drawing.Color.Red;
-            this.txtDespesas.Location = new System.Drawing.Point(623, 19);
-            this.txtDespesas.Multiline = true;
-            this.txtDespesas.Name = "txtDespesas";
-            this.txtDespesas.Size = new System.Drawing.Size(111, 20);
-            this.txtDespesas.TabIndex = 17;
-            this.txtDespesas.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtchequesPagos
-            // 
-            this.txtchequesPagos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtchequesPagos.BackColor = System.Drawing.Color.White;
-            this.txtchequesPagos.Font = new System.Drawing.Font("Cascadia Code SemiBold", 8.25F, System.Drawing.FontStyle.Bold);
-            this.txtchequesPagos.ForeColor = System.Drawing.Color.Red;
-            this.txtchequesPagos.Location = new System.Drawing.Point(623, 97);
-            this.txtchequesPagos.Multiline = true;
-            this.txtchequesPagos.Name = "txtchequesPagos";
-            this.txtchequesPagos.Size = new System.Drawing.Size(111, 20);
-            this.txtchequesPagos.TabIndex = 21;
-            this.txtchequesPagos.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtretornoCaixa
-            // 
-            this.txtretornoCaixa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtretornoCaixa.BackColor = System.Drawing.Color.White;
-            this.txtretornoCaixa.Font = new System.Drawing.Font("Cascadia Code SemiBold", 8.25F, System.Drawing.FontStyle.Bold);
-            this.txtretornoCaixa.ForeColor = System.Drawing.Color.Red;
-            this.txtretornoCaixa.Location = new System.Drawing.Point(623, 71);
-            this.txtretornoCaixa.Multiline = true;
-            this.txtretornoCaixa.Name = "txtretornoCaixa";
-            this.txtretornoCaixa.Size = new System.Drawing.Size(111, 20);
-            this.txtretornoCaixa.TabIndex = 20;
-            this.txtretornoCaixa.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtrecebimentoDiversos
-            // 
-            this.txtrecebimentoDiversos.BackColor = System.Drawing.Color.White;
-            this.txtrecebimentoDiversos.Font = new System.Drawing.Font("Cascadia Code SemiBold", 8.25F, System.Drawing.FontStyle.Bold);
-            this.txtrecebimentoDiversos.ForeColor = System.Drawing.Color.Lime;
-            this.txtrecebimentoDiversos.Location = new System.Drawing.Point(191, 71);
-            this.txtrecebimentoDiversos.Multiline = true;
-            this.txtrecebimentoDiversos.Name = "txtrecebimentoDiversos";
-            this.txtrecebimentoDiversos.Size = new System.Drawing.Size(145, 20);
-            this.txtrecebimentoDiversos.TabIndex = 11;
-            this.txtrecebimentoDiversos.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtsangrias
-            // 
-            this.txtsangrias.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtsangrias.BackColor = System.Drawing.Color.White;
-            this.txtsangrias.Font = new System.Drawing.Font("Cascadia Code SemiBold", 8.25F, System.Drawing.FontStyle.Bold);
-            this.txtsangrias.ForeColor = System.Drawing.Color.Red;
-            this.txtsangrias.Location = new System.Drawing.Point(623, 45);
-            this.txtsangrias.Multiline = true;
-            this.txtsangrias.Name = "txtsangrias";
-            this.txtsangrias.Size = new System.Drawing.Size(111, 20);
-            this.txtsangrias.TabIndex = 18;
-            this.txtsangrias.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtRecebimentoCheques
-            // 
-            this.txtRecebimentoCheques.BackColor = System.Drawing.Color.White;
-            this.txtRecebimentoCheques.Font = new System.Drawing.Font("Cascadia Code SemiBold", 8.25F, System.Drawing.FontStyle.Bold);
-            this.txtRecebimentoCheques.ForeColor = System.Drawing.Color.Lime;
-            this.txtRecebimentoCheques.Location = new System.Drawing.Point(191, 45);
-            this.txtRecebimentoCheques.Multiline = true;
-            this.txtRecebimentoCheques.Name = "txtRecebimentoCheques";
-            this.txtRecebimentoCheques.Size = new System.Drawing.Size(145, 20);
-            this.txtRecebimentoCheques.TabIndex = 10;
-            this.txtRecebimentoCheques.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtCaixaInicial
-            // 
-            this.txtCaixaInicial.BackColor = System.Drawing.Color.White;
-            this.txtCaixaInicial.Font = new System.Drawing.Font("Cascadia Code SemiBold", 8.25F, System.Drawing.FontStyle.Bold);
-            this.txtCaixaInicial.ForeColor = System.Drawing.Color.Lime;
-            this.txtCaixaInicial.Location = new System.Drawing.Point(191, 19);
-            this.txtCaixaInicial.Multiline = true;
-            this.txtCaixaInicial.Name = "txtCaixaInicial";
-            this.txtCaixaInicial.Size = new System.Drawing.Size(145, 20);
-            this.txtCaixaInicial.TabIndex = 9;
-            this.txtCaixaInicial.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textValor4
-            // 
-            this.textValor4.BackColor = System.Drawing.Color.Gray;
-            this.textValor4.Enabled = false;
-            this.textValor4.Font = new System.Drawing.Font("Cascadia Code SemiBold", 13F, System.Drawing.FontStyle.Bold);
-            this.textValor4.Location = new System.Drawing.Point(653, 113);
-            this.textValor4.Multiline = true;
-            this.textValor4.Name = "textValor4";
-            this.textValor4.Size = new System.Drawing.Size(145, 29);
-            this.textValor4.TabIndex = 35;
-            this.textValor4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textValor3
-            // 
-            this.textValor3.BackColor = System.Drawing.Color.DarkOrange;
-            this.textValor3.Enabled = false;
-            this.textValor3.Font = new System.Drawing.Font("Cascadia Code SemiBold", 13F, System.Drawing.FontStyle.Bold);
-            this.textValor3.Location = new System.Drawing.Point(653, 78);
-            this.textValor3.Multiline = true;
-            this.textValor3.Name = "textValor3";
-            this.textValor3.Size = new System.Drawing.Size(145, 29);
-            this.textValor3.TabIndex = 33;
-            this.textValor3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textValor1
-            // 
-            this.textValor1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textValor1.BackColor = System.Drawing.Color.Salmon;
-            this.textValor1.Enabled = false;
-            this.textValor1.Font = new System.Drawing.Font("Cascadia Code SemiBold", 13F, System.Drawing.FontStyle.Bold);
-            this.textValor1.Location = new System.Drawing.Point(653, 43);
-            this.textValor1.Multiline = true;
-            this.textValor1.Name = "textValor1";
-            this.textValor1.Size = new System.Drawing.Size(145, 29);
-            this.textValor1.TabIndex = 31;
-            this.textValor1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtEntradasTotal
-            // 
-            this.txtEntradasTotal.BackColor = System.Drawing.Color.LightGreen;
-            this.txtEntradasTotal.Enabled = false;
-            this.txtEntradasTotal.Font = new System.Drawing.Font("Cascadia Code SemiBold", 13F, System.Drawing.FontStyle.Bold);
-            this.txtEntradasTotal.Location = new System.Drawing.Point(653, 8);
-            this.txtEntradasTotal.Multiline = true;
-            this.txtEntradasTotal.Name = "txtEntradasTotal";
-            this.txtEntradasTotal.Size = new System.Drawing.Size(145, 29);
-            this.txtEntradasTotal.TabIndex = 30;
-            this.txtEntradasTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // AberturaCaixa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -835,15 +949,15 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
+        private System.Windows.Forms.ToolStripStatusLabel txtHistoricoCaixa;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtStatusCaixa;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DateTimePicker dtPickerUltimoFechamento;
+        private System.Windows.Forms.DateTimePicker dateAbertura;
+        private System.Windows.Forms.DateTimePicker dataUltimoFechamento;
         private System.Windows.Forms.Label label3;
         private Classes.textValor txtCaixaInicial;
         private System.Windows.Forms.Label label6;
@@ -889,5 +1003,17 @@
         private System.Windows.Forms.Panel btnReloadDespesas;
         private System.Windows.Forms.Panel btnAddRetornoCaixa;
         private System.Windows.Forms.Panel btnAddDespesas;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
     }
 }

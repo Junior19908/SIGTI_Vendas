@@ -46,3 +46,6 @@ E:\Projetos\VisualStudio\SistemaVendas\SistemaVendas\obj\Debug\SistemaVendas.csp
 E:\Projetos\VisualStudio\SistemaVendas\SistemaVendas\obj\Debug\SistemaVendas.exe
 E:\Projetos\VisualStudio\SistemaVendas\SistemaVendas\obj\Debug\SistemaVendas.pdb
 E:\Projetos\VisualStudio\SistemaVendas\SistemaVendas\obj\Debug\SistemaVendas.Caixa.AdicionarDespesas.resources
+E:\Projetos\VisualStudio\SistemaVendas\SistemaVendas\obj\Debug\SistemaVendas.Caixa.AdicionarSangria.resources
+E:\Projetos\VisualStudio\SistemaVendas\SistemaVendas\obj\Debug\SistemaVendas.Caixa.AdicionarChequesPagos.resources
+E:\Projetos\VisualStudio\SistemaVendas\SistemaVendas\obj\Debug\SistemaVendas.Caixa.AdicionarRetornoCaixa.resources

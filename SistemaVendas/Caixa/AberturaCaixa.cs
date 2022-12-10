@@ -22,19 +22,44 @@ namespace SistemaVendas.Caixa
             consultaCaixa();
             movimentacoesVendas();
         }
+        /*
+         * Configurar textBox's de entradas e saídas
+         */
+        int statusCaixa;
         private void consultaCaixa()
         {
-            OleDbCommand command = new OleDbCommand("SELECT * FROM TB_AberturaFechamentoCaixa WHERE col_nomeCaixa = '" + txtCaixa.Text.Trim() + "' AND col_status = 0 ORDER BY Código DESC", ClassConexao.DBSCV());
+            OleDbCommand command = new OleDbCommand("SELECT SUM(col_inicial) AS col_inicial,SUM(col_recebimentoCheques) AS col_recebimentoCheques FROM TB_AberturaFechamentoCaixaDBSCV WHERE col_nomeCaixa = '" + txtCaixa.Text.Trim() + "' AND col_status = 0 AND col_IdCaixa = 4001", ClassConexao.DBSCV());
             OleDbDataReader reader = command.ExecuteReader();
             while (reader.Read())
             {
-                txtCaixaInicial.Text = reader.GetValue(2).ToString();
-                txtRecebimentoCheques.Text = reader.GetValue(3).ToString();
-                txtrecebimentoDiversos.Text = reader.GetValue(4).ToString();
-                txtDespesas.Text = reader.GetValue(5).ToString();
-                txtsangrias.Text = reader.GetValue(6).ToString();
-
+                txtCaixaInicial.Text = reader.GetValue(0).ToString();
+                txtRecebimentoCheques.Text = reader.GetValue(1).ToString();
                 break;
+            }
+            OleDbCommand command2 = new OleDbCommand("SELECT * FROM TB_AberturaFechamentoCaixaDBSCV WHERE col_nomeCaixa = '" + txtCaixa.Text.Trim() + "' AND col_status = 0 AND col_IdCaixa = 4001", ClassConexao.DBSCV());
+            OleDbDataReader reader2 = command2.ExecuteReader();
+            while (reader2.Read())
+            {
+                dateAbertura.Text = reader2.GetValue(10).ToString();
+                statusCaixa = (int)reader2.GetValue(13);
+                break;
+            }
+
+
+
+            if(statusCaixa == 1)
+            {
+                txtStatusCaixa.Text = "Fechado";
+                txtCaixaInicial.Enabled = false; 
+                txtRecebimentoCheques.Enabled = false; 
+                txtrecebimentoDiversos.Enabled = false;
+            }
+            else
+            {
+                txtStatusCaixa.Text = "Aberto";
+                txtCaixaInicial.Enabled = true;
+                txtRecebimentoCheques.Enabled = true;
+                txtrecebimentoDiversos.Enabled = true;
             }
         }
         private void movimentacoesVendas()
@@ -99,6 +124,24 @@ namespace SistemaVendas.Caixa
         {
             consultaCaixa();
             movimentacoesVendas();
+        }
+
+        private void btnAddSangria_Click(object sender, EventArgs e)
+        {
+            AdicionarSangria adicionarSangria = new AdicionarSangria();
+            adicionarSangria.ShowDialog();
+        }
+
+        private void btnAddRetornoCaixa_Click(object sender, EventArgs e)
+        {
+            AdicionarRetornoCaixa ad = new AdicionarRetornoCaixa();
+            ad.ShowDialog();
+        }
+
+        private void btnAddChequesPagos_Click(object sender, EventArgs e)
+        {
+            AdicionarChequesPagos adicionarChequesPagos = new AdicionarChequesPagos();
+            adicionarChequesPagos.ShowDialog();
         }
     }
 }

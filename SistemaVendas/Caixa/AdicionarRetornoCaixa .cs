@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace SistemaVendas.Caixa
 {
-    public partial class AdicionarDespesas : MetroFramework.Forms.MetroForm
+    public partial class AdicionarRetornoCaixa : MetroFramework.Forms.MetroForm
     {
-        public AdicionarDespesas()
+        public AdicionarRetornoCaixa()
         {
             InitializeComponent();
             nomeMaquina = System.Environment.MachineName;
@@ -26,12 +26,12 @@ namespace SistemaVendas.Caixa
             {
                 OleDbCommand command = ClassConexao.DBSCV().CreateCommand();
                 command.CommandType = CommandType.Text;
-                command.CommandText = "INSERT INTO TB_AberturaFechamentoCaixaDBSCV (col_nomeCaixa,col_despesas, col_descricaoDespesas) VALUES" +
-                    "('"+ nomeMaquina + "','" + txtValorDespesa.Text + "','" + txtDescricaoDespesa.Text + "')";
+                command.CommandText = "INSERT INTO TB_AberturaFechamentoCaixaDBSCV (col_nomeCaixa,col_retorno, col_descricaoRetorno) VALUES" +
+                    "('"+ nomeMaquina + "','" + txtValorRetorno.Text + "','" + txtDescricaoRetorno.Text + "')";
                 command.ExecuteNonQuery();
                 MessageBox.Show("Cadastro Realizado com sucesso!");
-                txtDescricaoDespesa.Clear();
-                txtValorDespesa.Clear();
+                txtDescricaoRetorno.Clear();
+                txtValorRetorno.Clear();
             }
             catch (OleDbException ErroBanco)
             {

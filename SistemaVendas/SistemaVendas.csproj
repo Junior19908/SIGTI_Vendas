@@ -114,6 +114,24 @@
     <Compile Include="Caixa\AberturaCaixa.Designer.cs">
       <DependentUpon>AberturaCaixa.cs</DependentUpon>
     </Compile>
+    <Compile Include="Caixa\AdicionarChequesPagos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Caixa\AdicionarChequesPagos.Designer.cs">
+      <DependentUpon>AdicionarChequesPagos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Caixa\AdicionarRetornoCaixa .cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Caixa\AdicionarRetornoCaixa .Designer.cs">
+      <DependentUpon>AdicionarRetornoCaixa .cs</DependentUpon>
+    </Compile>
+    <Compile Include="Caixa\AdicionarSangria .cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Caixa\AdicionarSangria .Designer.cs">
+      <DependentUpon>AdicionarSangria .cs</DependentUpon>
+    </Compile>
     <Compile Include="Caixa\AdicionarDespesas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,6 +155,12 @@
     </Compile>
     <Compile Include="ConfBancoDados\ConfigConexao.Designer.cs">
       <DependentUpon>ConfigConexao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DadosEmpresa\Empresa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DadosEmpresa\Empresa.Designer.cs">
+      <DependentUpon>Empresa.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -184,12 +208,25 @@
     <EmbeddedResource Include="Caixa\AberturaCaixa.resx">
       <DependentUpon>AberturaCaixa.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Caixa\AdicionarChequesPagos.resx">
+      <DependentUpon>AdicionarChequesPagos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Caixa\AdicionarRetornoCaixa .resx">
+      <DependentUpon>AdicionarRetornoCaixa .cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Caixa\AdicionarSangria .resx">
+      <DependentUpon>AdicionarSangria .cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Caixa\AdicionarDespesas.resx">
       <DependentUpon>AdicionarDespesas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ConfBancoDados\ConfigConexao.resx">
       <DependentUpon>ConfigConexao.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DadosEmpresa\Empresa.resx">
+      <DependentUpon>Empresa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorio\RelatorioVendas.rdlc" />
     <EmbeddedResource Include="Vendas\CadastroProdutos.resx">
       <DependentUpon>CadastroProdutos.cs</DependentUpon>
     </EmbeddedResource>

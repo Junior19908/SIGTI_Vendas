@@ -12,13 +12,14 @@ using System.Windows.Forms;
 
 namespace SistemaVendas.Caixa
 {
-    public partial class AdicionarDespesas : MetroFramework.Forms.MetroForm
+    public partial class AdicionarSangria : MetroFramework.Forms.MetroForm
     {
-        public AdicionarDespesas()
+        public AdicionarSangria()
         {
             InitializeComponent();
             nomeMaquina = System.Environment.MachineName;
         }
+
         string nomeMaquina;
         private void btnGravarDespesa_Click(object sender, EventArgs e)
         {
@@ -26,14 +27,14 @@ namespace SistemaVendas.Caixa
             {
                 OleDbCommand command = ClassConexao.DBSCV().CreateCommand();
                 command.CommandType = CommandType.Text;
-                command.CommandText = "INSERT INTO TB_AberturaFechamentoCaixaDBSCV (col_nomeCaixa,col_despesas, col_descricaoDespesas) VALUES" +
-                    "('"+ nomeMaquina + "','" + txtValorDespesa.Text + "','" + txtDescricaoDespesa.Text + "')";
+                command.CommandText = "INSERT INTO TB_AberturaFechamentoCaixaDBSCV (col_nomeCaixa, col_sangria, col_descricaoSangria) VALUES" +
+                    "('"+ nomeMaquina + "','" + txtValorSangria.Text + "','" + txtDescricaoSangria.Text + "')";
                 command.ExecuteNonQuery();
                 MessageBox.Show("Cadastro Realizado com sucesso!");
-                txtDescricaoDespesa.Clear();
-                txtValorDespesa.Clear();
+                txtDescricaoSangria.Clear();
+                txtValorSangria.Clear();
             }
-            catch (OleDbException ErroBanco)
+            catch(OleDbException ErroBanco)
             {
                 MessageBox.Show("Erro com o banco de dados, " + ErroBanco.Message, "Aviso", MessageBoxButtons.OK);
             }
