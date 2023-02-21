@@ -290,7 +290,6 @@ namespace CadastroClientes
             this.Padding = new System.Windows.Forms.Padding(17, 60, 17, 17);
             this.Style = MetroFramework.MetroColorStyle.Silver;
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Menu_KeyDown);
-            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Menu_KeyPress);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

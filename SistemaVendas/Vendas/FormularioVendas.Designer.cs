@@ -32,27 +32,18 @@ namespace CadastroClientes
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormularioVendas));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label17 = new System.Windows.Forms.Label();
             this.datagridVenda = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MEDIDA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label9 = new System.Windows.Forms.Label();
             this.cbVendedor = new System.Windows.Forms.ComboBox();
@@ -106,13 +97,27 @@ namespace CadastroClientes
             this.txtStatusBarCaixa = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.txtStatusCaixa = new System.Windows.Forms.ToolStripStatusLabel();
+            this.btnExluirItem = new System.Windows.Forms.Button();
+            this.btnExcluirPedido = new System.Windows.Forms.Button();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MEDIDA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtTotalPago = new SistemaVendas.Classes.textValor();
             this.txtTotalBruto = new SistemaVendas.Classes.textValor();
             this.txtLiquido = new SistemaVendas.Classes.textValor();
             this.txtTroco = new SistemaVendas.Classes.textValor();
             this.txtValorPago2 = new SistemaVendas.Classes.textValor();
             this.txtValorPago1 = new SistemaVendas.Classes.textValor();
-            this.btnExluirItem = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.datagridVenda)).BeginInit();
@@ -173,102 +178,17 @@ namespace CadastroClientes
             this.Column5,
             this.Column9,
             this.Column10,
-            this.Column8});
+            this.Column8,
+            this.Column6,
+            this.Column7,
+            this.Column11,
+            this.Column12});
             this.datagridVenda.Location = new System.Drawing.Point(3, 16);
             this.datagridVenda.Name = "datagridVenda";
             this.datagridVenda.RowTemplate.Height = 25;
             this.datagridVenda.Size = new System.Drawing.Size(1043, 152);
             this.datagridVenda.TabIndex = 2;
-            this.datagridVenda.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datagridVenda_CellContentClick);
-            // 
-            // Column1
-            // 
-            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Column1.DataPropertyName = "col_codProduto";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle9;
-            this.Column1.HeaderText = "Código do Produto";
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 123;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "col_descricaoProduto";
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            this.Column2.DefaultCellStyle = dataGridViewCellStyle10;
-            this.Column2.HeaderText = "Descrição do Produto";
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 350;
-            // 
-            // MEDIDA
-            // 
-            this.MEDIDA.DataPropertyName = "col_unidadeMedida";
-            this.MEDIDA.HeaderText = "Um.";
-            this.MEDIDA.Name = "MEDIDA";
-            // 
-            // Column4
-            // 
-            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Column4.DataPropertyName = "col_quantidadeVendaProduto";
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            this.Column4.DefaultCellStyle = dataGridViewCellStyle11;
-            this.Column4.HeaderText = "Qtde";
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 56;
-            // 
-            // Column3
-            // 
-            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Column3.DataPropertyName = "col_valorProdutoUnidade";
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            dataGridViewCellStyle12.Format = "C2";
-            dataGridViewCellStyle12.NullValue = null;
-            this.Column3.DefaultCellStyle = dataGridViewCellStyle12;
-            this.Column3.HeaderText = "Valor Un.";
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 63;
-            // 
-            // Column5
-            // 
-            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Column5.DataPropertyName = "col_valorTotalProduto";
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            dataGridViewCellStyle13.Format = "C2";
-            dataGridViewCellStyle13.NullValue = null;
-            this.Column5.DefaultCellStyle = dataGridViewCellStyle13;
-            this.Column5.HeaderText = "Total Bruto";
-            this.Column5.Name = "Column5";
-            this.Column5.Width = 63;
-            // 
-            // Column9
-            // 
-            this.Column9.DataPropertyName = "col_porcentagemProduto";
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle14.Format = "%";
-            dataGridViewCellStyle14.NullValue = null;
-            this.Column9.DefaultCellStyle = dataGridViewCellStyle14;
-            this.Column9.HeaderText = "% Desc";
-            this.Column9.Name = "Column9";
-            // 
-            // Column10
-            // 
-            this.Column10.DataPropertyName = "col_valorDesconto";
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle15.Format = "C2";
-            this.Column10.DefaultCellStyle = dataGridViewCellStyle15;
-            this.Column10.HeaderText = "R$ Desc";
-            this.Column10.Name = "Column10";
-            // 
-            // Column8
-            // 
-            this.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Column8.DataPropertyName = "col_valorLiquidoProduto";
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle16.Format = "C2";
-            this.Column8.DefaultCellStyle = dataGridViewCellStyle16;
-            this.Column8.HeaderText = "Total Líquido";
-            this.Column8.Name = "Column8";
-            this.Column8.Width = 101;
+            this.datagridVenda.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datagridVenda_CellClick);
             // 
             // groupBox1
             // 
@@ -446,9 +366,7 @@ namespace CadastroClientes
             this.txtCodBarras.Size = new System.Drawing.Size(213, 20);
             this.txtCodBarras.TabIndex = 17;
             this.txtCodBarras.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtCodBarras.Enter += new System.EventHandler(this.txtCodBarras_Enter);
             this.txtCodBarras.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCodBarras_KeyDown);
-            this.txtCodBarras.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodBarras_KeyPress);
             // 
             // label3
             // 
@@ -539,6 +457,7 @@ namespace CadastroClientes
             // btnClienteNovo
             // 
             this.btnClienteNovo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClienteNovo.Enabled = false;
             this.btnClienteNovo.Location = new System.Drawing.Point(970, 448);
             this.btnClienteNovo.Name = "btnClienteNovo";
             this.btnClienteNovo.Size = new System.Drawing.Size(96, 52);
@@ -803,6 +722,7 @@ namespace CadastroClientes
             // rdOrcamento
             // 
             this.rdOrcamento.AutoSize = true;
+            this.rdOrcamento.Enabled = false;
             this.rdOrcamento.Location = new System.Drawing.Point(24, 34);
             this.rdOrcamento.Name = "rdOrcamento";
             this.rdOrcamento.Size = new System.Drawing.Size(115, 17);
@@ -825,6 +745,7 @@ namespace CadastroClientes
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.Enabled = false;
             this.button1.Location = new System.Drawing.Point(869, 448);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(96, 52);
@@ -893,6 +814,145 @@ namespace CadastroClientes
             this.txtStatusCaixa.Size = new System.Drawing.Size(43, 17);
             this.txtStatusCaixa.Text = "Aberto";
             // 
+            // btnExluirItem
+            // 
+            this.btnExluirItem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExluirItem.Location = new System.Drawing.Point(869, 506);
+            this.btnExluirItem.Name = "btnExluirItem";
+            this.btnExluirItem.Size = new System.Drawing.Size(96, 52);
+            this.btnExluirItem.TabIndex = 55;
+            this.btnExluirItem.Text = "&Excluir Item";
+            this.btnExluirItem.UseVisualStyleBackColor = true;
+            this.btnExluirItem.Click += new System.EventHandler(this.btnExluirItem_Click);
+            // 
+            // btnExcluirPedido
+            // 
+            this.btnExcluirPedido.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExcluirPedido.Location = new System.Drawing.Point(767, 506);
+            this.btnExcluirPedido.Name = "btnExcluirPedido";
+            this.btnExcluirPedido.Size = new System.Drawing.Size(96, 52);
+            this.btnExcluirPedido.TabIndex = 56;
+            this.btnExcluirPedido.Text = "&Excluir Pedido";
+            this.btnExcluirPedido.UseVisualStyleBackColor = true;
+            this.btnExcluirPedido.Click += new System.EventHandler(this.btnExcluirPedido_Click);
+            // 
+            // Column1
+            // 
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Column1.DataPropertyName = "col_codProduto";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle1;
+            this.Column1.HeaderText = "Código do Produto";
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 123;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "col_descricaoProduto";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            this.Column2.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Column2.HeaderText = "Descrição do Produto";
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 270;
+            // 
+            // MEDIDA
+            // 
+            this.MEDIDA.DataPropertyName = "col_unidadeMedida";
+            this.MEDIDA.HeaderText = "Um.";
+            this.MEDIDA.Name = "MEDIDA";
+            // 
+            // Column4
+            // 
+            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Column4.DataPropertyName = "col_quantidadeVendaProduto";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            this.Column4.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Column4.HeaderText = "Qtde";
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 56;
+            // 
+            // Column3
+            // 
+            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Column3.DataPropertyName = "col_valorProdutoUnidade";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle4.Format = "C2";
+            dataGridViewCellStyle4.NullValue = null;
+            this.Column3.DefaultCellStyle = dataGridViewCellStyle4;
+            this.Column3.HeaderText = "Valor Un.";
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 63;
+            // 
+            // Column5
+            // 
+            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Column5.DataPropertyName = "col_valorTotalProduto";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle5.Format = "C2";
+            dataGridViewCellStyle5.NullValue = null;
+            this.Column5.DefaultCellStyle = dataGridViewCellStyle5;
+            this.Column5.HeaderText = "Total Bruto";
+            this.Column5.Name = "Column5";
+            this.Column5.Width = 63;
+            // 
+            // Column9
+            // 
+            this.Column9.DataPropertyName = "col_porcentagemProduto";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.Format = "%";
+            dataGridViewCellStyle6.NullValue = null;
+            this.Column9.DefaultCellStyle = dataGridViewCellStyle6;
+            this.Column9.HeaderText = "% Desc";
+            this.Column9.Name = "Column9";
+            // 
+            // Column10
+            // 
+            this.Column10.DataPropertyName = "col_valorDesconto";
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle7.Format = "C2";
+            this.Column10.DefaultCellStyle = dataGridViewCellStyle7;
+            this.Column10.HeaderText = "R$ Desc";
+            this.Column10.Name = "Column10";
+            // 
+            // Column8
+            // 
+            this.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Column8.DataPropertyName = "col_valorLiquidoProduto";
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle8.Format = "C2";
+            this.Column8.DefaultCellStyle = dataGridViewCellStyle8;
+            this.Column8.HeaderText = "Total Líquido";
+            this.Column8.Name = "Column8";
+            this.Column8.Width = 101;
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "col_codVendaProduto";
+            this.Column6.HeaderText = "Column6";
+            this.Column6.Name = "Column6";
+            this.Column6.Visible = false;
+            // 
+            // Column7
+            // 
+            this.Column7.DataPropertyName = "col_statusPedido";
+            this.Column7.HeaderText = "Column7";
+            this.Column7.Name = "Column7";
+            this.Column7.Visible = false;
+            // 
+            // Column11
+            // 
+            this.Column11.DataPropertyName = "col_codItemVendaProduto";
+            this.Column11.HeaderText = "Column11";
+            this.Column11.Name = "Column11";
+            this.Column11.Visible = false;
+            // 
+            // Column12
+            // 
+            this.Column12.DataPropertyName = "col_codCliente";
+            this.Column12.HeaderText = "Column12";
+            this.Column12.Name = "Column12";
+            this.Column12.Visible = false;
+            // 
             // txtTotalPago
             // 
             this.txtTotalPago.Enabled = false;
@@ -958,22 +1018,12 @@ namespace CadastroClientes
             this.txtValorPago1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtValorPago1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtValorPago1_KeyDown_1);
             // 
-            // btnExluirItem
-            // 
-            this.btnExluirItem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnExluirItem.Location = new System.Drawing.Point(869, 506);
-            this.btnExluirItem.Name = "btnExluirItem";
-            this.btnExluirItem.Size = new System.Drawing.Size(96, 52);
-            this.btnExluirItem.TabIndex = 55;
-            this.btnExluirItem.Text = "&Excluir Item";
-            this.btnExluirItem.UseVisualStyleBackColor = true;
-            this.btnExluirItem.Click += new System.EventHandler(this.btnExluirItem_Click);
-            // 
             // FormularioVendas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1083, 620);
+            this.Controls.Add(this.btnExcluirPedido);
             this.Controls.Add(this.btnExluirItem);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.txtTotalPago);
@@ -1076,15 +1126,6 @@ namespace CadastroClientes
         private Button button1;
         private Timer refreshTimer;
         private CheckBox checkBox1;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn MEDIDA;
-        private DataGridViewTextBoxColumn Column4;
-        private DataGridViewTextBoxColumn Column3;
-        private DataGridViewTextBoxColumn Column5;
-        private DataGridViewTextBoxColumn Column9;
-        private DataGridViewTextBoxColumn Column10;
-        private DataGridViewTextBoxColumn Column8;
         private SistemaVendas.Classes.textValor txtValorPago2;
         private SistemaVendas.Classes.textValor txtValorPago1;
         private SistemaVendas.Classes.textValor txtTroco;
@@ -1097,5 +1138,19 @@ namespace CadastroClientes
         private ToolStripStatusLabel txtStatusCaixa;
         private ToolStripStatusLabel toolStripStatusLabel2;
         private Button btnExluirItem;
+        private Button btnExcluirPedido;
+        private DataGridViewTextBoxColumn Column1;
+        private DataGridViewTextBoxColumn Column2;
+        private DataGridViewTextBoxColumn MEDIDA;
+        private DataGridViewTextBoxColumn Column4;
+        private DataGridViewTextBoxColumn Column3;
+        private DataGridViewTextBoxColumn Column5;
+        private DataGridViewTextBoxColumn Column9;
+        private DataGridViewTextBoxColumn Column10;
+        private DataGridViewTextBoxColumn Column8;
+        private DataGridViewTextBoxColumn Column6;
+        private DataGridViewTextBoxColumn Column7;
+        private DataGridViewTextBoxColumn Column11;
+        private DataGridViewTextBoxColumn Column12;
     }
 }

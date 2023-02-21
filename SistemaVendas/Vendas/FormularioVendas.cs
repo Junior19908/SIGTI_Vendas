@@ -6,6 +6,7 @@ using System.Data.OleDb;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -47,32 +48,54 @@ namespace CadastroClientes
             }
             catch (Exception ErroEx)
             {
-                MessageBox.Show("Erro ao carregar número de pedidos. " + ErroEx.Message, "Info",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                MessageBox.Show("Erro ao carregar número de pedidos. " + ErroEx.Message, "SIGTI - Erro", MessageBoxButtons.OK,MessageBoxIcon.Stop);
             }
             finally
             {
                 ClassConexao.DBSCV().Close();
             }
         }
+        Int64 IDCliente;
         private void CarregarComboBoxCliente()
         {
             try
             {
-                OleDbCommand command = new OleDbCommand("SELECT Código, col_nomeCompleto FROM TB_ClienteDBSCV", ClassConexao.DBSCV());
-                OleDbDataReader reader = command.ExecuteReader();
-                DataTable dt = new DataTable();
-                dt.Load(reader);
-                DataRow row = dt.NewRow();
-
-                this.cbCliente.DataSource = dt;
-                this.cbCliente.ValueMember = "Código";
-                this.cbCliente.DisplayMember = "col_nomeCompleto";
-
-                reader.Close();
+                try
+                {
+                    IDCliente = Convert.ToInt32(datagridVenda.Rows[0].Cells[12].Value);
+                }
+                catch
+                {
+                    IDCliente = 0;
+                }
+                if(IDCliente == 0)
+                {
+                    OleDbCommand command = new OleDbCommand("SELECT Código, col_nomeCompleto FROM TB_ClienteDBSCV", ClassConexao.DBSCV());
+                    OleDbDataReader reader = command.ExecuteReader();
+                    DataTable dt = new DataTable();
+                    dt.Load(reader);
+                    DataRow row = dt.NewRow();
+                    this.cbCliente.DataSource = dt;
+                    this.cbCliente.ValueMember = "Código";
+                    this.cbCliente.DisplayMember = "col_nomeCompleto";
+                    reader.Close();
+                }
+                else
+                {
+                    OleDbCommand command = new OleDbCommand("SELECT Código, col_nomeCompleto FROM TB_ClienteDBSCV WHERE Código="+IDCliente+"", ClassConexao.DBSCV());
+                    OleDbDataReader reader = command.ExecuteReader();
+                    DataTable dt = new DataTable();
+                    dt.Load(reader);
+                    DataRow row = dt.NewRow();
+                    this.cbCliente.DataSource = dt;
+                    this.cbCliente.ValueMember = "Código";
+                    this.cbCliente.DisplayMember = "col_nomeCompleto";
+                    reader.Close();
+                }
             }
             catch (Exception Error)
             {
-                MessageBox.Show("Erro ao preencher o BoxCliente! - Contate o Desenvolvedor\r\n"+ Error.Message, "<- Banco de Dados ->",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                MessageBox.Show("Erro ao preencher o BoxCliente! - Contate o Desenvolvedor\r\n"+ Error.Message, "SIGTI - Erro",MessageBoxButtons.OK,MessageBoxIcon.Stop);
             }
             finally
             {
@@ -99,7 +122,7 @@ namespace CadastroClientes
             }
             catch (Exception Error)
             {
-                MessageBox.Show("Erro ao preencher o BoxCliente! - Contate o Desenvolvedor\r\n" + Error.Message, "<- Banco de Dados ->", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Erro ao preencher o BoxCliente! - Contate o Desenvolvedor\r\n" + Error.Message, "SIGTI - Erro", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
             finally
             {
@@ -132,13 +155,6 @@ namespace CadastroClientes
         Int64 IDCelula;
         Int64 IDPedido;
         Int64 IDItemPedido;
-        private void datagridVenda_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            IDCelula = Convert.ToInt64(datagridVenda.Rows[e.RowIndex].Cells[0].FormattedValue.ToString());
-            IDItemPedido = Convert.ToInt64(datagridVenda.Rows[e.RowIndex].Cells[11].FormattedValue.ToString());
-            IDPedido = Convert.ToInt64(txtVendaCod.Text);
-            MessageBox.Show(IDCelula.ToString() + " " + IDPedido.ToString() + " " + IDItemPedido.ToString());
-        }
         double valorProdutoUnidade;
         double valorProdutoTotal;
         double valorDescontoProduto;
@@ -146,6 +162,7 @@ namespace CadastroClientes
         double valorLiquidoVenda;
         double vlTotal;
         int codigoBarrasID;
+        Int64 cbCli;
         private void adicionarProdutos()
         {
             if (string.IsNullOrEmpty(txtQtde.Text))
@@ -169,34 +186,44 @@ namespace CadastroClientes
                     double consultTotalBruto = Convert.ToDouble(commandTotalProduto.ExecuteScalar());
                     if (consultTotalBruto > 0)
                     {
-                        //OleDbCommand comandoBuscaCliente = new OleDbCommand("SELECT * FROM TB_VendasDBSCV WHERE col_codCliente="+ cbCliente.SelectedValue + " AND col_statusPedido = 0 ", ClassConexao.DBSCV());
-                        //OleDbDataReader dreader = comandoBuscaCliente.ExecuteReader();
-                        //int _CodigoCliente = 0;
-                        //while (dreader.Read())
-                        //{
-                        //    _CodigoCliente = int.Parse(dreader["col_codCliente"].ToString());
-                        //    break;
-                        //}
+                        OleDbCommand comandoBuscaCliente = new OleDbCommand("SELECT * FROM TB_VendasDBSCV WHERE col_codCliente="+ cbCliente.SelectedValue + " AND col_statusPedido = 0 ", ClassConexao.DBSCV());
+                        OleDbDataReader dreader = comandoBuscaCliente.ExecuteReader();
+                        int _CodigoCliente = 0;
+                        while (dreader.Read())
+                        {
+                            _CodigoCliente = int.Parse(dreader["col_codCliente"].ToString());
+                            break;
+                        }
 
-                        //Int64 cbCli = Int64.Parse(cbCliente.SelectedValue.ToString());
-                        //if (_CodigoCliente == cbCli)
-                        //{
+                        try
+                        {
+                            IDCliente = Convert.ToInt32(datagridVenda.Rows[0].Cells[12].Value);
+                        }
+                        catch
+                        {
+                            IDCliente = 0;
+                        }
+
+
+
+                        if (_CodigoCliente == IDCliente)
+                        {
                             command = ClassConexao.DBSCV().CreateCommand();
                             command.CommandType = CommandType.Text;
                             command.CommandText = "INSERT INTO TB_VendasDBSCV (col_codVendaProduto, col_codProduto, col_quantidadeVendaProduto, col_valorProdutoUnidade, col_valorTotalProduto, col_porcentagemProduto, col_valorDesconto, col_valorLiquidoProduto, col_descricaoProduto, col_unidadeMedida,col_codCliente,col_dataVenda,col_codigoVendedor,col_maquinaCaixa) VALUES" +
                                 "(" + txtVendaCod.Text + "," + txtCodBarras.Text + ",'" + txtQtde.Text + "','" + txtPrecoVenda.Text.Replace("R$ ", "") + "','" + vlTotal.ToString("N2") + "', '" + txtDescontoPorcent.Text.Replace("%", "").Replace(" %", "").Replace("% ", "").Trim() + "', '" + valorC.ToString("N2") + "', '" + valorD.ToString("N2") + "','" + txtDescricaoItem.Text + "','" + txtUm.Text + "','" + cbCliente.SelectedValue + "', NOW(), '" + ClassDadosGEt.IDUsuario + "','"+ nomeCaixa +"')";
                             command.ExecuteNonQuery();
-                        //}
-                        //else
-                        //{
-                        //    MessageBox.Show("Pedido Referente a outro Cliente!..");
-                        //}
+                        }
+                        else
+                        {
+                            MessageBox.Show("Pedido Referente a outro Cliente!..");
+                        }
                         limparText();
-                        //comandoBuscaCliente.Connection.Close();
+                        comandoBuscaCliente.Connection.Close();
                     }
                     else
                     {
-                        MessageBox.Show("Produto do códido de barras "+ txtCodBarras.Text +" não Cadastrado");
+                        MessageBox.Show("Produto não Cadastrado", "SIGTI - Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         limparText();
                     }
                     commandTotalProduto.Connection.Close();
@@ -208,7 +235,7 @@ namespace CadastroClientes
             }
             catch (Exception Erro)
             {
-                MessageBox.Show("Erro ao inserir Item! - Contate o Desenvolvedor\r\n" + Erro.Message, "<- Banco de Dados ->", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Erro ao inserir Item! - Contate o Desenvolvedor\r\n" + Erro.Message, "SIGTI - Erro", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
         }
         private void limparText()
@@ -252,29 +279,6 @@ namespace CadastroClientes
                 //}
             }
         }
-        private void btnCriarCodBarras_Click(object sender, EventArgs e)
-        {
-            Random rnd = new Random();
-
-            byte[] buf = new byte[8];
-            rnd.NextBytes(buf);
-            long longRand = BitConverter.ToInt64(buf, 0);
-
-            long result = (Math.Abs(longRand % (2000000000000000 - 1000000000000000)) + 1000000000000000);
-
-            long random_seed = (long)rnd.Next(1000, 5000);
-            random_seed = random_seed * result + rnd.Next(1000, 5000);
-
-            this.txtCodBarras.Text = ((long)(random_seed / 655) % 10000000000000001).ToString();
-        }
-
-        private void txtCodBarras_Enter(object sender, EventArgs e)
-        {
-        }
-
-        private void txtCodBarras_KeyPress(object sender, KeyPressEventArgs e)
-        {
-        }
         double vlLiquido;
         private void carregarCodigoDeBarras()
         {
@@ -304,7 +308,7 @@ namespace CadastroClientes
             {
                 if (ClassConexao.DBSCV().State == ConnectionState.Open)
                 {
-                    OleDbCommand selectCMD = new OleDbCommand("SELECT col_codProduto,col_descricaoProduto,col_unidadeMedida,col_quantidadeVendaProduto,col_valorProdutoUnidade,col_valorTotalProduto,col_porcentagemProduto,col_valorDesconto,col_valorLiquidoProduto,col_codVendaProduto,col_statusPedido,col_codItemVendaProduto FROM TB_VendasDBSCV WHERE col_codVendaProduto=" + txtVendaCod.Text + " AND col_statusPedido = 0 ORDER BY col_codItemVendaProduto DESC", ClassConexao.DBSCV());
+                    OleDbCommand selectCMD = new OleDbCommand("SELECT col_codProduto,col_descricaoProduto,col_unidadeMedida,col_quantidadeVendaProduto,col_valorProdutoUnidade,col_valorTotalProduto,col_porcentagemProduto,col_valorDesconto,col_valorLiquidoProduto,col_codVendaProduto,col_statusPedido,col_codItemVendaProduto,col_codCliente FROM TB_VendasDBSCV WHERE col_codVendaProduto=" + txtVendaCod.Text + " AND col_statusPedido = 0 ORDER BY col_codItemVendaProduto DESC", ClassConexao.DBSCV());
                     OleDbDataAdapter daAdapter = new OleDbDataAdapter(selectCMD);
                     DataSet tableGridVendas = new DataSet();
                     daAdapter.Fill(tableGridVendas);
@@ -312,12 +316,12 @@ namespace CadastroClientes
                 }
                 else
                 {
-                    MessageBox.Show("Erro ao Conectar!");
+                    MessageBox.Show("Erro ao conectar!", "SIGTI - Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             catch (OleDbException ex)
             {
-                MessageBox.Show("Erro relacionado ao banco de dados " + ex.Message + " !", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Erro relacionado ao banco de dados " + ex.Message + " !", "SIGTI - Erro", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
             catch (Exception Er)
             {
@@ -386,13 +390,16 @@ namespace CadastroClientes
                     {
                         limparText();
                         limparTexto();
-                        MessageBox.Show("Cliente desativado!", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Cliente Desativado!", "SIGTI - Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }else if (statusDes == 1)
                     {
                         carregarCodigoDeBarras();
                         adicionarProdutos();
                     }
                 }
+            }else if(e.KeyCode == Keys.F1)
+            {
+
             }
         }
 
@@ -528,24 +535,55 @@ namespace CadastroClientes
 
         private void btnVerificaCliente_MouseClick(object sender, MouseEventArgs e)
         {
-            try
-            {
-                int ID = Convert.ToInt32(datagridVenda.Rows[0].Cells["ID"].Value);
-            }catch (Exception ex)
-            {
-
-            }
             
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Não Implementado!");
+            MessageBox.Show("Não Implementado!", "SIGTI - Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnExluirItem_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if(MessageBox.Show("Deseja Excluir o item "+ IDCelula + " ?", "SIGTI - Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+                {
+                    OleDbCommand oleDbCommand = new OleDbCommand("DELETE * FROM TB_VendasDBSCV WHERE col_codItemVendaProduto=" + IDItemPedido + " AND col_codVendaProduto = " + IDPedido + " AND col_codProduto = " + IDCelula + "", ClassConexao.DBSCV());
+                    oleDbCommand.ExecuteNonQuery();
+                    carregarGridVendas();
+                    MessageBox.Show("Exclusão realizada com sucesso!", "SIGTI - Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
 
+        private void datagridVenda_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            IDCelula = Convert.ToInt64(datagridVenda.Rows[e.RowIndex].Cells[0].FormattedValue.ToString());
+            IDItemPedido = Convert.ToInt64(datagridVenda.Rows[e.RowIndex].Cells[11].FormattedValue.ToString());
+            IDPedido = Convert.ToInt64(txtVendaCod.Text);
+        }
+
+        private void btnExcluirPedido_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (MessageBox.Show("Deseja Excluir o Pedido " + IDPedido + " ?", "SIGTI - Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+                {
+                    OleDbCommand oleDbCommand = new OleDbCommand("DELETE * FROM TB_VendasDBSCV WHERE col_codVendaProduto = " + IDPedido + "", ClassConexao.DBSCV());
+                    oleDbCommand.ExecuteNonQuery();
+                    carregarGridVendas();
+                    MessageBox.Show("Exclusão realizada com sucesso!", "SIGTI - Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnVender_Click_1(object sender, EventArgs e)
@@ -576,11 +614,12 @@ namespace CadastroClientes
                     "(" + txtVendaCod.Text + "," + cbCliente.SelectedValue + ",'"+ cbVendedor.SelectedValue +"','"+ txtValorPago1.Text.Replace("R$ ", "").Replace("R$", "").Trim() + "','"+ txtValorPago2.Text.Replace("R$ ", "").Replace("R$", "").Trim() + "','"+ cmbFormaPagamento1.Text +"','"+ cmbFormaPagamento2.Text +"','"+ txtLiquido.Text.Replace("R$ ", "").Replace("R$", "").Trim() + "')";
                 command.ExecuteNonQuery();
 
-
+                MessageBox.Show("Venda realizada com sucesso!", "SIGTI - Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 limparText();
                 limparTexto();
-                MessageBox.Show("Venda realizada com sucesso!");
                 carregarPedidos();
+                IDCliente = 0;
+                CarregarComboBoxCliente();
             }
             catch
             {

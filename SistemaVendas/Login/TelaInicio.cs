@@ -100,11 +100,6 @@ namespace CadastroClientes
 
         }
 
-        private void Menu_KeyPress(object sender, KeyPressEventArgs e)
-        {
-
-        }
-
         private void btnEstoque_Paint(object sender, PaintEventArgs e)
         {
 
