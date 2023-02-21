@@ -109,13 +109,13 @@ namespace CadastroClientes
 
         private void btnClienteNovo_Click(object sender, EventArgs e)
         {
-            string novaJanela = "1";
-            //var clientes = new CadastroClientes(novaJanela);
-            //clientes.Show();
-
-            CadastroClientes cadastro = new CadastroClientes(novaJanela);
-            cadastro.Show();
-
+            //string novaJanela = "1";
+            ////var clientes = new CadastroClientes(novaJanela);
+            ////clientes.Show();
+            //
+            //CadastroClientes cadastro = new CadastroClientes(novaJanela);
+            //cadastro.Show();
+            MessageBox.Show("Não Implementado!");
         }
 
         private void btnVender_Click(object sender, EventArgs e)
@@ -129,10 +129,15 @@ namespace CadastroClientes
             menu.Show();
             this.Dispose();
         }
-
+        Int64 IDCelula;
+        Int64 IDPedido;
+        Int64 IDItemPedido;
         private void datagridVenda_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            IDCelula = Convert.ToInt64(datagridVenda.Rows[e.RowIndex].Cells[0].FormattedValue.ToString());
+            IDItemPedido = Convert.ToInt64(datagridVenda.Rows[e.RowIndex].Cells[11].FormattedValue.ToString());
+            IDPedido = Convert.ToInt64(txtVendaCod.Text);
+            MessageBox.Show(IDCelula.ToString() + " " + IDPedido.ToString() + " " + IDItemPedido.ToString());
         }
         double valorProdutoUnidade;
         double valorProdutoTotal;
@@ -299,7 +304,7 @@ namespace CadastroClientes
             {
                 if (ClassConexao.DBSCV().State == ConnectionState.Open)
                 {
-                    OleDbCommand selectCMD = new OleDbCommand("SELECT col_codProduto,col_descricaoProduto,col_unidadeMedida,col_quantidadeVendaProduto,col_valorProdutoUnidade,col_valorTotalProduto,col_porcentagemProduto,col_valorDesconto,col_valorLiquidoProduto,col_codVendaProduto,col_statusPedido FROM TB_VendasDBSCV WHERE col_codVendaProduto=" + txtVendaCod.Text + " AND col_statusPedido = 0 ORDER BY col_codItemVendaProduto DESC", ClassConexao.DBSCV());
+                    OleDbCommand selectCMD = new OleDbCommand("SELECT col_codProduto,col_descricaoProduto,col_unidadeMedida,col_quantidadeVendaProduto,col_valorProdutoUnidade,col_valorTotalProduto,col_porcentagemProduto,col_valorDesconto,col_valorLiquidoProduto,col_codVendaProduto,col_statusPedido,col_codItemVendaProduto FROM TB_VendasDBSCV WHERE col_codVendaProduto=" + txtVendaCod.Text + " AND col_statusPedido = 0 ORDER BY col_codItemVendaProduto DESC", ClassConexao.DBSCV());
                     OleDbDataAdapter daAdapter = new OleDbDataAdapter(selectCMD);
                     DataSet tableGridVendas = new DataSet();
                     daAdapter.Fill(tableGridVendas);
@@ -372,8 +377,22 @@ namespace CadastroClientes
         {
             if(e.KeyCode == Keys.Enter)
             {
-                carregarCodigoDeBarras();
-                adicionarProdutos();
+                OleDbCommand command = new OleDbCommand("SELECT * FROM TB_ClienteDBSCV WHERE Código = " + cbCliente.SelectedValue + " ", ClassConexao.DBSCV());
+                OleDbDataReader dataReader = command.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    int statusDes = Convert.ToInt16(dataReader["col_status"].ToString());
+                    if (statusDes == 0)
+                    {
+                        limparText();
+                        limparTexto();
+                        MessageBox.Show("Cliente desativado!", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }else if (statusDes == 1)
+                    {
+                        carregarCodigoDeBarras();
+                        adicionarProdutos();
+                    }
+                }
             }
         }
 
@@ -396,10 +415,6 @@ namespace CadastroClientes
         double _ValorPagoReultado;
         double _ValorPagoReultadoTroco;
         double _ValorPagoTratamento;
-        private void txtValorPago1_KeyDown(object sender, KeyEventArgs e)
-        {
-        }
-
         private void txtValorPago1_KeyDown_1(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -511,6 +526,28 @@ namespace CadastroClientes
 
         }
 
+        private void btnVerificaCliente_MouseClick(object sender, MouseEventArgs e)
+        {
+            try
+            {
+                int ID = Convert.ToInt32(datagridVenda.Rows[0].Cells["ID"].Value);
+            }catch (Exception ex)
+            {
+
+            }
+            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Não Implementado!");
+        }
+
+        private void btnExluirItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void btnVender_Click_1(object sender, EventArgs e)
         {
             try
@@ -519,7 +556,6 @@ namespace CadastroClientes
                 commandUpdate.CommandType = CommandType.Text;
                 commandUpdate.CommandText = "UPDATE TB_VendasDBSCV SET col_statusPedido = 1  WHERE col_codCliente = "+ cbCliente.SelectedValue +" AND col_maquinaCaixa = '"+ nomeCaixa +"' ";
                 commandUpdate.ExecuteNonQuery();
-
 
                 if (string.IsNullOrEmpty(txtValorPago1.Text))
                 {
@@ -539,8 +575,6 @@ namespace CadastroClientes
                 command.CommandText = "INSERT INTO TB_FormaPagamentoDBSCV (col_codVendaProduto, col_codCliente,col_codigoVendedor,col_valorFinanceiroVenda1,col_valorFinanceiroVenda2,col_formaDePagamento1,col_formaDePagamento2,col_valorDoPedido) VALUES" +
                     "(" + txtVendaCod.Text + "," + cbCliente.SelectedValue + ",'"+ cbVendedor.SelectedValue +"','"+ txtValorPago1.Text.Replace("R$ ", "").Replace("R$", "").Trim() + "','"+ txtValorPago2.Text.Replace("R$ ", "").Replace("R$", "").Trim() + "','"+ cmbFormaPagamento1.Text +"','"+ cmbFormaPagamento2.Text +"','"+ txtLiquido.Text.Replace("R$ ", "").Replace("R$", "").Trim() + "')";
                 command.ExecuteNonQuery();
-
-
 
 
                 limparText();

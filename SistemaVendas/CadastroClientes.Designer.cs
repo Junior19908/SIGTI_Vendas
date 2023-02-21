@@ -92,6 +92,7 @@ namespace CadastroClientes
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label17 = new System.Windows.Forms.Label();
+            this.ckboxDesativar = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -140,6 +141,7 @@ namespace CadastroClientes
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.ckboxDesativar);
             this.tabPage1.Controls.Add(this.btnVoltar);
             this.tabPage1.Controls.Add(this.btnPesquisar);
             this.tabPage1.Controls.Add(this.label19);
@@ -797,6 +799,18 @@ namespace CadastroClientes
             this.label17.TabIndex = 0;
             this.label17.Text = "Módulo de Cadastro de Cliente";
             // 
+            // ckboxDesativar
+            // 
+            this.ckboxDesativar.AutoSize = true;
+            this.ckboxDesativar.Location = new System.Drawing.Point(104, 6);
+            this.ckboxDesativar.Name = "ckboxDesativar";
+            this.ckboxDesativar.Size = new System.Drawing.Size(77, 17);
+            this.ckboxDesativar.TabIndex = 45;
+            this.ckboxDesativar.Text = "Desativar?";
+            this.ckboxDesativar.UseVisualStyleBackColor = true;
+            this.ckboxDesativar.Visible = false;
+            this.ckboxDesativar.CheckedChanged += new System.EventHandler(this.ckboxDesativar_CheckedChanged);
+            // 
             // CadastroClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -891,5 +905,6 @@ namespace CadastroClientes
         private DataGridView datagridVenda;
         private DataGridViewTextBoxColumn IDArquivo;
         private DataGridViewTextBoxColumn col_nomeArquivo;
+        private CheckBox ckboxDesativar;
     }
 }

@@ -32,14 +32,14 @@ namespace CadastroClientes
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormularioVendas));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label17 = new System.Windows.Forms.Label();
@@ -56,7 +56,7 @@ namespace CadastroClientes
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label9 = new System.Windows.Forms.Label();
             this.cbVendedor = new System.Windows.Forms.ComboBox();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnVerificaCliente = new System.Windows.Forms.FlowLayoutPanel();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtPrecoVenda = new System.Windows.Forms.TextBox();
@@ -112,6 +112,7 @@ namespace CadastroClientes
             this.txtTroco = new SistemaVendas.Classes.textValor();
             this.txtValorPago2 = new SistemaVendas.Classes.textValor();
             this.txtValorPago1 = new SistemaVendas.Classes.textValor();
+            this.btnExluirItem = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.datagridVenda)).BeginInit();
@@ -184,8 +185,8 @@ namespace CadastroClientes
             // 
             this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.Column1.DataPropertyName = "col_codProduto";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle9;
             this.Column1.HeaderText = "Código do Produto";
             this.Column1.Name = "Column1";
             this.Column1.Width = 123;
@@ -193,8 +194,8 @@ namespace CadastroClientes
             // Column2
             // 
             this.Column2.DataPropertyName = "col_descricaoProduto";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            this.Column2.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            this.Column2.DefaultCellStyle = dataGridViewCellStyle10;
             this.Column2.HeaderText = "Descrição do Produto";
             this.Column2.Name = "Column2";
             this.Column2.Width = 350;
@@ -209,8 +210,8 @@ namespace CadastroClientes
             // 
             this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.Column4.DataPropertyName = "col_quantidadeVendaProduto";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            this.Column4.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            this.Column4.DefaultCellStyle = dataGridViewCellStyle11;
             this.Column4.HeaderText = "Qtde";
             this.Column4.Name = "Column4";
             this.Column4.Width = 56;
@@ -219,10 +220,10 @@ namespace CadastroClientes
             // 
             this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.Column3.DataPropertyName = "col_valorProdutoUnidade";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            dataGridViewCellStyle4.Format = "C2";
-            dataGridViewCellStyle4.NullValue = null;
-            this.Column3.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle12.Format = "C2";
+            dataGridViewCellStyle12.NullValue = null;
+            this.Column3.DefaultCellStyle = dataGridViewCellStyle12;
             this.Column3.HeaderText = "Valor Un.";
             this.Column3.Name = "Column3";
             this.Column3.Width = 63;
@@ -231,10 +232,10 @@ namespace CadastroClientes
             // 
             this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.Column5.DataPropertyName = "col_valorTotalProduto";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            dataGridViewCellStyle5.Format = "C2";
-            dataGridViewCellStyle5.NullValue = null;
-            this.Column5.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle13.Format = "C2";
+            dataGridViewCellStyle13.NullValue = null;
+            this.Column5.DefaultCellStyle = dataGridViewCellStyle13;
             this.Column5.HeaderText = "Total Bruto";
             this.Column5.Name = "Column5";
             this.Column5.Width = 63;
@@ -242,19 +243,19 @@ namespace CadastroClientes
             // Column9
             // 
             this.Column9.DataPropertyName = "col_porcentagemProduto";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.Format = "%";
-            dataGridViewCellStyle6.NullValue = null;
-            this.Column9.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle14.Format = "%";
+            dataGridViewCellStyle14.NullValue = null;
+            this.Column9.DefaultCellStyle = dataGridViewCellStyle14;
             this.Column9.HeaderText = "% Desc";
             this.Column9.Name = "Column9";
             // 
             // Column10
             // 
             this.Column10.DataPropertyName = "col_valorDesconto";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle7.Format = "C2";
-            this.Column10.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle15.Format = "C2";
+            this.Column10.DefaultCellStyle = dataGridViewCellStyle15;
             this.Column10.HeaderText = "R$ Desc";
             this.Column10.Name = "Column10";
             // 
@@ -262,9 +263,9 @@ namespace CadastroClientes
             // 
             this.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.Column8.DataPropertyName = "col_valorLiquidoProduto";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle8.Format = "C2";
-            this.Column8.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle16.Format = "C2";
+            this.Column8.DefaultCellStyle = dataGridViewCellStyle16;
             this.Column8.HeaderText = "Total Líquido";
             this.Column8.Name = "Column8";
             this.Column8.Width = 101;
@@ -275,7 +276,7 @@ namespace CadastroClientes
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.cbVendedor);
-            this.groupBox1.Controls.Add(this.flowLayoutPanel1);
+            this.groupBox1.Controls.Add(this.btnVerificaCliente);
             this.groupBox1.Controls.Add(this.textBox6);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.txtPrecoVenda);
@@ -323,14 +324,15 @@ namespace CadastroClientes
             this.cbVendedor.Size = new System.Drawing.Size(135, 23);
             this.cbVendedor.TabIndex = 26;
             // 
-            // flowLayoutPanel1
+            // btnVerificaCliente
             // 
-            this.flowLayoutPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("flowLayoutPanel1.BackgroundImage")));
-            this.flowLayoutPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(572, 9);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(33, 26);
-            this.flowLayoutPanel1.TabIndex = 14;
+            this.btnVerificaCliente.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnVerificaCliente.BackgroundImage")));
+            this.btnVerificaCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnVerificaCliente.Location = new System.Drawing.Point(572, 9);
+            this.btnVerificaCliente.Name = "btnVerificaCliente";
+            this.btnVerificaCliente.Size = new System.Drawing.Size(33, 26);
+            this.btnVerificaCliente.TabIndex = 14;
+            this.btnVerificaCliente.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnVerificaCliente_MouseClick);
             // 
             // textBox6
             // 
@@ -829,6 +831,7 @@ namespace CadastroClientes
             this.button1.TabIndex = 47;
             this.button1.Text = "&Imprimir Recibo";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // refreshTimer
             // 
@@ -955,11 +958,23 @@ namespace CadastroClientes
             this.txtValorPago1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtValorPago1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtValorPago1_KeyDown_1);
             // 
+            // btnExluirItem
+            // 
+            this.btnExluirItem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExluirItem.Location = new System.Drawing.Point(869, 506);
+            this.btnExluirItem.Name = "btnExluirItem";
+            this.btnExluirItem.Size = new System.Drawing.Size(96, 52);
+            this.btnExluirItem.TabIndex = 55;
+            this.btnExluirItem.Text = "&Excluir Item";
+            this.btnExluirItem.UseVisualStyleBackColor = true;
+            this.btnExluirItem.Click += new System.EventHandler(this.btnExluirItem_Click);
+            // 
             // FormularioVendas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1083, 620);
+            this.Controls.Add(this.btnExluirItem);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.txtTotalPago);
             this.Controls.Add(this.txtTotalBruto);
@@ -1025,7 +1040,7 @@ namespace CadastroClientes
         private PictureBox pictureBox2;
         private Label label2;
         private DateTimePicker dateTimePicker1;
-        private FlowLayoutPanel flowLayoutPanel1;
+        private FlowLayoutPanel btnVerificaCliente;
         private Label label9;
         private ComboBox cbVendedor;
         private TextBox textBox6;
@@ -1081,5 +1096,6 @@ namespace CadastroClientes
         private ToolStripStatusLabel toolStripStatusLabel1;
         private ToolStripStatusLabel txtStatusCaixa;
         private ToolStripStatusLabel toolStripStatusLabel2;
+        private Button btnExluirItem;
     }
 }

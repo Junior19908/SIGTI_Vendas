@@ -1,0 +1,162 @@
+[33mcommit 85cc18b2e4a38d822da8a99dce3ad0f8f8f22d9f[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: Carlos Júnior <carlosjunyoor@gmail.com>
+Date:   Mon Dec 12 19:47:26 2022 -0300
+
+    Configurações novo Form
+
+[33mcommit c29bdf598add44314ac67b77e4c82f261ca7e1ca[m
+Author: Carlos Júnior <carlosjunyoor@gmail.com>
+Date:   Sat Dec 10 20:59:30 2022 -0300
+
+    Configuração formulario de abertuda/fechamento caixa, e novos forms criados(dados empresa, relatorios)
+
+[33mcommit 71994b4ad483329b8461bfbcd292e999d86423c3[m
+Author: Carlos Júnior <carlosjunyoor@gmail.com>
+Date:   Fri Dec 9 17:48:50 2022 -0300
+
+    Configuração da tela Abertura/Fechamento de Caixa
+
+[33mcommit bc2391836055982e3cd3cd159c98ddb88266a4e3[m
+Author: Carlos Júnior <carlosjunyoor@gmail.com>
+Date:   Fri Dec 2 20:15:52 2022 -0300
+
+    Configuração Caixa
+
+[33mcommit 03f5b63198086ea1e030530f2f82daefc20d398d[m
+Author: Carlos Júnior <carlosjunyoor@gmail.com>
+Date:   Tue Nov 29 20:58:44 2022 -0300
+
+    Criando Formulário de Abertura/Fechamento de Caixa
+
+[33mcommit d705e04da676e24db2f7cd0ab8395801dc76c9a2[m
+Author: Carlos Júnior <carlosjunyoor@gmail.com>
+Date:   Mon Nov 21 21:18:58 2022 -0300
+
+    Configurações no formulário de vendas e criação dos formulários de Abertura e Fechamento de Caixa
+
+[33mcommit 989df8f6cb649fd36e9c8a9a106a0b8f66cd6030[m
+Author: Carlos Júnior <carlosjunyoor@gmail.com>
+Date:   Sat Nov 19 22:59:16 2022 -0300
+
+    Configurações e Implementações Modulo Vendas
+
+[33mcommit c34203d6010e778cc9476316578ffb153269edea[m
+Author: Carlos Júnior <carlosjunyoor@gmail.com>
+Date:   Fri Nov 18 22:02:58 2022 -0300
+
+    Configuração Tela Vendas
+
+[33mcommit 9bed8596bfb82ec62afd43229d730604ded2ae2f[m
+Author: Carlos Júnior <carlosjunyoor@gmail.com>
+Date:   Fri Nov 18 12:27:15 2022 -0300
+
+    tabela vendas layout e formulario, formulario cliente - Configurações
+
+[33mcommit 5bb36a1e8acf03974b9a5d922fe0ec202d63a9fe[m
+Author: Carlos Júnior <carlosjunyoor@gmail.com>
+Date:   Thu Nov 17 22:04:04 2022 -0300
+
+    Configuração Formulário de Vendas
+
+[33mcommit cc5bc0c5e1d1ceaa86aa8cf4eb2c731b8d71a247[m
+Author: Carlos Júnior <carlosjunyoor@gmail.com>
+Date:   Thu Nov 17 20:06:29 2022 -0300
+
+    Configurações Formulário de Vendas
+
+[33mcommit 687f4ebf953c9e5fbd330ab9eb467589d83203a2[m
+Author: Carlos Júnior <carlosjunyoor@gmail.com>
+Date:   Wed Nov 16 23:50:50 2022 -0300
+
+    Configurações de Layouts & Campos lucro, margem e preço total
+
+[33mcommit 948d8af93adc563d745595f989016af9cbbf8961[m
+Author: Carlos Júnior <carlosjunyoor@gmail.com>
+Date:   Wed Nov 16 12:36:13 2022 -0300
+
+    Configurando layout vendas
+
+[33mcommit b5a8d1705fe486196c7ba9d329c33ef0d0adaccf[m
+Author: Carlos Júnior <carlosjunyoor@gmail.com>
+Date:   Tue Nov 15 20:58:22 2022 -0300
+
+    Configurando Layouts
+
+[33mcommit 1c819a633794432751affd98b1ccb4cf5f8ebd23[m
+Author: Carlos Júnior <carlosjunyoor@gmail.com>
+Date:   Tue Nov 15 20:30:36 2022 -0300
+
+    Configurações de Layout
+
+[33mcommit 780a0d7a46fd49a4b9f94e5169114b7628fc9f01[m
+Author: Carlos Júnior <carlosjunyoor@gmail.com>
+Date:   Tue Nov 15 16:17:28 2022 -0300
+
+    Layout, Cadastro de Produtos
+
+[33mcommit 4648c11e0f78512944f62e003180beb840bfad05[m
+Author: Carlos Júnior <carlosjunyoor@gmail.com>
+Date:   Tue Nov 15 15:48:06 2022 -0300
+
+    Configurando Layouts
+
+[33mcommit 98a4973cf1abc5fe45e8aaced96b1a98c8b4d32b[m
+Author: Carlos Júnior <carlosjunyoor@gmail.com>
+Date:   Tue Nov 15 12:32:47 2022 -0300
+
+    Configuração de Layouts
+
+[33mcommit a8be75f6f2cb3d4a7388e3485d7f3bba2ca7986e[m
+Author: Carlos Júnior <carlosjunyoor@gmail.com>
+Date:   Tue Nov 15 10:38:46 2022 -0300
+
+    Removido do Layout botão gerador de código, implementação do insert
+
+[33mcommit 06ed2795847d91598155d8c7eb2b2d0a0e6cf211[m
+Merge: a24685d 4cf54ee
+Author: Carlos Júnior <carlosjunyoor@gmail.com>
+Date:   Tue Nov 15 09:57:35 2022 -0300
+
+    Merge branch 'main' of https://github.com/Junior19908/SIGTI_Vendas
+
+[33mcommit a24685d57e6d1819cb21f58b054bdbee7493b623[m
+Author: Carlos Júnior <carlosjunyoor@gmail.com>
+Date:   Tue Nov 15 09:55:43 2022 -0300
+
+    Adicionando Funcionalidade Botão de Geração de Códigos Aleatórios
+
+[33mcommit 4cf54eed3a8cdd8d52374e630e82eb1a2088e496[m
+Author: CarlosjunyooR <38036242+Junior19908@users.noreply.github.com>
+Date:   Tue Nov 15 09:40:23 2022 -0300
+
+    Update README.md
+
+[33mcommit 5a98828c3369e3068aadefc96d40716341960ae1[m
+Author: CarlosjunyooR <38036242+Junior19908@users.noreply.github.com>
+Date:   Tue Nov 15 09:40:08 2022 -0300
+
+    README.md
+
+[33mcommit 0ea2cc572d52b543729c791dc884e909716b4391[m
+Author: Carlos Júnior <carlosjunyoor@gmail.com>
+Date:   Tue Nov 15 09:36:21 2022 -0300
+
+    Configurando Layout e Comando Insert - Módulo de Vendas
+
+[33mcommit d5ec006f01ae83968d512676c1988f38d0d529cc[m
+Author: Carlos Júnior <carlosjunyoor@gmail.com>
+Date:   Tue Nov 15 08:53:48 2022 -0300
+
+    Configurando Layout do Módulo de Vendas
+
+[33mcommit 1f8daa4741ac14b1afc1cf7d44119ee47c2c5ef6[m
+Author: Carlos Júnior <carlosjunyoor@gmail.com>
+Date:   Tue Nov 15 07:59:19 2022 -0300
+
+    Add
+
+[33mcommit 2bc607a6c575065348a551cb72dfa3803ad2f69b[m
+Author: Carlos Júnior <carlosjunyoor@gmail.com>
+Date:   Tue Nov 15 07:38:34 2022 -0300
+
+    Inicio Sistema de Vendas

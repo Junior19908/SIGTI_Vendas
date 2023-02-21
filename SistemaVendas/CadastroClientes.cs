@@ -141,7 +141,7 @@ namespace CadastroClientes
             try
             {
                 //Consulta no Banco de Dados se Existe Aquele Código(ID) caso tenha,
-                //será feito um Update caso não tenha ele cria um novo registro.
+                //será feito um Update se não, ele cria um novo registro.
                 OleDbCommand prompt = new OleDbCommand("SELECT COUNT(*) FROM TB_ClienteDBSCV WHERE Código = " + txtCodigoCliente.Text + " ", ClassConexao.DBSCV());//Seleção da tabela no Banco de Dados.
                 prompt.ExecuteNonQuery();//Executa o comando.
                 int consultDB = Convert.ToInt32(prompt.ExecuteScalar());//Converte o resultado para números inteiros.
@@ -338,6 +338,16 @@ namespace CadastroClientes
                 txtemail.Text = dataReader[16].ToString();
                 txtInfo.Text = dataReader[17].ToString();
 
+                int statusDes = Convert.ToInt16(dataReader["col_status"].ToString());
+
+                if(statusDes == 0)
+                {
+                    ckboxDesativar.Checked = true;
+                }
+                else if(statusDes == 1){
+                    ckboxDesativar.Checked = false;
+                }
+
                 try
                 {
                     byte[] images = ((byte[])dataReader[20]);
@@ -376,6 +386,7 @@ namespace CadastroClientes
             //carregarGridVendas();
             CarregarGrid();
             CarregarInfoCliente();
+            ckboxDesativar.Visible = true;
             if (Nulo == 1)
             {
                 LimparTxtBox();
@@ -386,6 +397,30 @@ namespace CadastroClientes
         private void btnLimpar_Click(object sender, EventArgs e)
         {
             LimparTxtBox();
+        }
+
+        private void ckboxDesativar_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if(ckboxDesativar.Checked) {
+                    command = ClassConexao.DBSCV().CreateCommand();
+                    command.CommandType = CommandType.Text;
+                    command.CommandText = "UPDATE TB_ClienteDBSCV SET col_status = 0 WHERE Código = " + txtCodigoCliente.Text + " ";
+                    command.ExecuteNonQuery();
+                }
+                else
+                {
+                    command = ClassConexao.DBSCV().CreateCommand();
+                    command.CommandType = CommandType.Text;
+                    command.CommandText = "UPDATE TB_ClienteDBSCV SET col_status = 1 WHERE Código = " + txtCodigoCliente.Text + " ";
+                    command.ExecuteNonQuery();
+                }
+            }
+            catch (Exception E)
+            {
+                MessageBox.Show(E.Message);
+            }
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
